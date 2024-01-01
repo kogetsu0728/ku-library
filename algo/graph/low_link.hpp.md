@@ -2,13 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: algo/verify/aoj/GRL_3_A.test.cpp
+    title: algo/verify/aoj/GRL_3_A.test.cpp
+  - icon: ':x:'
+    path: algo/verify/aoj/GRL_3_B.test.cpp
+    title: algo/verify/aoj/GRL_3_B.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/tree/low_link.hpp\"\n\nclass LowLink{\n\tprivate:\n\
+  bundledCode: "#line 2 \"algo/graph/low_link.hpp\"\n\nclass LowLink{\n\tprivate:\n\
     \t\tint n, comp;\n\t\tvector<vector<int>> g;\n\t\tvector<bool> seen;\n\t\tvector<int>\
     \ ord, low, art;\n\t\tset<pair<int,int>> bri;\n\n\t\tvoid dfs(int v, int p, int\
     \ &i){\n\t\t\tseen[v] = true;\n\t\t\tord[v] = low[v] = i++;\n\t\t\tfor(const int\
@@ -43,15 +49,17 @@ data:
     \ bri.count(make_pair(min(u,v),max(u,v)));\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/tree/low_link.hpp
+  path: algo/graph/low_link.hpp
   requiredBy: []
-  timestamp: '2024-01-01 10:12:57+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
-documentation_of: algo/tree/low_link.hpp
+  timestamp: '2024-01-01 13:55:44+09:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - algo/verify/aoj/GRL_3_A.test.cpp
+  - algo/verify/aoj/GRL_3_B.test.cpp
+documentation_of: algo/graph/low_link.hpp
 layout: document
 redirect_from:
-- /library/algo/tree/low_link.hpp
-- /library/algo/tree/low_link.hpp.html
-title: algo/tree/low_link.hpp
+- /library/algo/graph/low_link.hpp
+- /library/algo/graph/low_link.hpp.html
+title: algo/graph/low_link.hpp
 ---

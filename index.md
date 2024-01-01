@@ -28,6 +28,9 @@ data:
       title: algo/data_structure/weighted_union_find.hpp
   - name: algo/graph
     pages:
+    - icon: ':question:'
+      path: algo/graph/low_link.hpp
+      title: algo/graph/low_link.hpp
     - icon: ':heavy_check_mark:'
       path: algo/graph/topological_sort.hpp
       title: algo/graph/topological_sort.hpp
@@ -63,9 +66,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/tree/heavy_light_decomposition.hpp
       title: algo/tree/heavy_light_decomposition.hpp
-    - icon: ':warning:'
-      path: algo/tree/low_link.hpp
-      title: algo/tree/low_link.hpp
   verificationCategories:
   - name: algo/verify/aoj
     pages:
@@ -75,6 +75,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/verify/aoj/DSL_5_B.test.cpp
       title: algo/verify/aoj/DSL_5_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: algo/verify/aoj/GRL_3_A.test.cpp
+      title: algo/verify/aoj/GRL_3_A.test.cpp
+    - icon: ':x:'
+      path: algo/verify/aoj/GRL_3_B.test.cpp
+      title: algo/verify/aoj/GRL_3_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: algo/verify/aoj/GRL_4_A.test.cpp
       title: algo/verify/aoj/GRL_4_A.test.cpp
