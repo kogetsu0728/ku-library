@@ -9,7 +9,7 @@ int main(){
 	int N, M;
 	cin >> N >> M;
 	LowLink lo(N);
-	vector<pair<int,int>> edge(N);
+	vector<pair<int,int>> edge(M);
 	for(int i=0; i<M; i++){
 		int u, v;
 		cin >> u >> v;
