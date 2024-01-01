@@ -21,7 +21,7 @@ function acsubmit(){
 	echo "\033[36mSubmit? (y/n)\033[0m"
 	read input
 	if [[ $input == "y" ]]; then
-		acc submit .bundled.cpp -- -y -w 0
+		acc submit submit.cpp -- -y -w 0
 	fi
 }
 
