@@ -14,7 +14,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/data_structure/double_ended_priority_queue.hpp
       title: algo/data_structure/double_ended_priority_queue.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algo/data_structure/rollback_union_find.hpp
       title: algo/data_structure/rollback_union_find.hpp
     - icon: ':heavy_check_mark:'
@@ -86,6 +86,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/verify/yosupo/lca.test.cpp
       title: algo/verify/yosupo/lca.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: algo/verify/yosupo/persistent_unionfind.test.cpp
+      title: algo/verify/yosupo/persistent_unionfind.test.cpp
     - icon: ':heavy_check_mark:'
       path: algo/verify/yosupo/static_range_min.test.cpp
       title: algo/verify/yosupo/static_range_min.test.cpp

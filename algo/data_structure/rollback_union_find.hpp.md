@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: algo/verify/yosupo/persistent_unionfind.test.cpp
+    title: algo/verify/yosupo/persistent_unionfind.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"algo/data_structure/rollback_union_find.hpp\"\n\nclass RollbackUnionFind{\n\
@@ -54,8 +57,9 @@ data:
   path: algo/data_structure/rollback_union_find.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - algo/verify/yosupo/persistent_unionfind.test.cpp
 documentation_of: algo/data_structure/rollback_union_find.hpp
 layout: document
 redirect_from:
