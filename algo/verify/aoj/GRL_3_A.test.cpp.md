@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: algo/graph/low_link.hpp
     title: algo/graph/low_link.hpp
   _extendedRequiredBy: []

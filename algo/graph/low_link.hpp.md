@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: algo/verify/aoj/GRL_3_A.test.cpp
     title: algo/verify/aoj/GRL_3_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: algo/verify/aoj/GRL_3_B.test.cpp
     title: algo/verify/aoj/GRL_3_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"algo/graph/low_link.hpp\"\n\nclass LowLink{\n\tprivate:\n\
@@ -52,7 +52,7 @@ data:
   path: algo/graph/low_link.hpp
   requiredBy: []
   timestamp: '2024-01-01 13:55:44+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - algo/verify/aoj/GRL_3_A.test.cpp
   - algo/verify/aoj/GRL_3_B.test.cpp

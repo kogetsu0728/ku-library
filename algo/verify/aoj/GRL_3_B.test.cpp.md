@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: algo/graph/low_link.hpp
     title: algo/graph/low_link.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
@@ -33,7 +33,7 @@ data:
     \ 0<get_art(v);\n\t\t}\n\n\t\tbool is_bridge(int u, int v) const {\n\t\t\treturn\
     \ bri.count(make_pair(min(u,v),max(u,v)));\n\t\t}\n};\n#line 7 \"algo/verify/aoj/GRL_3_B.test.cpp\"\
     \n\nint main(){\n\tint N, M;\n\tcin >> N >> M;\n\tLowLink lo(N);\n\tvector<pair<int,int>>\
-    \ edge(N);\n\tfor(int i=0; i<M; i++){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t\
+    \ edge(M);\n\tfor(int i=0; i<M; i++){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t\
     edge[i] = make_pair(min(u, v), max(u, v));\n\t\tlo.add_edge(u, v);\n\t}\n\n\t\
     lo.build();\n\n\tvector<pair<int,int>> ans;\n\tfor(auto [u,v]:edge){\n\t\tif(lo.is_bridge(u,v)){\n\
     \t\t\tans.push_back(make_pair(u, v));\n\t\t}\n\t}\n\n\tsort(ans.begin(), ans.end());\n\
@@ -41,7 +41,7 @@ data:
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../graph/low_link.hpp\"\
     \n\nint main(){\n\tint N, M;\n\tcin >> N >> M;\n\tLowLink lo(N);\n\tvector<pair<int,int>>\
-    \ edge(N);\n\tfor(int i=0; i<M; i++){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t\
+    \ edge(M);\n\tfor(int i=0; i<M; i++){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t\
     edge[i] = make_pair(min(u, v), max(u, v));\n\t\tlo.add_edge(u, v);\n\t}\n\n\t\
     lo.build();\n\n\tvector<pair<int,int>> ans;\n\tfor(auto [u,v]:edge){\n\t\tif(lo.is_bridge(u,v)){\n\
     \t\t\tans.push_back(make_pair(u, v));\n\t\t}\n\t}\n\n\tsort(ans.begin(), ans.end());\n\
@@ -51,8 +51,8 @@ data:
   isVerificationFile: true
   path: algo/verify/aoj/GRL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2024-01-01 13:55:44+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-01-01 14:00:11+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: algo/verify/aoj/GRL_3_B.test.cpp
 layout: document

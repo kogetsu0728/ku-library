@@ -28,7 +28,7 @@ data:
       title: algo/data_structure/weighted_union_find.hpp
   - name: algo/graph
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: algo/graph/low_link.hpp
       title: algo/graph/low_link.hpp
     - icon: ':heavy_check_mark:'
@@ -78,7 +78,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/verify/aoj/GRL_3_A.test.cpp
       title: algo/verify/aoj/GRL_3_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: algo/verify/aoj/GRL_3_B.test.cpp
       title: algo/verify/aoj/GRL_3_B.test.cpp
     - icon: ':heavy_check_mark:'
