@@ -3,7 +3,7 @@ name: verify
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   verify:
@@ -14,8 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      with:
-        path: main
 
     - name: Set up Python
       uses: actions/setup-python@v1
