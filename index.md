@@ -61,6 +61,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/string/rolling_hash.hpp
       title: algo/string/rolling_hash.hpp
+  - name: algo/template
+    pages:
+    - icon: ':warning:'
+      path: algo/template/template.hpp
+      title: algo/template/template.hpp
   - name: algo/tree
     pages:
     - icon: ':heavy_check_mark:'
