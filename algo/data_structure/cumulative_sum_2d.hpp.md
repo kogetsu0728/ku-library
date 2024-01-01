@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: algo/verify/aoj/DSL_4_A.test.cpp
+    title: algo/verify/aoj/DSL_4_A.test.cpp
+  - icon: ':heavy_check_mark:'
     path: algo/verify/aoj/DSL_5_B.test.cpp
     title: algo/verify/aoj/DSL_5_B.test.cpp
   _isVerificationFailed: false
@@ -42,6 +45,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - algo/verify/aoj/DSL_5_B.test.cpp
+  - algo/verify/aoj/DSL_4_A.test.cpp
 documentation_of: algo/data_structure/cumulative_sum_2d.hpp
 layout: document
 redirect_from:

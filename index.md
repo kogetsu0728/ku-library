@@ -50,7 +50,7 @@ data:
       title: algo/math/sieve_of_eratosthenes.hpp
   - name: algo/misc
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: algo/misc/compress.hpp
       title: algo/misc/compress.hpp
     - icon: ':warning:'
@@ -72,6 +72,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/verify/aoj/DSL_1_B.test.cpp
       title: algo/verify/aoj/DSL_1_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: algo/verify/aoj/DSL_4_A.test.cpp
+      title: algo/verify/aoj/DSL_4_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: algo/verify/aoj/DSL_5_B.test.cpp
       title: algo/verify/aoj/DSL_5_B.test.cpp

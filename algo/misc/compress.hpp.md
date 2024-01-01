@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: algo/verify/aoj/DSL_4_A.test.cpp
+    title: algo/verify/aoj/DSL_4_A.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"algo/misc/compress.hpp\"\n\ntemplate<class T,class C=less<T>>\n\
@@ -33,8 +36,9 @@ data:
   path: algo/misc/compress.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - algo/verify/aoj/DSL_4_A.test.cpp
 documentation_of: algo/misc/compress.hpp
 layout: document
 redirect_from:
