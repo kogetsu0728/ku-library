@@ -14,6 +14,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      with:
+        path: main
 
     - name: Set up Python
       uses: actions/setup-python@v1
@@ -22,6 +24,7 @@ jobs:
       run: pip3 install -U online-judge-verify-helper
 
     - name: Run tests
+      working-directory: main
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DROPBOX_TOKEN: ${{ secrets.DROPBOX_TOKEN }}
