@@ -4,6 +4,7 @@
 "algo/verify/aoj/GRL_4_A.test.cpp": "2024-01-01 10:28:09 +0900",
 "algo/verify/yosupo/double_ended_priority_queue.test.cpp": "2024-01-01 10:28:09 +0900",
 "algo/verify/yosupo/lca.test.cpp": "2024-01-01 10:28:09 +0900",
+"algo/verify/yosupo/persistent_unionfind.test.cpp": "2024-01-01 13:30:47 +0900",
 "algo/verify/yosupo/static_range_min.test.cpp": "2024-01-01 10:28:09 +0900",
 "algo/verify/yosupo/static_range_sum.test.cpp": "2024-01-01 10:28:09 +0900",
 "algo/verify/yosupo/unionfind.test.cpp": "2024-01-01 10:28:09 +0900",
