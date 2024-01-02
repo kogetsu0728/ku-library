@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: algo/verify/yukicoder/468.cpp
-    title: algo/verify/yukicoder/468.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: algo/verify/aoj/GRL_4_A.test.cpp
     title: algo/verify/aoj/GRL_4_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: algo/verify/yukicoder/468.test.cpp
+    title: algo/verify/yukicoder/468.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -43,12 +43,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: algo/graph/topological_sort.hpp
-  requiredBy:
-  - algo/verify/yukicoder/468.cpp
+  requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - algo/verify/aoj/GRL_4_A.test.cpp
+  - algo/verify/yukicoder/468.test.cpp
 documentation_of: algo/graph/topological_sort.hpp
 layout: document
 redirect_from:

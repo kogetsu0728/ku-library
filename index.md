@@ -71,11 +71,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/tree/heavy_light_decomposition.hpp
       title: algo/tree/heavy_light_decomposition.hpp
-  - name: algo/verify/yukicoder
-    pages:
-    - icon: ':warning:'
-      path: algo/verify/yukicoder/468.cpp
-      title: algo/verify/yukicoder/468.cpp
   verificationCategories:
   - name: algo/verify/aoj
     pages:
@@ -126,5 +121,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/verify/yosupo/zalgorithm.test.cpp
       title: algo/verify/yosupo/zalgorithm.test.cpp
+  - name: algo/verify/yukicoder
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: algo/verify/yukicoder/468.test.cpp
+      title: algo/verify/yukicoder/468.test.cpp
 layout: toppage
 ---
