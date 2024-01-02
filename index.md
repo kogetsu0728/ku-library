@@ -71,6 +71,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: algo/tree/heavy_light_decomposition.hpp
       title: algo/tree/heavy_light_decomposition.hpp
+  - name: algo/verify/yukicoder
+    pages:
+    - icon: ':warning:'
+      path: algo/verify/yukicoder/468.cpp
+      title: algo/verify/yukicoder/468.cpp
   verificationCategories:
   - name: algo/verify/aoj
     pages:

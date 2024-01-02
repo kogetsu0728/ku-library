@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: algo/verify/yukicoder/468.cpp
+    title: algo/verify/yukicoder/468.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: algo/verify/aoj/GRL_4_A.test.cpp
@@ -40,7 +43,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: algo/graph/topological_sort.hpp
-  requiredBy: []
+  requiredBy:
+  - algo/verify/yukicoder/468.cpp
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
