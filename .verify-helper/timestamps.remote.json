@@ -13,5 +13,6 @@
 "algo/verify/yosupo/unionfind.test.cpp": "2024-01-01 10:28:09 +0900",
 "algo/verify/yosupo/vertex_add_path_sum.test.cpp": "2024-01-01 10:28:09 +0900",
 "algo/verify/yosupo/vertex_add_subtree_sum.test.cpp": "2024-01-01 10:28:09 +0900",
-"algo/verify/yosupo/zalgorithm.test.cpp": "2024-01-01 10:28:09 +0900"
+"algo/verify/yosupo/zalgorithm.test.cpp": "2024-01-01 10:28:09 +0900",
+"algo/verify/yukicoder/468.test.cpp": "2024-01-02 11:42:53 +0900"
 }
