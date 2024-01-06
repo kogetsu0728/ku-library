@@ -13,10 +13,6 @@ function acnew(){
 	cd $ATCODER_PATH/$1
 }
 
-function acmake(){
-	make -f $MY_LIBRARY_PATH/acc/cpp/makefile $1
-}
-
 function acsubmit(){
 	echo "\033[36mSubmit? (y/n)\033[0m"
 	read input
@@ -26,7 +22,7 @@ function acsubmit(){
 }
 
 function actest(){
-	if acmake all; then
+	if make all; then
 		if oj t -c "./a.out" -t 5 -e 1e-6 -N; then
 			echo "\033[32mAccepted\033[0m"
 			acsubmit
