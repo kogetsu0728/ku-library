@@ -17,7 +17,7 @@ submit.cpp: main.cpp
 	grep -v '^#pragma once' | \
 	cat -s \
 	> $@
-	@sed -i '1i /**\n *    author  : $(AUTHOR_NAME)\n *    created : $(CURRENT_DATE)\n**/' $@
+	@sed -i '1i /**\n *    author  : $(AUTHOR_NAME)\n *    created : $(CURRENT_DATE) (UTC+9)\n**/' $@
 
 a.out: submit.cpp
 	g++ -I$(AC_LIBRARY_PATH) -std=gnu++23 -Wall -Wextra -march=native -O2 -DLOCAL -o $@ $^
