@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: algo/data_structure/segment_tree.hpp
-    title: algo/data_structure/segment_tree.hpp
+    path: data_structure/segment_tree.hpp
+    title: data_structure/segment_tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,9 +14,9 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
     links:
     - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#line 1 \"algo/verify/yosupo/static_range_sum.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include <iostream>\n\
-    #include <vector>\nusing namespace std;\n\n#line 2 \"algo/data_structure/segment_tree.hpp\"\
+  bundledCode: "#line 1 \"verify/yosupo/static_range_sum.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include <iostream>\n\
+    #include <vector>\nusing namespace std;\n\n#line 2 \"data_structure/segment_tree.hpp\"\
     \n\ntemplate<class S, S (*op)(S,S), S (*e)()>\nclass SegmentTree{\n\tprivate:\n\
     \t\tint n;\n\t\tvector<S> v;\n\n\t\tvoid update(int i){\n\t\t\tv[i] = op(v[i<<1],\
     \ v[(i<<1)|1]);\n\t\t}\n\n\tpublic:\n\t\tSegmentTree():SegmentTree(0){}\n\t\t\
@@ -29,12 +29,12 @@ data:
     \ v_r = op(v[--r], v_r);\n\t\t\t\tl >>= 1, r >>= 1;\n\t\t\t}\n\t\t\treturn op(v_l,\
     \ v_r);\n\t\t}\n\n\t\tvoid set(int i, S x){\n\t\t\ti += n;\n\t\t\tv[i] = x;\n\t\
     \t\twhile(1<i){\n\t\t\t\ti >>= 1;\n\t\t\t\tupdate(i);\n\t\t\t}\n\t\t}\n};\n#line\
-    \ 8 \"algo/verify/yosupo/static_range_sum.test.cpp\"\n\nlong long op(long long\
-    \ a, long long b){\n\treturn a+b;\n}\n\nlong long e(){\n\treturn 0LL;\n}\n\nint\
-    \ main(){\n\tint N, Q;\n\tcin >> N >> Q;\n\tvector<long long> A(N);\n\tfor(int\
-    \ i=0; i<N; i++){\n\t\tcin >> A[i];\n\t}\n\n\tSegmentTree<long long, op, e> seg(A);\n\
-    \tfor(;Q--;){\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << seg.prod(l,r) <<\
-    \ endl;\n\t}\n}\n"
+    \ 8 \"verify/yosupo/static_range_sum.test.cpp\"\n\nlong long op(long long a, long\
+    \ long b){\n\treturn a+b;\n}\n\nlong long e(){\n\treturn 0LL;\n}\n\nint main(){\n\
+    \tint N, Q;\n\tcin >> N >> Q;\n\tvector<long long> A(N);\n\tfor(int i=0; i<N;\
+    \ i++){\n\t\tcin >> A[i];\n\t}\n\n\tSegmentTree<long long, op, e> seg(A);\n\t\
+    for(;Q--;){\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << seg.prod(l,r) << endl;\n\
+    \t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
     #include <iostream>\n#include <vector>\nusing namespace std;\n\n#include \"../../data_structure/segment_tree.hpp\"\
     \n\nlong long op(long long a, long long b){\n\treturn a+b;\n}\n\nlong long e(){\n\
@@ -43,17 +43,17 @@ data:
     \ long, op, e> seg(A);\n\tfor(;Q--;){\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\t\
     cout << seg.prod(l,r) << endl;\n\t}\n}\n"
   dependsOn:
-  - algo/data_structure/segment_tree.hpp
+  - data_structure/segment_tree.hpp
   isVerificationFile: true
-  path: algo/verify/yosupo/static_range_sum.test.cpp
+  path: verify/yosupo/static_range_sum.test.cpp
   requiredBy: []
   timestamp: '2024-01-01 10:28:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: algo/verify/yosupo/static_range_sum.test.cpp
+documentation_of: verify/yosupo/static_range_sum.test.cpp
 layout: document
 redirect_from:
-- /verify/algo/verify/yosupo/static_range_sum.test.cpp
-- /verify/algo/verify/yosupo/static_range_sum.test.cpp.html
-title: algo/verify/yosupo/static_range_sum.test.cpp
+- /verify/verify/yosupo/static_range_sum.test.cpp
+- /verify/verify/yosupo/static_range_sum.test.cpp.html
+title: verify/yosupo/static_range_sum.test.cpp
 ---

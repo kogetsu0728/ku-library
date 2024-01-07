@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: algo/tree/heavy_light_decomposition.hpp
-    title: algo/tree/heavy_light_decomposition.hpp
+    path: tree/heavy_light_decomposition.hpp
+    title: tree/heavy_light_decomposition.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,9 +14,9 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/lca
     links:
     - https://judge.yosupo.jp/problem/lca
-  bundledCode: "#line 1 \"algo/verify/yosupo/lca.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
+  bundledCode: "#line 1 \"verify/yosupo/lca.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
     \n\n#include <iostream>\n#include <vector>\n#include <utility>\n#include <algorithm>\n\
-    #include <functional>\nusing namespace std;\n\n#line 2 \"algo/tree/heavy_light_decomposition.hpp\"\
+    #include <functional>\nusing namespace std;\n\n#line 2 \"tree/heavy_light_decomposition.hpp\"\
     \n\nclass HeavyLightDecomposition{\n\tprivate:\n\t\tint n;\n\t\tvector<vector<int>>\
     \ g;\n\t\tvector<int> siz, par, dep, top, in, out;\n\n\t\tvoid dfs_siz(int v,\
     \ int p){\n\t\t\tpar[v] = p;\n\t\t\tfor(int &nv:g[v]){\n\t\t\t\tif(nv==p){\n\t\
@@ -39,9 +39,9 @@ data:
     \ u, int v, const function<void(int,int)> &func) const {\n\t\t\twhile(true){\n\
     \t\t\t\tif(in[u]>in[v]) swap(u, v);\n\t\t\t\tfunc(max(in[u], in[top[v]]), in[v]+1);\n\
     \t\t\t\tif(top[u]==top[v]) break;\n\t\t\t\tv = par[top[v]];\n\t\t\t}\n\t\t}\n\
-    };\n#line 11 \"algo/verify/yosupo/lca.test.cpp\"\n\nint main(){\n\tint N, Q;\n\
-    \tcin >> N >> Q;\n\tHeavyLightDecomposition hld(N);\n\tfor(int i=1; i<N; i++){\n\
-    \t\tint p;\n\t\tcin >> p;\n\t\thld.add_edge(i, p);\n\t}\n\n\thld.build();\n\n\t\
+    };\n#line 11 \"verify/yosupo/lca.test.cpp\"\n\nint main(){\n\tint N, Q;\n\tcin\
+    \ >> N >> Q;\n\tHeavyLightDecomposition hld(N);\n\tfor(int i=1; i<N; i++){\n\t\
+    \tint p;\n\t\tcin >> p;\n\t\thld.add_edge(i, p);\n\t}\n\n\thld.build();\n\n\t\
     for(;Q--;){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tcout << hld.lca(u, v) << endl;\n\
     \t}\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n\n#include <iostream>\n\
@@ -52,17 +52,17 @@ data:
     \t}\n\n\thld.build();\n\n\tfor(;Q--;){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t\
     cout << hld.lca(u, v) << endl;\n\t}\n}\n"
   dependsOn:
-  - algo/tree/heavy_light_decomposition.hpp
+  - tree/heavy_light_decomposition.hpp
   isVerificationFile: true
-  path: algo/verify/yosupo/lca.test.cpp
+  path: verify/yosupo/lca.test.cpp
   requiredBy: []
   timestamp: '2024-01-01 10:28:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: algo/verify/yosupo/lca.test.cpp
+documentation_of: verify/yosupo/lca.test.cpp
 layout: document
 redirect_from:
-- /verify/algo/verify/yosupo/lca.test.cpp
-- /verify/algo/verify/yosupo/lca.test.cpp.html
-title: algo/verify/yosupo/lca.test.cpp
+- /verify/verify/yosupo/lca.test.cpp
+- /verify/verify/yosupo/lca.test.cpp.html
+title: verify/yosupo/lca.test.cpp
 ---

@@ -1,17 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: acc/cpp/main.cpp
-    title: acc/cpp/main.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: '#line 1 "algo/template/template.hpp"
+  bundledCode: '#line 1 "template/template.hpp"
 
     #ifdef LOCAL
 
@@ -125,16 +122,15 @@ data:
     '
   dependsOn: []
   isVerificationFile: false
-  path: algo/template/template.hpp
-  requiredBy:
-  - acc/cpp/main.cpp
+  path: template/template.hpp
+  requiredBy: []
   timestamp: '2024-01-01 22:33:58+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: algo/template/template.hpp
+documentation_of: template/template.hpp
 layout: document
 redirect_from:
-- /library/algo/template/template.hpp
-- /library/algo/template/template.hpp.html
-title: algo/template/template.hpp
+- /library/template/template.hpp
+- /library/template/template.hpp.html
+title: template/template.hpp
 ---

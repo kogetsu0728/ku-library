@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: algo/graph/low_link.hpp
-    title: algo/graph/low_link.hpp
+    path: graph/low_link.hpp
+    title: graph/low_link.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,8 +14,8 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A
-  bundledCode: "#line 1 \"algo/verify/aoj/GRL_3_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"algo/graph/low_link.hpp\"\
+  bundledCode: "#line 1 \"verify/aoj/GRL_3_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_A\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"graph/low_link.hpp\"\
     \n\nclass LowLink{\n\tprivate:\n\t\tint n, comp;\n\t\tvector<vector<int>> g;\n\
     \t\tvector<bool> seen;\n\t\tvector<int> ord, low, art;\n\t\tset<pair<int,int>>\
     \ bri;\n\n\t\tvoid dfs(int v, int p, int &i){\n\t\t\tseen[v] = true;\n\t\t\tord[v]\
@@ -31,7 +31,7 @@ data:
     \ component() const {\n\t\t\treturn comp;\n\t\t}\n\n\t\tint get_art(int v) const\
     \ {\n\t\t\treturn art[v];\n\t\t}\n\n\t\tbool is_art(int v) const {\n\t\t\treturn\
     \ 0<get_art(v);\n\t\t}\n\n\t\tbool is_bridge(int u, int v) const {\n\t\t\treturn\
-    \ bri.count(make_pair(min(u,v),max(u,v)));\n\t\t}\n};\n#line 7 \"algo/verify/aoj/GRL_3_A.test.cpp\"\
+    \ bri.count(make_pair(min(u,v),max(u,v)));\n\t\t}\n};\n#line 7 \"verify/aoj/GRL_3_A.test.cpp\"\
     \n\nint main(){\n\tint N, M;\n\tcin >> N >> M;\n\tLowLink lo(N);\n\tfor(int i=0;\
     \ i<M; i++){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tlo.add_edge(u, v);\n\t}\n\
     \n\tlo.build();\n\n\tfor(int i=0; i<N; i++){\n\t\tif(lo.is_art(i)){\n\t\t\tcout\
@@ -43,17 +43,17 @@ data:
     \n\tlo.build();\n\n\tfor(int i=0; i<N; i++){\n\t\tif(lo.is_art(i)){\n\t\t\tcout\
     \ << i << endl;\n\t\t}\n\t}\n}\n"
   dependsOn:
-  - algo/graph/low_link.hpp
+  - graph/low_link.hpp
   isVerificationFile: true
-  path: algo/verify/aoj/GRL_3_A.test.cpp
+  path: verify/aoj/GRL_3_A.test.cpp
   requiredBy: []
   timestamp: '2024-01-01 13:55:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: algo/verify/aoj/GRL_3_A.test.cpp
+documentation_of: verify/aoj/GRL_3_A.test.cpp
 layout: document
 redirect_from:
-- /verify/algo/verify/aoj/GRL_3_A.test.cpp
-- /verify/algo/verify/aoj/GRL_3_A.test.cpp.html
-title: algo/verify/aoj/GRL_3_A.test.cpp
+- /verify/verify/aoj/GRL_3_A.test.cpp
+- /verify/verify/aoj/GRL_3_A.test.cpp.html
+title: verify/aoj/GRL_3_A.test.cpp
 ---

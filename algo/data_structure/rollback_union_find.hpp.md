@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/persistent_unionfind.test.cpp
-    title: algo/verify/yosupo/persistent_unionfind.test.cpp
+    path: verify/yosupo/persistent_unionfind.test.cpp
+    title: verify/yosupo/persistent_unionfind.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/data_structure/rollback_union_find.hpp\"\n\nclass RollbackUnionFind{\n\
+  bundledCode: "#line 2 \"data_structure/rollback_union_find.hpp\"\n\nclass RollbackUnionFind{\n\
     \tprivate:\n\t\tint n, comp;\n\t\tvector<int> par;\n\t\tstack<pair<int,int>> his;\n\
     \n\tpublic:\n\t\tRollbackUnionFind():RollbackUnionFind(0){}\n\t\tRollbackUnionFind(const\
     \ int _n):\n\t\t\tn(_n), comp(_n), par(_n,-1), his(){}\n\n\t\tint size(int x)\
@@ -54,16 +54,16 @@ data:
     }\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/data_structure/rollback_union_find.hpp
+  path: data_structure/rollback_union_find.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/yosupo/persistent_unionfind.test.cpp
-documentation_of: algo/data_structure/rollback_union_find.hpp
+  - verify/yosupo/persistent_unionfind.test.cpp
+documentation_of: data_structure/rollback_union_find.hpp
 layout: document
 redirect_from:
-- /library/algo/data_structure/rollback_union_find.hpp
-- /library/algo/data_structure/rollback_union_find.hpp.html
-title: algo/data_structure/rollback_union_find.hpp
+- /library/data_structure/rollback_union_find.hpp
+- /library/data_structure/rollback_union_find.hpp.html
+title: data_structure/rollback_union_find.hpp
 ---

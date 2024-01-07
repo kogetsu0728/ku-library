@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/aoj/DSL_4_A.test.cpp
-    title: algo/verify/aoj/DSL_4_A.test.cpp
+    path: verify/aoj/DSL_4_A.test.cpp
+    title: verify/aoj/DSL_4_A.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/misc/compress.hpp\"\n\ntemplate<class T,class C=less<T>>\n\
+  bundledCode: "#line 2 \"misc/compress.hpp\"\n\ntemplate<class T,class C=less<T>>\n\
     class Compress{\n\tprivate:\n\t\tvector<T> v;\n\n\tpublic:\n\t\tCompress(){}\n\
     \n\t\tvoid push(const T x){\n\t\t\tv.push_back(x);\n\t\t}\n\n\t\tvoid build(){\n\
     \t\t\tsort(v.begin(), v.end(), C());\n\t\t\tv.erase(unique(v.begin(),v.end()),v.end());\n\
@@ -33,16 +33,16 @@ data:
     return nth(get(x))==x;\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/misc/compress.hpp
+  path: misc/compress.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/aoj/DSL_4_A.test.cpp
-documentation_of: algo/misc/compress.hpp
+  - verify/aoj/DSL_4_A.test.cpp
+documentation_of: misc/compress.hpp
 layout: document
 redirect_from:
-- /library/algo/misc/compress.hpp
-- /library/algo/misc/compress.hpp.html
-title: algo/misc/compress.hpp
+- /library/misc/compress.hpp
+- /library/misc/compress.hpp.html
+title: misc/compress.hpp
 ---

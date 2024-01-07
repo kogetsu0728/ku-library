@@ -4,14 +4,14 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/aoj/DSL_1_B.test.cpp
-    title: algo/verify/aoj/DSL_1_B.test.cpp
+    path: verify/aoj/DSL_1_B.test.cpp
+    title: verify/aoj/DSL_1_B.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/data_structure/weighted_union_find.hpp\"\n\ntemplate<class\
+  bundledCode: "#line 2 \"data_structure/weighted_union_find.hpp\"\n\ntemplate<class\
     \ T> class WeightedUnionFind{\n\tprivate:\n\t\tint n, comp;\n\t\tvector<int> par,\
     \ rank;\n\t\tvector<T> wei;\n\n\tpublic:\n\t\tWeightedUnionFind(const int _n=0,\
     \ const T _e=0):\n\t\t\tn(_n), comp(_n), par(_n, -1), rank(_n), wei(n,_e){}\n\n\
@@ -51,16 +51,16 @@ data:
     };\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/data_structure/weighted_union_find.hpp
+  path: data_structure/weighted_union_find.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/aoj/DSL_1_B.test.cpp
-documentation_of: algo/data_structure/weighted_union_find.hpp
+  - verify/aoj/DSL_1_B.test.cpp
+documentation_of: data_structure/weighted_union_find.hpp
 layout: document
 redirect_from:
-- /library/algo/data_structure/weighted_union_find.hpp
-- /library/algo/data_structure/weighted_union_find.hpp.html
-title: algo/data_structure/weighted_union_find.hpp
+- /library/data_structure/weighted_union_find.hpp
+- /library/data_structure/weighted_union_find.hpp.html
+title: data_structure/weighted_union_find.hpp
 ---

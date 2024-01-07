@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: algo/string/rolling_hash.hpp
-    title: algo/string/rolling_hash.hpp
+    path: string/rolling_hash.hpp
+    title: string/rolling_hash.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,9 +14,9 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/zalgorithm
     links:
     - https://judge.yosupo.jp/problem/zalgorithm
-  bundledCode: "#line 1 \"algo/verify/yosupo/zalgorithm.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/zalgorithm\"\n\n#include <iostream>\n#include\
-    \ <string>\n#include <vector>\nusing namespace std;\n\n#line 2 \"algo/string/rolling_hash.hpp\"\
+  bundledCode: "#line 1 \"verify/yosupo/zalgorithm.test.cpp\"\n#define PROBLEM \"\
+    https://judge.yosupo.jp/problem/zalgorithm\"\n\n#include <iostream>\n#include\
+    \ <string>\n#include <vector>\nusing namespace std;\n\n#line 2 \"string/rolling_hash.hpp\"\
     \n\nclass RollingHash{\n\tprivate:\n\t\tstatic const long long mod1=888888901,\
     \ mod2=987654323;\n\t\tlong long base1, base2;\n\t\tint n;\n\t\tvector<long long>\
     \ hash1, hash2, pow1, pow2;\n\n\tpublic:\n\t\tRollingHash(const string &s, const\
@@ -32,7 +32,7 @@ data:
     \ mod2;\n\t\t\treturn make_pair(fi,se);\n\t\t}\n\n\t\tint lcp(const int a, const\
     \ int b) const {\n\t\t\tint ok = 0, ng = min(n+1-a,n+1-b);\n\t\t\twhile(1<ng-ok){\n\
     \t\t\t\tint mid = (ok+ng)/2;\n\t\t\t\tif(get(a,a+mid)==get(b,b+mid)) ok = mid;\n\
-    \t\t\t\telse ng = mid;\n\t\t\t}\n\t\t\treturn ok;\n\t\t}\n};\n#line 9 \"algo/verify/yosupo/zalgorithm.test.cpp\"\
+    \t\t\t\telse ng = mid;\n\t\t\t}\n\t\t\treturn ok;\n\t\t}\n};\n#line 9 \"verify/yosupo/zalgorithm.test.cpp\"\
     \n\nint main(){\n\tstring S;\n\tcin >> S;\n\n\tRollingHash rh(S);\n\n\tfor(int\
     \ i=0; i<int(S.length()); i++){\n\t\tif(i) cout << ' ';\n\t\tcout << rh.lcp(0,i);\n\
     \t}\n\tcout << endl;\n}\n"
@@ -42,17 +42,17 @@ data:
     \n\tRollingHash rh(S);\n\n\tfor(int i=0; i<int(S.length()); i++){\n\t\tif(i) cout\
     \ << ' ';\n\t\tcout << rh.lcp(0,i);\n\t}\n\tcout << endl;\n}\n"
   dependsOn:
-  - algo/string/rolling_hash.hpp
+  - string/rolling_hash.hpp
   isVerificationFile: true
-  path: algo/verify/yosupo/zalgorithm.test.cpp
+  path: verify/yosupo/zalgorithm.test.cpp
   requiredBy: []
   timestamp: '2024-01-01 10:28:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: algo/verify/yosupo/zalgorithm.test.cpp
+documentation_of: verify/yosupo/zalgorithm.test.cpp
 layout: document
 redirect_from:
-- /verify/algo/verify/yosupo/zalgorithm.test.cpp
-- /verify/algo/verify/yosupo/zalgorithm.test.cpp.html
-title: algo/verify/yosupo/zalgorithm.test.cpp
+- /verify/verify/yosupo/zalgorithm.test.cpp
+- /verify/verify/yosupo/zalgorithm.test.cpp.html
+title: verify/yosupo/zalgorithm.test.cpp
 ---

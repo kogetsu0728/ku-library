@@ -4,17 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/aoj/GRL_4_A.test.cpp
-    title: algo/verify/aoj/GRL_4_A.test.cpp
+    path: verify/aoj/GRL_4_A.test.cpp
+    title: verify/aoj/GRL_4_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yukicoder/468.test.cpp
-    title: algo/verify/yukicoder/468.test.cpp
+    path: verify/yukicoder/468.test.cpp
+    title: verify/yukicoder/468.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/graph/topological_sort.hpp\"\n\nclass TopologicalSort{\n\
+  bundledCode: "#line 2 \"graph/topological_sort.hpp\"\n\nclass TopologicalSort{\n\
     \tprivate:\n\t\tint n;\n\t\tvector<vector<int>> g;\n\t\tvector<int> p;\n\n\tpublic:\n\
     \t\tTopologicalSort():TopologicalSort(0){}\n\t\tTopologicalSort(int _n):\n\t\t\
     \tn(_n), g(_n){}\n\n\t\tvoid add_edge(int u, int v){\n\t\t\tg[u].push_back(v);\n\
@@ -42,17 +42,17 @@ data:
     \treturn p[i];\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/graph/topological_sort.hpp
+  path: graph/topological_sort.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/aoj/GRL_4_A.test.cpp
-  - algo/verify/yukicoder/468.test.cpp
-documentation_of: algo/graph/topological_sort.hpp
+  - verify/aoj/GRL_4_A.test.cpp
+  - verify/yukicoder/468.test.cpp
+documentation_of: graph/topological_sort.hpp
 layout: document
 redirect_from:
-- /library/algo/graph/topological_sort.hpp
-- /library/algo/graph/topological_sort.hpp.html
-title: algo/graph/topological_sort.hpp
+- /library/graph/topological_sort.hpp
+- /library/graph/topological_sort.hpp.html
+title: graph/topological_sort.hpp
 ---

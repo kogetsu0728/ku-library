@@ -4,18 +4,18 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/zalgorithm.test.cpp
-    title: algo/verify/yosupo/zalgorithm.test.cpp
+    path: verify/yosupo/zalgorithm.test.cpp
+    title: verify/yosupo/zalgorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/string/rolling_hash.hpp\"\n\nclass RollingHash{\n\t\
-    private:\n\t\tstatic const long long mod1=888888901, mod2=987654323;\n\t\tlong\
-    \ long base1, base2;\n\t\tint n;\n\t\tvector<long long> hash1, hash2, pow1, pow2;\n\
-    \n\tpublic:\n\t\tRollingHash(const string &s, const long long _base1=2525, const\
-    \ long long _base2=4649):\n\t\t\tbase1(_base1), base2(_base2) {\n\t\t\t\tn = s.length();\n\
+  bundledCode: "#line 2 \"string/rolling_hash.hpp\"\n\nclass RollingHash{\n\tprivate:\n\
+    \t\tstatic const long long mod1=888888901, mod2=987654323;\n\t\tlong long base1,\
+    \ base2;\n\t\tint n;\n\t\tvector<long long> hash1, hash2, pow1, pow2;\n\n\tpublic:\n\
+    \t\tRollingHash(const string &s, const long long _base1=2525, const long long\
+    \ _base2=4649):\n\t\t\tbase1(_base1), base2(_base2) {\n\t\t\t\tn = s.length();\n\
     \t\t\t\thash1.assign(n+1, 0);\n\t\t\t\thash2.assign(n+1, 0);\n\t\t\t\tpow1.assign(n+1,\
     \ 1);\n\t\t\t\tpow2.assign(n+1, 1);\n\t\t\t\tfor (int i=0; i<n; i++){\n\t\t\t\t\
     \thash1[i+1] = (hash1[i]*base1+s[i]) % mod1;\n\t\t\t\t\thash2[i+1] = (hash2[i]*base2+s[i])\
@@ -45,16 +45,16 @@ data:
     \ ok = mid;\n\t\t\t\telse ng = mid;\n\t\t\t}\n\t\t\treturn ok;\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/string/rolling_hash.hpp
+  path: string/rolling_hash.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/yosupo/zalgorithm.test.cpp
-documentation_of: algo/string/rolling_hash.hpp
+  - verify/yosupo/zalgorithm.test.cpp
+documentation_of: string/rolling_hash.hpp
 layout: document
 redirect_from:
-- /library/algo/string/rolling_hash.hpp
-- /library/algo/string/rolling_hash.hpp.html
-title: algo/string/rolling_hash.hpp
+- /library/string/rolling_hash.hpp
+- /library/string/rolling_hash.hpp.html
+title: string/rolling_hash.hpp
 ---

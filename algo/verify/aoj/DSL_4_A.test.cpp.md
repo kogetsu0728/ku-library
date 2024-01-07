@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: algo/data_structure/cumulative_sum_2d.hpp
-    title: algo/data_structure/cumulative_sum_2d.hpp
+    path: data_structure/cumulative_sum_2d.hpp
+    title: data_structure/cumulative_sum_2d.hpp
   - icon: ':heavy_check_mark:'
-    path: algo/misc/compress.hpp
-    title: algo/misc/compress.hpp
+    path: misc/compress.hpp
+    title: misc/compress.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,8 +17,8 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A
-  bundledCode: "#line 1 \"algo/verify/aoj/DSL_4_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"algo/misc/compress.hpp\"\
+  bundledCode: "#line 1 \"verify/aoj/DSL_4_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"misc/compress.hpp\"\
     \n\ntemplate<class T,class C=less<T>>\nclass Compress{\n\tprivate:\n\t\tvector<T>\
     \ v;\n\n\tpublic:\n\t\tCompress(){}\n\n\t\tvoid push(const T x){\n\t\t\tv.push_back(x);\n\
     \t\t}\n\n\t\tvoid build(){\n\t\t\tsort(v.begin(), v.end(), C());\n\t\t\tv.erase(unique(v.begin(),v.end()),v.end());\n\
@@ -28,7 +28,7 @@ data:
     \t\t\twhile(1<ok-ng){\n\t\t\t\tint mid=(ok+ng)/2;\n\t\t\t\tif(!C()(v[mid],x))\
     \ ok=mid;\n\t\t\t\telse ng=mid;\n\t\t\t}\n\t\t\treturn ok;\n\t\t}\n\n\t\tbool\
     \ count(const T x) const {\n\t\t\treturn nth(get(x))==x;\n\t\t}\n};\n#line 2 \"\
-    algo/data_structure/cumulative_sum_2d.hpp\"\n\ntemplate<class T>\nclass CumulativeSum2d{\n\
+    data_structure/cumulative_sum_2d.hpp\"\n\ntemplate<class T>\nclass CumulativeSum2d{\n\
     \tprivate:\n\t\tint h, w;\n\t\tvector<vector<T>> v;\n\n\tpublic:\n\t\tCumulativeSum2d():CumulativeSum2d(0,0){}\n\
     \t\tCumulativeSum2d(int _h, int _w, T _e=0):\n\t\t\th(_h), w(_w), v(_h+1,vector<T>(_w+1,_e)){}\n\
     \n\t\tvoid add(int y, int x, T d){\n\t\t\tv[y+1][x+1] += d;\n\t\t}\n\n\t\tvoid\
@@ -38,9 +38,9 @@ data:
     \ += v[y][x-1]+v[y-1][x]-v[y-1][x-1];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tT get(int\
     \ y, int x) const {\n\t\t\treturn v[y+1][x+1];\n\t\t}\n\n\t\tT sum(int y1, int\
     \ x1, int y2, int x2) const {\n\t\t\treturn v[y2][x2]-v[y1][x2]-v[y2][x1]+v[y1][x1];\n\
-    \t\t}\n};\n#line 8 \"algo/verify/aoj/DSL_4_A.test.cpp\"\n\nint main(){\n\tint\
-    \ N;\n\tcin >> N;\n\tvector<long long> x1(N), y1(N), x2(N), y2(N);\n\tfor(int\
-    \ i=0; i<N; i++){\n\t\tcin >> x1[i] >> y1[i] >> x2[i] >> y2[i];\n\t}\n\n\tCompress<long\
+    \t\t}\n};\n#line 8 \"verify/aoj/DSL_4_A.test.cpp\"\n\nint main(){\n\tint N;\n\t\
+    cin >> N;\n\tvector<long long> x1(N), y1(N), x2(N), y2(N);\n\tfor(int i=0; i<N;\
+    \ i++){\n\t\tcin >> x1[i] >> y1[i] >> x2[i] >> y2[i];\n\t}\n\n\tCompress<long\
     \ long> cmp_x, cmp_y;\n\tfor(int i=0; i<N; i++){\n\t\tcmp_x.push(x1[i]), cmp_x.push(x2[i]);\n\
     \t\tcmp_y.push(y1[i]), cmp_y.push(y2[i]);\n\t}\n\n\tcmp_x.build(), cmp_y.build();\n\
     \n\tCumulativeSum2d<int> cnt(int(cmp_y.size()), int(cmp_x.size()));\n\tfor(int\
@@ -63,18 +63,18 @@ data:
     \t\t\tif(cnt.get(i,j)){\n\t\t\t\tans += (cmp_y.nth(i+1)-cmp_y.nth(i))*(cmp_x.nth(j+1)-cmp_x.nth(j));\n\
     \t\t\t}\n\t\t}\n\t}\n\n\tcout << ans << endl;\n}\n"
   dependsOn:
-  - algo/misc/compress.hpp
-  - algo/data_structure/cumulative_sum_2d.hpp
+  - misc/compress.hpp
+  - data_structure/cumulative_sum_2d.hpp
   isVerificationFile: true
-  path: algo/verify/aoj/DSL_4_A.test.cpp
+  path: verify/aoj/DSL_4_A.test.cpp
   requiredBy: []
   timestamp: '2024-01-01 14:21:10+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: algo/verify/aoj/DSL_4_A.test.cpp
+documentation_of: verify/aoj/DSL_4_A.test.cpp
 layout: document
 redirect_from:
-- /verify/algo/verify/aoj/DSL_4_A.test.cpp
-- /verify/algo/verify/aoj/DSL_4_A.test.cpp.html
-title: algo/verify/aoj/DSL_4_A.test.cpp
+- /verify/verify/aoj/DSL_4_A.test.cpp
+- /verify/verify/aoj/DSL_4_A.test.cpp.html
+title: verify/aoj/DSL_4_A.test.cpp
 ---

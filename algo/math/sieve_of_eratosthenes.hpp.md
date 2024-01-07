@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/math/sieve_of_eratosthenes.hpp\"\n\nclass SieveOfEratosthenes{\n\
+  bundledCode: "#line 2 \"math/sieve_of_eratosthenes.hpp\"\n\nclass SieveOfEratosthenes{\n\
     \tprivate:\n\t\tint siz;\n\t\tvector<int> div, pr, cnt;\n\tpublic:\n\t\tSieveOfEratosthenes(int\
     \ n):\n\t\t\tsiz(n),div(n+1),pr(0),cnt(n+1){\n\t\t\t\tdiv[1] = 1;\n\t\t\t\tfor(int\
     \ i=2; i<=n; i++){\n\t\t\t\t\tif(div[i]!=0) continue;\n\t\t\t\t\tpr.push_back(i);\n\
@@ -68,15 +68,15 @@ data:
     \t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/math/sieve_of_eratosthenes.hpp
+  path: math/sieve_of_eratosthenes.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: algo/math/sieve_of_eratosthenes.hpp
+documentation_of: math/sieve_of_eratosthenes.hpp
 layout: document
 redirect_from:
-- /library/algo/math/sieve_of_eratosthenes.hpp
-- /library/algo/math/sieve_of_eratosthenes.hpp.html
-title: algo/math/sieve_of_eratosthenes.hpp
+- /library/math/sieve_of_eratosthenes.hpp
+- /library/math/sieve_of_eratosthenes.hpp.html
+title: math/sieve_of_eratosthenes.hpp
 ---

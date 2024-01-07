@@ -4,17 +4,17 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/aoj/DSL_4_A.test.cpp
-    title: algo/verify/aoj/DSL_4_A.test.cpp
+    path: verify/aoj/DSL_4_A.test.cpp
+    title: verify/aoj/DSL_4_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: algo/verify/aoj/DSL_5_B.test.cpp
-    title: algo/verify/aoj/DSL_5_B.test.cpp
+    path: verify/aoj/DSL_5_B.test.cpp
+    title: verify/aoj/DSL_5_B.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/data_structure/cumulative_sum_2d.hpp\"\n\ntemplate<class\
+  bundledCode: "#line 2 \"data_structure/cumulative_sum_2d.hpp\"\n\ntemplate<class\
     \ T>\nclass CumulativeSum2d{\n\tprivate:\n\t\tint h, w;\n\t\tvector<vector<T>>\
     \ v;\n\n\tpublic:\n\t\tCumulativeSum2d():CumulativeSum2d(0,0){}\n\t\tCumulativeSum2d(int\
     \ _h, int _w, T _e=0):\n\t\t\th(_h), w(_w), v(_h+1,vector<T>(_w+1,_e)){}\n\n\t\
@@ -39,17 +39,17 @@ data:
     \t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/data_structure/cumulative_sum_2d.hpp
+  path: data_structure/cumulative_sum_2d.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/aoj/DSL_5_B.test.cpp
-  - algo/verify/aoj/DSL_4_A.test.cpp
-documentation_of: algo/data_structure/cumulative_sum_2d.hpp
+  - verify/aoj/DSL_5_B.test.cpp
+  - verify/aoj/DSL_4_A.test.cpp
+documentation_of: data_structure/cumulative_sum_2d.hpp
 layout: document
 redirect_from:
-- /library/algo/data_structure/cumulative_sum_2d.hpp
-- /library/algo/data_structure/cumulative_sum_2d.hpp.html
-title: algo/data_structure/cumulative_sum_2d.hpp
+- /library/data_structure/cumulative_sum_2d.hpp
+- /library/data_structure/cumulative_sum_2d.hpp.html
+title: data_structure/cumulative_sum_2d.hpp
 ---

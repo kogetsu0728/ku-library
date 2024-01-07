@@ -4,26 +4,26 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/static_range_min.test.cpp
-    title: algo/verify/yosupo/static_range_min.test.cpp
+    path: verify/yosupo/static_range_min.test.cpp
+    title: verify/yosupo/static_range_min.test.cpp
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/static_range_sum.test.cpp
-    title: algo/verify/yosupo/static_range_sum.test.cpp
+    path: verify/yosupo/static_range_sum.test.cpp
+    title: verify/yosupo/static_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/vertex_add_path_sum.test.cpp
-    title: algo/verify/yosupo/vertex_add_path_sum.test.cpp
+    path: verify/yosupo/vertex_add_path_sum.test.cpp
+    title: verify/yosupo/vertex_add_path_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/vertex_add_subtree_sum.test.cpp
-    title: algo/verify/yosupo/vertex_add_subtree_sum.test.cpp
+    path: verify/yosupo/vertex_add_subtree_sum.test.cpp
+    title: verify/yosupo/vertex_add_subtree_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/data_structure/segment_tree.hpp\"\n\ntemplate<class\
-    \ S, S (*op)(S,S), S (*e)()>\nclass SegmentTree{\n\tprivate:\n\t\tint n;\n\t\t\
-    vector<S> v;\n\n\t\tvoid update(int i){\n\t\t\tv[i] = op(v[i<<1], v[(i<<1)|1]);\n\
-    \t\t}\n\n\tpublic:\n\t\tSegmentTree():SegmentTree(0){}\n\t\tSegmentTree(int _n):SegmentTree(vector<S>(_n,\
+  bundledCode: "#line 2 \"data_structure/segment_tree.hpp\"\n\ntemplate<class S, S\
+    \ (*op)(S,S), S (*e)()>\nclass SegmentTree{\n\tprivate:\n\t\tint n;\n\t\tvector<S>\
+    \ v;\n\n\t\tvoid update(int i){\n\t\t\tv[i] = op(v[i<<1], v[(i<<1)|1]);\n\t\t\
+    }\n\n\tpublic:\n\t\tSegmentTree():SegmentTree(0){}\n\t\tSegmentTree(int _n):SegmentTree(vector<S>(_n,\
     \ e())){}\n\t\tSegmentTree(const vector<S> &_v){\n\t\t\tn = (int)_v.size();\n\t\
     \t\tv.assign(2*n, e());\n\t\t\tfor(int i=0; i<n; i++) v[n+i] = _v[i];\n\t\t\t\
     for(int i=n-1; i>=1; i--) update(i);\n\t\t}\n\n\t\tS get(int i) const {\n\t\t\t\
@@ -48,19 +48,19 @@ data:
     }\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/data_structure/segment_tree.hpp
+  path: data_structure/segment_tree.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/yosupo/vertex_add_subtree_sum.test.cpp
-  - algo/verify/yosupo/static_range_sum.test.cpp
-  - algo/verify/yosupo/static_range_min.test.cpp
-  - algo/verify/yosupo/vertex_add_path_sum.test.cpp
-documentation_of: algo/data_structure/segment_tree.hpp
+  - verify/yosupo/vertex_add_subtree_sum.test.cpp
+  - verify/yosupo/static_range_sum.test.cpp
+  - verify/yosupo/static_range_min.test.cpp
+  - verify/yosupo/vertex_add_path_sum.test.cpp
+documentation_of: data_structure/segment_tree.hpp
 layout: document
 redirect_from:
-- /library/algo/data_structure/segment_tree.hpp
-- /library/algo/data_structure/segment_tree.hpp.html
-title: algo/data_structure/segment_tree.hpp
+- /library/data_structure/segment_tree.hpp
+- /library/data_structure/segment_tree.hpp.html
+title: data_structure/segment_tree.hpp
 ---

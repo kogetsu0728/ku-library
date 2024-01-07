@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: algo/graph/topological_sort.hpp
-    title: algo/graph/topological_sort.hpp
+    path: graph/topological_sort.hpp
+    title: graph/topological_sort.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -14,10 +14,10 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
-  bundledCode: "#line 1 \"algo/verify/aoj/GRL_4_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
+  bundledCode: "#line 1 \"verify/aoj/GRL_4_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
     \n\n#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace\
-    \ std;\n\n#line 2 \"algo/graph/topological_sort.hpp\"\n\nclass TopologicalSort{\n\
-    \tprivate:\n\t\tint n;\n\t\tvector<vector<int>> g;\n\t\tvector<int> p;\n\n\tpublic:\n\
+    \ std;\n\n#line 2 \"graph/topological_sort.hpp\"\n\nclass TopologicalSort{\n\t\
+    private:\n\t\tint n;\n\t\tvector<vector<int>> g;\n\t\tvector<int> p;\n\n\tpublic:\n\
     \t\tTopologicalSort():TopologicalSort(0){}\n\t\tTopologicalSort(int _n):\n\t\t\
     \tn(_n), g(_n){}\n\n\t\tvoid add_edge(int u, int v){\n\t\t\tg[u].push_back(v);\n\
     \t\t}\n\n\t\tbool build(){\n\t\t\tvector<int> cnt(n);\n\t\t\tfor(int v=0; v<n;\
@@ -29,10 +29,10 @@ data:
     \tque.push(nv);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tif(n!=int(p.size())){\n\
     \t\t\t\tp.clear();\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\treturn true;\n\t\t}\n\
     \n\t\tint operator[](const int i) const {\n\t\t\treturn p[i];\n\t\t}\n};\n#line\
-    \ 9 \"algo/verify/aoj/GRL_4_A.test.cpp\"\n\nint main(){\n\tint N, M;\n\tcin >>\
-    \ N >> M;\n\tTopologicalSort ts(N);\n\tfor(int i=0; i<M; i++){\n\t\tint u, v;\n\
-    \t\tcin >> u >> v;\n\t\tts.add_edge(u, v);\n\t}\n\n\tcout << (ts.build()?0:1)\
-    \ << endl;\n}\n"
+    \ 9 \"verify/aoj/GRL_4_A.test.cpp\"\n\nint main(){\n\tint N, M;\n\tcin >> N >>\
+    \ M;\n\tTopologicalSort ts(N);\n\tfor(int i=0; i<M; i++){\n\t\tint u, v;\n\t\t\
+    cin >> u >> v;\n\t\tts.add_edge(u, v);\n\t}\n\n\tcout << (ts.build()?0:1) << endl;\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
     \n\n#include <iostream>\n#include <vector>\n#include <queue>\nusing namespace\
     \ std;\n\n#include \"../../graph/topological_sort.hpp\"\n\nint main(){\n\tint\
@@ -40,17 +40,17 @@ data:
     \t\tint u, v;\n\t\tcin >> u >> v;\n\t\tts.add_edge(u, v);\n\t}\n\n\tcout << (ts.build()?0:1)\
     \ << endl;\n}\n"
   dependsOn:
-  - algo/graph/topological_sort.hpp
+  - graph/topological_sort.hpp
   isVerificationFile: true
-  path: algo/verify/aoj/GRL_4_A.test.cpp
+  path: verify/aoj/GRL_4_A.test.cpp
   requiredBy: []
   timestamp: '2024-01-01 10:28:09+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: algo/verify/aoj/GRL_4_A.test.cpp
+documentation_of: verify/aoj/GRL_4_A.test.cpp
 layout: document
 redirect_from:
-- /verify/algo/verify/aoj/GRL_4_A.test.cpp
-- /verify/algo/verify/aoj/GRL_4_A.test.cpp.html
-title: algo/verify/aoj/GRL_4_A.test.cpp
+- /verify/verify/aoj/GRL_4_A.test.cpp
+- /verify/verify/aoj/GRL_4_A.test.cpp.html
+title: verify/aoj/GRL_4_A.test.cpp
 ---

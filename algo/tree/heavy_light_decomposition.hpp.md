@@ -4,20 +4,20 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/lca.test.cpp
-    title: algo/verify/yosupo/lca.test.cpp
+    path: verify/yosupo/lca.test.cpp
+    title: verify/yosupo/lca.test.cpp
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/vertex_add_path_sum.test.cpp
-    title: algo/verify/yosupo/vertex_add_path_sum.test.cpp
+    path: verify/yosupo/vertex_add_path_sum.test.cpp
+    title: verify/yosupo/vertex_add_path_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: algo/verify/yosupo/vertex_add_subtree_sum.test.cpp
-    title: algo/verify/yosupo/vertex_add_subtree_sum.test.cpp
+    path: verify/yosupo/vertex_add_subtree_sum.test.cpp
+    title: verify/yosupo/vertex_add_subtree_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/tree/heavy_light_decomposition.hpp\"\n\nclass HeavyLightDecomposition{\n\
+  bundledCode: "#line 2 \"tree/heavy_light_decomposition.hpp\"\n\nclass HeavyLightDecomposition{\n\
     \tprivate:\n\t\tint n;\n\t\tvector<vector<int>> g;\n\t\tvector<int> siz, par,\
     \ dep, top, in, out;\n\n\t\tvoid dfs_siz(int v, int p){\n\t\t\tpar[v] = p;\n\t\
     \t\tfor(int &nv:g[v]){\n\t\t\t\tif(nv==p){\n\t\t\t\t\tif(nv==g[v].back()) break;\n\
@@ -66,18 +66,18 @@ data:
     };\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/tree/heavy_light_decomposition.hpp
+  path: tree/heavy_light_decomposition.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/yosupo/vertex_add_subtree_sum.test.cpp
-  - algo/verify/yosupo/vertex_add_path_sum.test.cpp
-  - algo/verify/yosupo/lca.test.cpp
-documentation_of: algo/tree/heavy_light_decomposition.hpp
+  - verify/yosupo/vertex_add_subtree_sum.test.cpp
+  - verify/yosupo/vertex_add_path_sum.test.cpp
+  - verify/yosupo/lca.test.cpp
+documentation_of: tree/heavy_light_decomposition.hpp
 layout: document
 redirect_from:
-- /library/algo/tree/heavy_light_decomposition.hpp
-- /library/algo/tree/heavy_light_decomposition.hpp.html
-title: algo/tree/heavy_light_decomposition.hpp
+- /library/tree/heavy_light_decomposition.hpp
+- /library/tree/heavy_light_decomposition.hpp.html
+title: tree/heavy_light_decomposition.hpp
 ---

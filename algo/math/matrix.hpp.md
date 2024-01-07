@@ -8,8 +8,8 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/math/matrix.hpp\"\n\ntemplate<class T> class Matrix{\n\
-    \tprivate:\n\t\tint ro, co;\n\t\tvector<vector<T>> vec;\n\tpublic:\n\t\tMatrix(int\
+  bundledCode: "#line 2 \"math/matrix.hpp\"\n\ntemplate<class T> class Matrix{\n\t\
+    private:\n\t\tint ro, co;\n\t\tvector<vector<T>> vec;\n\tpublic:\n\t\tMatrix(int\
     \ _ro, int _co, T _e=0):\n\t\t\tro(_ro), co(_co), vec(_ro,vector<T>(_co,_e)){}\n\
     \n\t\tint row() const { return ro; }\n\t\tint col() const { return co; }\n\n\t\
     \tvector<T> operator[](int i) const {\n\t\t\treturn vec[i];\n\t\t}\n\t\tvector<T>\
@@ -106,15 +106,15 @@ data:
     \t\t\t}\n\t\t\treturn res;\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/math/matrix.hpp
+  path: math/matrix.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: algo/math/matrix.hpp
+documentation_of: math/matrix.hpp
 layout: document
 redirect_from:
-- /library/algo/math/matrix.hpp
-- /library/algo/math/matrix.hpp.html
-title: algo/math/matrix.hpp
+- /library/math/matrix.hpp
+- /library/math/matrix.hpp.html
+title: math/matrix.hpp
 ---

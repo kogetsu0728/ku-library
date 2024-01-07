@@ -8,7 +8,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/math/fraction.hpp\"\n\ntemplate<class T> class Fraction{\n\
+  bundledCode: "#line 2 \"math/fraction.hpp\"\n\ntemplate<class T> class Fraction{\n\
     \tprivate:\n\t\tT num, den;\n\t\tFraction<T> &reduce(){\n\t\t\tassert(den!=0);\n\
     \t\t\tif(num==0){\n\t\t\t\tden = 1;\n\t\t\t}else{\n\t\t\t\tif(den<0){ num *= -1,\
     \ den *= -1; }\n\t\t\t\tT div = gcd(abs(num), den);\n\t\t\t\tnum /= div, den /=\
@@ -66,15 +66,15 @@ data:
     \t\t\treturn os;\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/math/fraction.hpp
+  path: math/fraction.hpp
   requiredBy: []
   timestamp: '2024-01-01 10:12:57+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: algo/math/fraction.hpp
+documentation_of: math/fraction.hpp
 layout: document
 redirect_from:
-- /library/algo/math/fraction.hpp
-- /library/algo/math/fraction.hpp.html
-title: algo/math/fraction.hpp
+- /library/math/fraction.hpp
+- /library/math/fraction.hpp.html
+title: math/fraction.hpp
 ---

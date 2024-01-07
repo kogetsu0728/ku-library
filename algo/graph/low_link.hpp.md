@@ -4,18 +4,18 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: algo/verify/aoj/GRL_3_A.test.cpp
-    title: algo/verify/aoj/GRL_3_A.test.cpp
+    path: verify/aoj/GRL_3_A.test.cpp
+    title: verify/aoj/GRL_3_A.test.cpp
   - icon: ':heavy_check_mark:'
-    path: algo/verify/aoj/GRL_3_B.test.cpp
-    title: algo/verify/aoj/GRL_3_B.test.cpp
+    path: verify/aoj/GRL_3_B.test.cpp
+    title: verify/aoj/GRL_3_B.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"algo/graph/low_link.hpp\"\n\nclass LowLink{\n\tprivate:\n\
-    \t\tint n, comp;\n\t\tvector<vector<int>> g;\n\t\tvector<bool> seen;\n\t\tvector<int>\
+  bundledCode: "#line 2 \"graph/low_link.hpp\"\n\nclass LowLink{\n\tprivate:\n\t\t\
+    int n, comp;\n\t\tvector<vector<int>> g;\n\t\tvector<bool> seen;\n\t\tvector<int>\
     \ ord, low, art;\n\t\tset<pair<int,int>> bri;\n\n\t\tvoid dfs(int v, int p, int\
     \ &i){\n\t\t\tseen[v] = true;\n\t\t\tord[v] = low[v] = i++;\n\t\t\tfor(const int\
     \ &nv:g[v]){\n\t\t\t\tif(seen[nv]){\n\t\t\t\t\tif(nv!=p){\n\t\t\t\t\t\tlow[v]\
@@ -49,17 +49,17 @@ data:
     \ bri.count(make_pair(min(u,v),max(u,v)));\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: algo/graph/low_link.hpp
+  path: graph/low_link.hpp
   requiredBy: []
   timestamp: '2024-01-01 13:55:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - algo/verify/aoj/GRL_3_A.test.cpp
-  - algo/verify/aoj/GRL_3_B.test.cpp
-documentation_of: algo/graph/low_link.hpp
+  - verify/aoj/GRL_3_A.test.cpp
+  - verify/aoj/GRL_3_B.test.cpp
+documentation_of: graph/low_link.hpp
 layout: document
 redirect_from:
-- /library/algo/graph/low_link.hpp
-- /library/algo/graph/low_link.hpp.html
-title: algo/graph/low_link.hpp
+- /library/graph/low_link.hpp
+- /library/graph/low_link.hpp.html
+title: graph/low_link.hpp
 ---
