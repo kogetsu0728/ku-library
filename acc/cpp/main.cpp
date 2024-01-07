@@ -1,4 +1,4 @@
-#include "algo/template/template.hpp"
+#include "template/template.hpp"
 
 void _main(){
 }
