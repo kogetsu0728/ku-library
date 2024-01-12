@@ -16,7 +16,6 @@ template<class T=int> using graph=vector<vector<T>>;
 template<class T> using min_priority_queue=priority_queue<T,vector<T>,greater<T>>;
 constexpr int INF32=INT_MAX/2;
 constexpr ll INF64=1LL<<60;
-constexpr ld PI=numbers::pi_v<ld>;
 constexpr int DX[]={0,0,-1,1,-1,-1,1,1};
 constexpr int DY[]={-1,1,0,0,-1,1,-1,1};
 template<class T> inline bool chmax(T &a,T b){return a<b?a=b,true:false;}
