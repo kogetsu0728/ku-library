@@ -46,8 +46,6 @@ data:
 
     constexpr ll INF64=1LL<<60;
 
-    constexpr ld PI=numbers::pi_v<ld>;
-
     constexpr int DX[]={0,0,-1,1,-1,-1,1,1};
 
     constexpr int DY[]={-1,1,0,0,-1,1,-1,1};
@@ -101,8 +99,6 @@ data:
 
     constexpr ll INF64=1LL<<60;
 
-    constexpr ld PI=numbers::pi_v<ld>;
-
     constexpr int DX[]={0,0,-1,1,-1,-1,1,1};
 
     constexpr int DY[]={-1,1,0,0,-1,1,-1,1};
@@ -124,7 +120,7 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-01-12 12:39:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template.hpp
