@@ -4,7 +4,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "../data_structure/ordered_map_and_range_query.hpp"
+#include "../../data_structure/ordered_map_and_range_query.hpp"
 
 using ll = long long;
 constexpr ll INF64 = 1LL<<60;
