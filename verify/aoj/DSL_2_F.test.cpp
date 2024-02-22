@@ -42,8 +42,8 @@ int main(){
     cin >> N >> Q;
 
     OrderedMapAndRangeQuery<K, compare, S, op, e, F, mapping, composition, id> rbst;
-    rbst.set(-INF64, e());
-    rbst.set(INF64, e());
+    rbst.insert(-INF64, e());
+    rbst.insert(INF64, e());
 
     for(;Q--;){
         int t;
@@ -53,10 +53,10 @@ int main(){
             cin >> l >> r >> x;
             r++;
             if(!rbst.count(l)){
-                rbst.set(l, rbst.get(rbst.lower_bound(l)-1).second);
+                rbst.insert(l, rbst.get(rbst.lower_bound(l)-1).second);
             }
             if(!rbst.count(r)){
-                rbst.set(r, rbst.get(rbst.lower_bound(r)-1).second);
+                rbst.insert(r, rbst.get(rbst.lower_bound(r)-1).second);
             }
             rbst.apply(rbst.lower_bound(l), rbst.lower_bound(r), x);
         }
