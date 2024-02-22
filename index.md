@@ -10,6 +10,9 @@ data:
       path: data_structure/double_ended_priority_queue.hpp
       title: data_structure/double_ended_priority_queue.hpp
     - icon: ':heavy_check_mark:'
+      path: data_structure/ordered_map_and_range_query.hpp
+      title: data_structure/ordered_map_and_range_query.hpp
+    - icon: ':heavy_check_mark:'
       path: data_structure/rollback_union_find.hpp
       title: data_structure/rollback_union_find.hpp
     - icon: ':heavy_check_mark:'
@@ -78,6 +81,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_1_B.test.cpp
       title: verify/aoj/DSL_1_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/DSL_2_F.test.cpp
+      title: verify/aoj/DSL_2_F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/aoj/DSL_2_H.test.cpp
+      title: verify/aoj/DSL_2_H.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_4_A.test.cpp
       title: verify/aoj/DSL_4_A.test.cpp
