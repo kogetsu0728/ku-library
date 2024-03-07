@@ -24,11 +24,15 @@ data:
 
     #include <bits/stdc++.h>
 
-    #include <atcoder/all>
-
     using namespace std;
 
+    #if __has_include(<atcoder/all>)
+
+    #include <atcoder/all>
+
     using namespace atcoder;
+
+    #endif
 
     using ll=long long;
 
@@ -63,11 +67,15 @@ data:
 
     #include <bits/stdc++.h>
 
-    #include <atcoder/all>
-
     using namespace std;
 
+    #if __has_include(<atcoder/all>)
+
+    #include <atcoder/all>
+
     using namespace atcoder;
+
+    #endif
 
     using ll=long long;
 
@@ -91,14 +99,16 @@ data:
 
     #define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)
 
-    #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)'
+    #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)
+
+    '
   dependsOn: []
   isVerificationFile: false
   path: template/template_base.hpp
   requiredBy:
   - template/template_codeforces.hpp
   - template/template_atcoder.hpp
-  timestamp: '2024-01-22 18:10:36+09:00'
+  timestamp: '2024-03-07 17:34:02+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template_base.hpp
