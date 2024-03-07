@@ -2,9 +2,11 @@
 #define _GLIBCXX_DEBUG
 #endif
 #include <bits/stdc++.h>
-#include <atcoder/all>
 using namespace std;
+#if __has_include(<atcoder/all>)
+#include <atcoder/all>
 using namespace atcoder;
+#endif
 using ll=long long;
 using ld=long double;
 template<class T> using graph=vector<vector<T>>;
