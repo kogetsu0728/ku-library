@@ -62,14 +62,8 @@ data:
   - name: template
     pages:
     - icon: ':warning:'
-      path: template/template_atcoder.hpp
-      title: template/template_atcoder.hpp
-    - icon: ':warning:'
-      path: template/template_base.hpp
-      title: template/template_base.hpp
-    - icon: ':warning:'
-      path: template/template_codeforces.hpp
-      title: template/template_codeforces.hpp
+      path: template/template.hpp
+      title: template/template.hpp
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
