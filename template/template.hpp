@@ -16,3 +16,9 @@ template<class T> inline bool chmax(T &a,T b){return a<b?a=b,true:false;}
 template<class T> inline bool chmin(T &a,T b){return a>b?a=b,true:false;}
 #define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)
 #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)
+void _main();
+int main(){
+    cin.tie(0)->sync_with_stdio(0);
+    cout<<fixed<<setprecision(16);
+    _main();
+}
