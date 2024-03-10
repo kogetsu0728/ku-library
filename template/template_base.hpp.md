@@ -16,12 +16,6 @@ data:
     links: []
   bundledCode: '#line 1 "template/template_base.hpp"
 
-    #ifdef LOCAL
-
-    #define _GLIBCXX_DEBUG
-
-    #endif
-
     #include <bits/stdc++.h>
 
     using namespace std;
@@ -59,13 +53,7 @@ data:
     #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)
 
     '
-  code: '#ifdef LOCAL
-
-    #define _GLIBCXX_DEBUG
-
-    #endif
-
-    #include <bits/stdc++.h>
+  code: '#include <bits/stdc++.h>
 
     using namespace std;
 
@@ -108,7 +96,7 @@ data:
   requiredBy:
   - template/template_codeforces.hpp
   - template/template_atcoder.hpp
-  timestamp: '2024-03-07 17:34:02+09:00'
+  timestamp: '2024-03-10 11:21:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template_base.hpp
