@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 #endif
-using ll = long long;
-using ld = long double;
+using ll=long long;
+using ld=long double;
 template<class T> using graph=vector<vector<T>>;
 template<class T> using min_priority_queue=priority_queue<T,vector<T>,greater<T>>;
 constexpr int INF32=INT_MAX/2;
