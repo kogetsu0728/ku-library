@@ -15,11 +15,11 @@ data:
     constexpr int INF32=INT_MAX/2;\nconstexpr ll INF64=1LL<<60;\nconstexpr array<int,4>\
     \ DX4={0,1,0,-1};\nconstexpr array<int,4> DY4={-1,0,1,0};\nconstexpr array<int,8>\
     \ DX8={0,1,1,1,0,-1,-1,-1};\nconstexpr array<int,8> DY8={-1,-1,0,1,1,1,0,-1};\n\
-    template<class T> inline bool chmax(T &a,T b){return a<b?a=b,true:false;}\ntemplate<class\
-    \ T> inline bool chmin(T &a,T b){return b<a?a=b,true:false;}\n#define rep(i,s,n)\
-    \ for(ll i=(ll)(s);i<(ll)(n);i++)\n#define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)\n\
-    void _main();\nint main(){\n\tcin.tie(0)->sync_with_stdio(0);\n\tcout<<fixed<<setprecision(16);\n\
-    \t_main();\n}\n"
+    template<class T> inline bool chmax(T& a,const T& b){return a<b?a=b,true:false;}\n\
+    template<class T> inline bool chmin(T& a,const T& b){return b<a?a=b,true:false;}\n\
+    #define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)\n#define rrep(i,s,n) for(ll\
+    \ i=(ll)(s);i>=(ll)(n);i--)\nvoid _main();\nint main(){\n\tcin.tie(0)->sync_with_stdio(0);\n\
+    \tcout<<fixed<<setprecision(16);\n\t_main();\n}\n"
   code: "#include <bits/stdc++.h>\nusing namespace std;\n#if __has_include(<atcoder/all>)\n\
     #include <atcoder/all>\nusing namespace atcoder;\n#endif\nusing ll=long long;\n\
     using ld=long double;\ntemplate<class T> using graph=vector<vector<T>>;\ntemplate<class\
@@ -27,16 +27,16 @@ data:
     \ int INF32=INT_MAX/2;\nconstexpr ll INF64=1LL<<60;\nconstexpr array<int,4> DX4={0,1,0,-1};\n\
     constexpr array<int,4> DY4={-1,0,1,0};\nconstexpr array<int,8> DX8={0,1,1,1,0,-1,-1,-1};\n\
     constexpr array<int,8> DY8={-1,-1,0,1,1,1,0,-1};\ntemplate<class T> inline bool\
-    \ chmax(T &a,T b){return a<b?a=b,true:false;}\ntemplate<class T> inline bool chmin(T\
-    \ &a,T b){return b<a?a=b,true:false;}\n#define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)\n\
-    #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)\nvoid _main();\nint main(){\n\
-    \tcin.tie(0)->sync_with_stdio(0);\n\tcout<<fixed<<setprecision(16);\n\t_main();\n\
-    }\n"
+    \ chmax(T& a,const T& b){return a<b?a=b,true:false;}\ntemplate<class T> inline\
+    \ bool chmin(T& a,const T& b){return b<a?a=b,true:false;}\n#define rep(i,s,n)\
+    \ for(ll i=(ll)(s);i<(ll)(n);i++)\n#define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)\n\
+    void _main();\nint main(){\n\tcin.tie(0)->sync_with_stdio(0);\n\tcout<<fixed<<setprecision(16);\n\
+    \t_main();\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2024-03-14 15:46:22+09:00'
+  timestamp: '2024-03-14 15:49:46+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template.hpp
