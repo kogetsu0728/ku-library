@@ -14,8 +14,8 @@ constexpr array<int,4> DX4={0,1,0,-1};
 constexpr array<int,4> DY4={-1,0,1,0};
 constexpr array<int,8> DX8={0,1,1,1,0,-1,-1,-1};
 constexpr array<int,8> DY8={-1,-1,0,1,1,1,0,-1};
-template<class T> inline bool chmax(T &a,T b){return a<b?a=b,true:false;}
-template<class T> inline bool chmin(T &a,T b){return b<a?a=b,true:false;}
+template<class T> inline bool chmax(T& a,const T& b){return a<b?a=b,true:false;}
+template<class T> inline bool chmin(T& a,const T& b){return b<a?a=b,true:false;}
 #define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)
 #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)
 void _main();
