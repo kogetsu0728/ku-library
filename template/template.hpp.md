@@ -18,8 +18,9 @@ data:
     template<class T> inline bool chmax(T& a,const T& b){return a<b?a=b,true:false;}\n\
     template<class T> inline bool chmin(T& a,const T& b){return b<a?a=b,true:false;}\n\
     #define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)\n#define rrep(i,s,n) for(ll\
-    \ i=(ll)(s);i>=(ll)(n);i--)\nvoid _main();\nint main(){\n\tcin.tie(0)->sync_with_stdio(0);\n\
-    \tcout<<fixed<<setprecision(16);\n\t_main();\n}\n"
+    \ i=(ll)(s);i>=(ll)(n);i--)\nvoid _main();\nint main(){\n\tcin.tie(nullptr);\n\
+    \tios_base::sync_with_stdio(false);\n\tcout<<fixed<<setprecision(16);\n\t_main();\n\
+    }\n"
   code: "#include <bits/stdc++.h>\nusing namespace std;\n#if __has_include(<atcoder/all>)\n\
     #include <atcoder/all>\nusing namespace atcoder;\n#endif\nusing ll=long long;\n\
     using ld=long double;\ntemplate<class T> using graph=vector<vector<T>>;\ntemplate<class\
@@ -30,13 +31,13 @@ data:
     \ chmax(T& a,const T& b){return a<b?a=b,true:false;}\ntemplate<class T> inline\
     \ bool chmin(T& a,const T& b){return b<a?a=b,true:false;}\n#define rep(i,s,n)\
     \ for(ll i=(ll)(s);i<(ll)(n);i++)\n#define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)\n\
-    void _main();\nint main(){\n\tcin.tie(0)->sync_with_stdio(0);\n\tcout<<fixed<<setprecision(16);\n\
-    \t_main();\n}\n"
+    void _main();\nint main(){\n\tcin.tie(nullptr);\n\tios_base::sync_with_stdio(false);\n\
+    \tcout<<fixed<<setprecision(16);\n\t_main();\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2024-03-14 15:49:46+09:00'
+  timestamp: '2024-03-14 15:56:47+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template.hpp
