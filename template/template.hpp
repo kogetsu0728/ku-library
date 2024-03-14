@@ -20,7 +20,8 @@ template<class T> inline bool chmin(T& a,const T& b){return b<a?a=b,true:false;}
 #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)
 void _main();
 int main(){
-	cin.tie(0)->sync_with_stdio(0);
+	cin.tie(nullptr);
+	ios_base::sync_with_stdio(false);
 	cout<<fixed<<setprecision(16);
 	_main();
 }
