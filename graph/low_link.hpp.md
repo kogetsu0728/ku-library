@@ -54,8 +54,8 @@ data:
   timestamp: '2024-01-07 12:12:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/GRL_3_B.test.cpp
   - verify/aoj/GRL_3_A.test.cpp
+  - verify/aoj/GRL_3_B.test.cpp
 documentation_of: graph/low_link.hpp
 layout: document
 redirect_from:
