@@ -16,7 +16,7 @@ data:
     \ DX4={0,1,0,-1};\nconstexpr array<int,4> DY4={-1,0,1,0};\nconstexpr array<int,8>\
     \ DX8={0,1,1,1,0,-1,-1,-1};\nconstexpr array<int,8> DY8={-1,-1,0,1,1,1,0,-1};\n\
     template<class T> inline bool chmax(T &a,T b){return a<b?a=b,true:false;}\ntemplate<class\
-    \ T> inline bool chmin(T &a,T b){return a>b?a=b,true:false;}\n#define rep(i,s,n)\
+    \ T> inline bool chmin(T &a,T b){return b<a?a=b,true:false;}\n#define rep(i,s,n)\
     \ for(ll i=(ll)(s);i<(ll)(n);i++)\n#define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)\n\
     void _main();\nint main(){\n\tcin.tie(0)->sync_with_stdio(0);\n\tcout<<fixed<<setprecision(16);\n\
     \t_main();\n}\n"
@@ -28,7 +28,7 @@ data:
     constexpr array<int,4> DY4={-1,0,1,0};\nconstexpr array<int,8> DX8={0,1,1,1,0,-1,-1,-1};\n\
     constexpr array<int,8> DY8={-1,-1,0,1,1,1,0,-1};\ntemplate<class T> inline bool\
     \ chmax(T &a,T b){return a<b?a=b,true:false;}\ntemplate<class T> inline bool chmin(T\
-    \ &a,T b){return a>b?a=b,true:false;}\n#define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)\n\
+    \ &a,T b){return b<a?a=b,true:false;}\n#define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)\n\
     #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)\nvoid _main();\nint main(){\n\
     \tcin.tie(0)->sync_with_stdio(0);\n\tcout<<fixed<<setprecision(16);\n\t_main();\n\
     }\n"
@@ -36,7 +36,7 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2024-03-14 15:44:24+09:00'
+  timestamp: '2024-03-14 15:46:22+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template.hpp
