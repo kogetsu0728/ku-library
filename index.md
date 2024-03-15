@@ -38,6 +38,9 @@ data:
       path: math/combination.hpp
       title: math/combination.hpp
     - icon: ':warning:'
+      path: math/ext_gcd.hpp
+      title: math/ext_gcd.hpp
+    - icon: ':warning:'
       path: math/fraction.hpp
       title: math/fraction.hpp
     - icon: ':warning:'
