@@ -37,7 +37,7 @@ data:
     - icon: ':warning:'
       path: math/combination.hpp
       title: math/combination.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/ext_gcd.hpp
       title: math/ext_gcd.hpp
     - icon: ':warning:'
@@ -99,7 +99,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/GRL_4_A.test.cpp
       title: verify/aoj/GRL_4_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/NTL_1_E.test.cpp
       title: verify/aoj/NTL_1_E.test.cpp
   - name: verify/yosupo
