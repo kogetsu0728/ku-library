@@ -1,9 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-#if __has_include(<atcoder/all>)
-#include <atcoder/all>
-using namespace atcoder;
-#endif
 using ll=long long;
 using ld=long double;
 template<class T> using graph=vector<vector<T>>;
