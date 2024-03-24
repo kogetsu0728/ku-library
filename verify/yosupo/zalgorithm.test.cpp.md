@@ -29,8 +29,12 @@ data:
     \n\t\tpair<long long, long long> get(const int l, const int r) const {\n\t\t\t\
     long long fi = hash1[r]-(hash1[l]*pow1[r-l]%mod1);\n\t\t\tif(fi<0) fi += mod1;\n\
     \t\t\tlong long se = hash2[r]-(hash2[l]*pow2[r-l]%mod2);\n\t\t\tif(se<0) se +=\
-    \ mod2;\n\t\t\treturn make_pair(fi,se);\n\t\t}\n\n\t\tint lcp(const int a, const\
-    \ int b) const {\n\t\t\tint ok = 0, ng = min(n+1-a,n+1-b);\n\t\t\twhile(1<ng-ok){\n\
+    \ mod2;\n\t\t\treturn make_pair(fi,se);\n\t\t}\n\n\t\tpair<long long, long long>\
+    \ merge( \\\n\t\t\t\tconst pair<long long, long long> a, const pair<long long,\
+    \ long long> b, const int b_len) const {\n\t\t\tlong long fi = ((a.first*pow1[b_len])%mod1\
+    \ + b.first) % mod1;\n\t\t\tlong long se = ((a.second*pow2[b_len])%mod2 + b.second)\
+    \ % mod2;\n\t\t\treturn make_pair(fi, se);\n\t\t}\n\n\t\tint lcp(const int a,\
+    \ const int b) const {\n\t\t\tint ok = 0, ng = min(n+1-a,n+1-b);\n\t\t\twhile(1<ng-ok){\n\
     \t\t\t\tint mid = (ok+ng)/2;\n\t\t\t\tif(get(a,a+mid)==get(b,b+mid)) ok = mid;\n\
     \t\t\t\telse ng = mid;\n\t\t\t}\n\t\t\treturn ok;\n\t\t}\n};\n#line 9 \"verify/yosupo/zalgorithm.test.cpp\"\
     \n\nint main(){\n\tstring S;\n\tcin >> S;\n\n\tRollingHash rh(S);\n\n\tfor(int\
@@ -46,7 +50,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/zalgorithm.test.cpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-03-24 12:59:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/zalgorithm.test.cpp
