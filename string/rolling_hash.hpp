@@ -31,6 +31,13 @@ class RollingHash{
 			return make_pair(fi,se);
 		}
 
+		pair<long long, long long> merge( \
+				const pair<long long, long long> a, const pair<long long, long long> b, const int b_len) const {
+			long long fi = ((a.first*pow1[b_len])%mod1 + b.first) % mod1;
+			long long se = ((a.second*pow2[b_len])%mod2 + b.second) % mod2;
+			return make_pair(fi, se);
+		}
+
 		int lcp(const int a, const int b) const {
 			int ok = 0, ng = min(n+1-a,n+1-b);
 			while(1<ng-ok){
