@@ -1,10 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/lca"
 
-#include <iostream>
-#include <vector>
-#include <utility>
-#include <algorithm>
-#include <functional>
+#include <bits/stdc++.h>
 using namespace std;
 
 #include "../../tree/heavy_light_decomposition.hpp"
