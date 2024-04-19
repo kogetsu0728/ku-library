@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data_structure/cumulative_sum_2d.hpp
     title: data_structure/cumulative_sum_2d.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B
@@ -17,16 +17,18 @@ data:
   bundledCode: "#line 1 \"verify/aoj/DSL_5_B.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_5_B\"\
     \n\n#include <iostream>\n#include <vector>\n#include <algorithm>\nusing namespace\
     \ std;\n\n#line 2 \"data_structure/cumulative_sum_2d.hpp\"\n\ntemplate<class T>\n\
-    class CumulativeSum2d{\n\tprivate:\n\t\tint h, w;\n\t\tvector<vector<T>> v;\n\n\
-    \tpublic:\n\t\tCumulativeSum2d():CumulativeSum2d(0,0){}\n\t\tCumulativeSum2d(int\
-    \ _h, int _w, T _e=0):\n\t\t\th(_h), w(_w), v(_h+1,vector<T>(_w+1,_e)){}\n\n\t\
-    \tvoid add(int y, int x, T d){\n\t\t\tv[y+1][x+1] += d;\n\t\t}\n\n\t\tvoid add(int\
-    \ y1, int x1, int y2, int x2, T d){\n\t\t\tadd(y1, x1, d);\n\t\t\tadd(y1, x2,\
-    \ -d);\n\t\t\tadd(y2, x1, -d);\n\t\t\tadd(y2, x2, d);\n\t\t}\n\n\t\tvoid build(){\n\
-    \t\t\tfor(int y=1; y<=h; y++){\n\t\t\t\tfor(int x=1; x<=w; x++){\n\t\t\t\t\tv[y][x]\
-    \ += v[y][x-1]+v[y-1][x]-v[y-1][x-1];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tT get(int\
-    \ y, int x) const {\n\t\t\treturn v[y+1][x+1];\n\t\t}\n\n\t\tT sum(int y1, int\
-    \ x1, int y2, int x2) const {\n\t\t\treturn v[y2][x2]-v[y1][x2]-v[y2][x1]+v[y1][x1];\n\
+    class CumulativeSum2d{\n\tprivate:\n\t\tbool init;\n\t\tint h, w;\n\t\tvector<vector<T>>\
+    \ v;\n\n\tpublic:\n\t\tCumulativeSum2d():CumulativeSum2d(0,0){}\n\t\tCumulativeSum2d(int\
+    \ _h, int _w, T _e=0):\n\t\t\tinit(false), h(_h), w(_w), v(_h+1,vector<T>(_w+1,_e)){}\n\
+    \n\t\tvoid add(int y, int x, T d){\n\t\t\tassert(init==false);\n\t\t\tv[y+1][x+1]\
+    \ += d;\n\t\t}\n\n\t\tvoid add(int y1, int x1, int y2, int x2, T d){\n\t\t\tassert(init==false);\n\
+    \t\t\tadd(y1, x1, d);\n\t\t\tadd(y1, x2, -d);\n\t\t\tadd(y2, x1, -d);\n\t\t\t\
+    add(y2, x2, d);\n\t\t}\n\n\t\tvoid build(){\n\t\t\tassert(init==false);\n\t\t\t\
+    init = true;\n\t\t\tfor(int y=1; y<=h; y++){\n\t\t\t\tfor(int x=1; x<=w; x++){\n\
+    \t\t\t\t\tv[y][x] += v[y][x-1]+v[y-1][x]-v[y-1][x-1];\n\t\t\t\t}\n\t\t\t}\n\t\t\
+    }\n\n\t\tT get(int y, int x) const {\n\t\t\tassert(init==true);\n\t\t\treturn\
+    \ v[y+1][x+1];\n\t\t}\n\n\t\tT sum(int y1, int x1, int y2, int x2) const {\n\t\
+    \t\tassert(init==true);\n\t\t\treturn v[y2][x2]-v[y1][x2]-v[y2][x1]+v[y1][x1];\n\
     \t\t}\n};\n#line 9 \"verify/aoj/DSL_5_B.test.cpp\"\n\nint main(){\n\tint N;\n\t\
     cin >> N;\n\tvector<long long> x1(N), y1(N), x2(N), y2(N);\n\tfor(int i=0; i<N;\
     \ i++){\n\t\tcin >> x1[i] >> y1[i] >> x2[i] >> y2[i];\n\t}\n\n\tCumulativeSum2d<long\
@@ -48,8 +50,8 @@ data:
   isVerificationFile: true
   path: verify/aoj/DSL_5_B.test.cpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-04-19 21:17:28+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/aoj/DSL_5_B.test.cpp
 layout: document
