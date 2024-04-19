@@ -9,15 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/static_range_sum.test.cpp
     title: verify/yosupo/static_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/vertex_add_path_sum.test.cpp
     title: verify/yosupo/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data_structure/segment_tree.hpp\"\n\ntemplate<class S, S\
@@ -51,7 +51,7 @@ data:
   path: data_structure/segment_tree.hpp
   requiredBy: []
   timestamp: '2024-01-07 12:12:23+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/static_range_sum.test.cpp
   - verify/yosupo/static_range_min.test.cpp
