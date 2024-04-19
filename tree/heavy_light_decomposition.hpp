@@ -2,6 +2,7 @@
 
 class HeavyLightDecomposition{
 	private:
+		bool init;
 		int n;
 		vector<vector<int>> g;
 		vector<int> siz, par, dep, top, in, out;
@@ -34,26 +35,32 @@ class HeavyLightDecomposition{
 		}
 
 	public:
-		HeavyLightDecomposition(const int _n=0):
-			n(_n), g(_n), siz(_n, 1), par(_n, -1),
+		HeavyLightDecomposition(): HeavyLightDecomposition(0) {}
+		HeavyLightDecomposition(const int _n):
+			init(false), n(_n), g(_n), siz(_n, 1), par(_n, -1),
 			dep(_n), top(_n), in(_n), out(_n){}
 
 		void add_edge(int u, int v){
+			assert(!init);
 			g[u].push_back(v);
 			g[v].push_back(u);
 		}
 
 		void build(){
+			assert(!init);
+			init = true;
 			dfs_siz(0, -1);
 			int i{};
 			dfs_hld(0, -1, i);
 		}
 
 		int depth(int v) const {
+			assert(init);
 			return dep[v];
 		}
 
 		int lca(int u, int v) const {
+			assert(init);
 			while(true){
 				if(in[u]>in[v]) swap(u, v);
 				if(top[u]==top[v]) return u;
@@ -62,14 +69,17 @@ class HeavyLightDecomposition{
 		}
 
 		void node_query(int v, const function<void(int)> &func) const {
+			assert(init);
 			func(in[v]);
 		}
 
 		void subtree_query(int v, const function<void(int,int)> &func) const {
+			assert(init);
 			func(in[v], out[v]);
 		}
 
 		void path_query(int u, int v, const function<void(int,int)> &func) const {
+			assert(init);
 			while(true){
 				if(in[u]>in[v]) swap(u, v);
 				func(max(in[u], in[top[v]]), in[v]+1);

@@ -13,12 +13,12 @@ class CumulativeSum2d{
 			init(false), h(_h), w(_w), v(_h+1,vector<T>(_w+1,_e)){}
 
 		void add(int y, int x, T d){
-			assert(init==false);
+			assert(!init);
 			v[y+1][x+1] += d;
 		}
 
 		void add(int y1, int x1, int y2, int x2, T d){
-			assert(init==false);
+			assert(!init);
 			add(y1, x1, d);
 			add(y1, x2, -d);
 			add(y2, x1, -d);
@@ -26,7 +26,7 @@ class CumulativeSum2d{
 		}
 
 		void build(){
-			assert(init==false);
+			assert(!init);
 			init = true;
 			for(int y=1; y<=h; y++){
 				for(int x=1; x<=w; x++){
@@ -36,12 +36,12 @@ class CumulativeSum2d{
 		}
 
 		T get(int y, int x) const {
-			assert(init==true);
+			assert(init);
 			return v[y+1][x+1];
 		}
 
 		T sum(int y1, int x1, int y2, int x2) const {
-			assert(init==true);
+			assert(init);
 			return v[y2][x2]-v[y1][x2]-v[y2][x1]+v[y1][x1];
 		}
 };
