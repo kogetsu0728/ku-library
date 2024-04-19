@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/GRL_4_A.test.cpp
     title: verify/aoj/GRL_4_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/468.test.cpp
     title: verify/yukicoder/468.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/topological_sort.hpp\"\n\nclass TopologicalSort{\n\
@@ -47,7 +47,7 @@ data:
   path: graph/topological_sort.hpp
   requiredBy: []
   timestamp: '2024-04-19 21:31:05+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/468.test.cpp
   - verify/aoj/GRL_4_A.test.cpp

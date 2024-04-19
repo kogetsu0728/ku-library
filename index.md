@@ -15,7 +15,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/rollback_union_find.hpp
       title: data_structure/rollback_union_find.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree.hpp
       title: data_structure/segment_tree.hpp
     - icon: ':heavy_check_mark:'
@@ -29,7 +29,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/low_link.hpp
       title: graph/low_link.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/topological_sort.hpp
       title: graph/topological_sort.hpp
   - name: math
@@ -69,7 +69,7 @@ data:
       title: template/template.hpp
   - name: tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: tree/heavy_light_decomposition.hpp
       title: tree/heavy_light_decomposition.hpp
   verificationCategories:
@@ -96,7 +96,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/GRL_3_B.test.cpp
       title: verify/aoj/GRL_3_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/GRL_4_A.test.cpp
       title: verify/aoj/GRL_4_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -107,7 +107,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/double_ended_priority_queue.test.cpp
       title: verify/yosupo/double_ended_priority_queue.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/lca.test.cpp
       title: verify/yosupo/lca.test.cpp
     - icon: ':heavy_check_mark:'
@@ -122,10 +122,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/unionfind.test.cpp
       title: verify/yosupo/unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/vertex_add_path_sum.test.cpp
       title: verify/yosupo/vertex_add_path_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/vertex_add_subtree_sum.test.cpp
       title: verify/yosupo/vertex_add_subtree_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -133,7 +133,7 @@ data:
       title: verify/yosupo/zalgorithm.test.cpp
   - name: verify/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yukicoder/468.test.cpp
       title: verify/yukicoder/468.test.cpp
 layout: toppage
