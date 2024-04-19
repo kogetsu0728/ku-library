@@ -8,11 +8,10 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"template/template.hpp\"\n\n#pragma GCC target(\"avx2\")\n\
-    #pragma GCC optimize(\"O3\")\n#pragma GCC optimize(\"unroll-loops\")\n#endif\n\
-    #include <bits/stdc++.h>\nusing namespace std;\nusing uint=unsigned int;\nusing\
-    \ ll=long long;\nusing ull=unsigned long long;\nusing ld=long double;\ntemplate<class\
-    \ T> using graph=vector<vector<T>>;\ntemplate<class T> using min_priority_queue=priority_queue<T,vector<T>,greater<T>>;\n\
+  bundledCode: "#line 1 \"template/template.hpp\"\n#include <bits/stdc++.h>\nusing\
+    \ namespace std;\nusing uint=unsigned int;\nusing ll=long long;\nusing ull=unsigned\
+    \ long long;\nusing ld=long double;\ntemplate<class T> using graph=vector<vector<T>>;\n\
+    template<class T> using min_priority_queue=priority_queue<T,vector<T>,greater<T>>;\n\
     constexpr int INF32=INT_MAX/2;\nconstexpr ll INF64=1LL<<60;\nconstexpr ld PI=3.14159265358979323846264338327950288419716939937510;\n\
     constexpr array<int,4> DX4={0,1,0,-1}, DY4={-1,0,1,0};\nconstexpr array<int,8>\
     \ DX8={0,1,1,1,0,-1,-1,-1}, DY8={-1,-1,0,1,1,1,0,-1};\ninline int popcnt(ull n){return\
@@ -22,11 +21,9 @@ data:
     #define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)\nvoid _main();\nint main(){\n\
     \tcin.tie(nullptr);\n\tios_base::sync_with_stdio(false);\n\tcout<<fixed<<setprecision(16);\n\
     \t_main();\n}\n"
-  code: "#ifndef LOCAL\n#pragma GCC target(\"avx2\")\n#pragma GCC optimize(\"O3\"\
-    )\n#pragma GCC optimize(\"unroll-loops\")\n#endif\n#include <bits/stdc++.h>\n\
-    using namespace std;\nusing uint=unsigned int;\nusing ll=long long;\nusing ull=unsigned\
-    \ long long;\nusing ld=long double;\ntemplate<class T> using graph=vector<vector<T>>;\n\
-    template<class T> using min_priority_queue=priority_queue<T,vector<T>,greater<T>>;\n\
+  code: "#include <bits/stdc++.h>\nusing namespace std;\nusing uint=unsigned int;\n\
+    using ll=long long;\nusing ull=unsigned long long;\nusing ld=long double;\ntemplate<class\
+    \ T> using graph=vector<vector<T>>;\ntemplate<class T> using min_priority_queue=priority_queue<T,vector<T>,greater<T>>;\n\
     constexpr int INF32=INT_MAX/2;\nconstexpr ll INF64=1LL<<60;\nconstexpr ld PI=3.14159265358979323846264338327950288419716939937510;\n\
     constexpr array<int,4> DX4={0,1,0,-1}, DY4={-1,0,1,0};\nconstexpr array<int,8>\
     \ DX8={0,1,1,1,0,-1,-1,-1}, DY8={-1,-1,0,1,1,1,0,-1};\ninline int popcnt(ull n){return\
@@ -40,7 +37,7 @@ data:
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2024-04-19 21:13:36+09:00'
+  timestamp: '2024-04-19 22:26:23+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template.hpp
