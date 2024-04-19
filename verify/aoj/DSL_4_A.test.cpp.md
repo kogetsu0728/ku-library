@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data_structure/cumulative_sum_2d.hpp
     title: data_structure/cumulative_sum_2d.hpp
   - icon: ':heavy_check_mark:'

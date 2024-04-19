@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: data_structure
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/cumulative_sum_2d.hpp
       title: data_structure/cumulative_sum_2d.hpp
     - icon: ':heavy_check_mark:'
@@ -87,7 +87,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_4_A.test.cpp
       title: verify/aoj/DSL_4_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_5_B.test.cpp
       title: verify/aoj/DSL_5_B.test.cpp
     - icon: ':heavy_check_mark:'
