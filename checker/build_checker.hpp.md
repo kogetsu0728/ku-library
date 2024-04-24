@@ -5,7 +5,7 @@ data:
   - icon: ':x:'
     path: graph/low_link.hpp
     title: graph/low_link.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/topological_sort.hpp
     title: graph/topological_sort.hpp
   - icon: ':heavy_check_mark:'
@@ -21,10 +21,10 @@ data:
   - icon: ':x:'
     path: verify/aoj/GRL_3_B.test.cpp
     title: verify/aoj/GRL_3_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/GRL_4_A.test.cpp
     title: verify/aoj/GRL_4_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/468.test.cpp
     title: verify/yukicoder/468.test.cpp
   _isVerificationFailed: true
