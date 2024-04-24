@@ -72,6 +72,6 @@ class LowLink{
 		bool is_bridge(int u, int v) const {
 			build_checker.after();
 
-			return bri.contains(make_pair(min(u,v),max(u,v)));
+			return bri.count(make_pair(min(u,v),max(u,v)));
 		}
 };
