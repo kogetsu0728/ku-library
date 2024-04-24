@@ -4,9 +4,7 @@
 "verify/aoj/DSL_2_H.test.cpp": "2024-02-22 10:09:55 +0900",
 "verify/aoj/DSL_4_A.test.cpp": "2024-04-24 17:00:28 +0900",
 "verify/aoj/DSL_5_B.test.cpp": "2024-04-19 21:31:05 +0900",
-"verify/aoj/GRL_3_A.test.cpp": "2024-04-19 21:31:05 +0900",
-"verify/aoj/GRL_3_B.test.cpp": "2024-04-19 21:31:05 +0900",
-"verify/aoj/GRL_4_A.test.cpp": "2024-04-19 21:38:19 +0900",
+"verify/aoj/GRL_4_A.test.cpp": "2024-04-24 17:11:34 +0900",
 "verify/aoj/NTL_1_E.test.cpp": "2024-03-15 14:05:58 +0900",
 "verify/yosupo/double_ended_priority_queue.test.cpp": "2024-01-07 12:12:23 +0900",
 "verify/yosupo/lca.test.cpp": "2024-04-19 21:38:19 +0900",
@@ -17,5 +15,5 @@
 "verify/yosupo/vertex_add_path_sum.test.cpp": "2024-04-19 21:38:19 +0900",
 "verify/yosupo/vertex_add_subtree_sum.test.cpp": "2024-04-19 21:38:19 +0900",
 "verify/yosupo/zalgorithm.test.cpp": "2024-03-24 12:59:04 +0900",
-"verify/yukicoder/468.test.cpp": "2024-04-19 21:31:05 +0900"
+"verify/yukicoder/468.test.cpp": "2024-04-24 17:11:34 +0900"
 }
