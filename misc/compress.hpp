@@ -3,40 +3,53 @@
 template<class T,class C=less<T>>
 class Compress{
 	private:
-		vector<T> v;
+		BuildChecker build_checker;
+		vector<T> vec;
 
 	public:
-		Compress(){}
+		Compress(): build_checker(), vec() {}
 
 		void push(const T x){
-			v.push_back(x);
+			build_checker.before();
+
+			vec.push_back(x);
 		}
 
 		void build(){
-			sort(v.begin(), v.end(), C());
-			v.erase(unique(v.begin(),v.end()),v.end());
+			build_checker.build();
+
+			sort(vec.begin(), vec.end(), C());
+			vec.erase(unique(vec.begin(),vec.end()),vec.end());
 		}
 
 		size_t size() const {
-			return v.size();
+			build_checker.after();
+
+			return vec.size();
 		}
 
 		T nth(const int i) const {
-			assert(0<=i && i<int(v.size()));
-			return v[i];
+			build_checker.after();
+
+			assert(0<=i && i<int(vec.size()));
+			return vec[i];
 		}
 
 		int get(const T x) const {
-			int ng=-1, ok=int(v.size())-1;
+			build_checker.after();
+
+			int ng=-1, ok=int(vec.size())-1;
 			while(1<ok-ng){
 				int mid=(ok+ng)/2;
-				if(!C()(v[mid],x)) ok=mid;
+				if(!C()(vec[mid],x)) ok=mid;
 				else ng=mid;
 			}
 			return ok;
 		}
 
-		bool count(const T x) const {
+		bool contains(const T x) const {
+			build_checker.after();
+
 			return nth(get(x))==x;
 		}
 };
