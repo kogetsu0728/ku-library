@@ -1,8 +1,10 @@
 #pragma once
 
+#include "checker/build_checker.hpp"
+
 class LowLink{
 	private:
-		bool init;
+		BuildChecker build_checker;
 		int n, comp;
 		vector<vector<int>> g;
 		vector<bool> seen;
@@ -30,17 +32,18 @@ class LowLink{
 	public:
 		LowLink(): LowLink(0) {}
 		LowLink(const int _n):
-			init(false), n(_n), comp(0), g(_n), seen(_n), ord(_n), low(_n), art(_n){}
+			build_checker(), n(_n), comp(0), g(_n), seen(_n), ord(_n), low(_n), art(_n){}
 
 		void add_edge(int u, int v){
-			assert(!init);
+			build_checker.before();
+
 			g[u].push_back(v);
 			g[v].push_back(u);
 		}
 
 		void build(){
-			assert(!init);
-			init = true;
+			build_checker.build();
+
 			for(int v=0; v<n; v++) if(!seen[v]){
 				comp++;
 				int i{};
@@ -49,22 +52,26 @@ class LowLink{
 		}
 
 		int component() const {
-			assert(init);
+			build_checker.after();
+
 			return comp;
 		}
 
 		int get_art(int v) const {
-			assert(init);
+			build_checker.after();
+
 			return art[v];
 		}
 
 		bool is_art(int v) const {
-			assert(init);
+			build_checker.after();
+
 			return 0<get_art(v);
 		}
 
 		bool is_bridge(int u, int v) const {
-			assert(init);
-			return bri.count(make_pair(min(u,v),max(u,v)));
+			build_checker.after();
+
+			return bri.contains(make_pair(min(u,v),max(u,v)));
 		}
 };
