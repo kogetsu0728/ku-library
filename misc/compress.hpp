@@ -1,6 +1,6 @@
 #pragma once
 
-#include "misc/build_checker.hpp"
+#include "checker/build_checker.hpp"
 
 template<class T,class C=less<T>>
 class Compress{
