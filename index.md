@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: data_structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data_structure/cumulative_sum_2d.hpp
       title: data_structure/cumulative_sum_2d.hpp
     - icon: ':heavy_check_mark:'
@@ -51,7 +51,10 @@ data:
       title: math/sieve_of_eratosthenes.hpp
   - name: misc
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
+      path: misc/build_checker.hpp
+      title: misc/build_checker.hpp
+    - icon: ':x:'
       path: misc/compress.hpp
       title: misc/compress.hpp
     - icon: ':warning:'
@@ -84,7 +87,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_2_H.test.cpp
       title: verify/aoj/DSL_2_H.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aoj/DSL_4_A.test.cpp
       title: verify/aoj/DSL_4_A.test.cpp
     - icon: ':heavy_check_mark:'
