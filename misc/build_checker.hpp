@@ -1,3 +1,5 @@
+#pragma once
+
 class BuildChecker{
 	private:
 		bool built;
