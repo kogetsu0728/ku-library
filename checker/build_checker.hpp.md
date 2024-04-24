@@ -14,7 +14,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"misc/build_checker.hpp\"\n\nclass BuildChecker{\n\tprivate:\n\
+  bundledCode: "#line 2 \"checker/build_checker.hpp\"\n\nclass BuildChecker{\n\tprivate:\n\
     \t\tbool built;\n\n\tpublic:\n\t\tBuildChecker(): built(false){}\n\t\t\n\t\tvoid\
     \ before() const {\n\t\t\tassert(built==false);\n\t\t}\n\n\t\tvoid after() const\
     \ {\n\t\t\tassert(built==true);\n\t\t}\n\n\t\tvoid build(){\n\t\t\tthis->before();\n\
@@ -25,17 +25,17 @@ data:
     \ build(){\n\t\t\tthis->before();\n\t\t\tbuilt = true;\n\t\t}\n};\n"
   dependsOn: []
   isVerificationFile: false
-  path: misc/build_checker.hpp
+  path: checker/build_checker.hpp
   requiredBy:
   - misc/compress.hpp
-  timestamp: '2024-04-24 16:48:58+09:00'
+  timestamp: '2024-04-24 17:00:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/DSL_4_A.test.cpp
-documentation_of: misc/build_checker.hpp
+documentation_of: checker/build_checker.hpp
 layout: document
 redirect_from:
-- /library/misc/build_checker.hpp
-- /library/misc/build_checker.hpp.html
-title: misc/build_checker.hpp
+- /library/checker/build_checker.hpp
+- /library/checker/build_checker.hpp.html
+title: checker/build_checker.hpp
 ---

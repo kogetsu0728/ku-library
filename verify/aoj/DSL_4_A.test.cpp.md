@@ -2,11 +2,11 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
+    path: checker/build_checker.hpp
+    title: checker/build_checker.hpp
+  - icon: ':heavy_check_mark:'
     path: data_structure/cumulative_sum_2d.hpp
     title: data_structure/cumulative_sum_2d.hpp
-  - icon: ':heavy_check_mark:'
-    path: misc/build_checker.hpp
-    title: misc/build_checker.hpp
   - icon: ':heavy_check_mark:'
     path: misc/compress.hpp
     title: misc/compress.hpp
@@ -22,14 +22,14 @@ data:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A
   bundledCode: "#line 1 \"verify/aoj/DSL_4_A.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_4_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"misc/compress.hpp\"\
-    \n\n#line 2 \"misc/build_checker.hpp\"\n\nclass BuildChecker{\n\tprivate:\n\t\t\
-    bool built;\n\n\tpublic:\n\t\tBuildChecker(): built(false){}\n\t\t\n\t\tvoid before()\
-    \ const {\n\t\t\tassert(built==false);\n\t\t}\n\n\t\tvoid after() const {\n\t\t\
-    \tassert(built==true);\n\t\t}\n\n\t\tvoid build(){\n\t\t\tthis->before();\n\t\t\
-    \tbuilt = true;\n\t\t}\n};\n#line 4 \"misc/compress.hpp\"\n\ntemplate<class T,class\
-    \ C=less<T>>\nclass Compress{\n\tprivate:\n\t\tBuildChecker build_checker;\n\t\
-    \tvector<T> vec;\n\n\tpublic:\n\t\tCompress(): build_checker(), vec() {}\n\n\t\
-    \tvoid push(const T x){\n\t\t\tbuild_checker.before();\n\n\t\t\tvec.push_back(x);\n\
+    \n\n#line 2 \"checker/build_checker.hpp\"\n\nclass BuildChecker{\n\tprivate:\n\
+    \t\tbool built;\n\n\tpublic:\n\t\tBuildChecker(): built(false){}\n\t\t\n\t\tvoid\
+    \ before() const {\n\t\t\tassert(built==false);\n\t\t}\n\n\t\tvoid after() const\
+    \ {\n\t\t\tassert(built==true);\n\t\t}\n\n\t\tvoid build(){\n\t\t\tthis->before();\n\
+    \t\t\tbuilt = true;\n\t\t}\n};\n#line 4 \"misc/compress.hpp\"\n\ntemplate<class\
+    \ T,class C=less<T>>\nclass Compress{\n\tprivate:\n\t\tBuildChecker build_checker;\n\
+    \t\tvector<T> vec;\n\n\tpublic:\n\t\tCompress(): build_checker(), vec() {}\n\n\
+    \t\tvoid push(const T x){\n\t\t\tbuild_checker.before();\n\n\t\t\tvec.push_back(x);\n\
     \t\t}\n\n\t\tvoid build(){\n\t\t\tbuild_checker.build();\n\n\t\t\tsort(vec.begin(),\
     \ vec.end(), C());\n\t\t\tvec.erase(unique(vec.begin(),vec.end()),vec.end());\n\
     \t\t}\n\n\t\tsize_t size() const {\n\t\t\tbuild_checker.after();\n\n\t\t\treturn\
@@ -78,12 +78,12 @@ data:
     \t\t\t}\n\t\t}\n\t}\n\n\tcout << ans << endl;\n}\n"
   dependsOn:
   - misc/compress.hpp
-  - misc/build_checker.hpp
+  - checker/build_checker.hpp
   - data_structure/cumulative_sum_2d.hpp
   isVerificationFile: true
   path: verify/aoj/DSL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2024-04-24 16:48:58+09:00'
+  timestamp: '2024-04-24 17:00:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/DSL_4_A.test.cpp

@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: checker
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: checker/build_checker.hpp
+      title: checker/build_checker.hpp
   - name: data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -51,9 +56,6 @@ data:
       title: math/sieve_of_eratosthenes.hpp
   - name: misc
     pages:
-    - icon: ':heavy_check_mark:'
-      path: misc/build_checker.hpp
-      title: misc/build_checker.hpp
     - icon: ':heavy_check_mark:'
       path: misc/compress.hpp
       title: misc/compress.hpp
