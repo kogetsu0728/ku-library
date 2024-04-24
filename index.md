@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: checker
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: checker/build_checker.hpp
       title: checker/build_checker.hpp
   - name: data_structure
@@ -31,10 +31,10 @@ data:
       title: data_structure/weighted_union_find.hpp
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/low_link.hpp
       title: graph/low_link.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/topological_sort.hpp
       title: graph/topological_sort.hpp
   - name: math
@@ -95,13 +95,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_5_B.test.cpp
       title: verify/aoj/DSL_5_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aoj/GRL_3_A.test.cpp
       title: verify/aoj/GRL_3_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aoj/GRL_3_B.test.cpp
       title: verify/aoj/GRL_3_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aoj/GRL_4_A.test.cpp
       title: verify/aoj/GRL_4_A.test.cpp
     - icon: ':heavy_check_mark:'
@@ -138,7 +138,7 @@ data:
       title: verify/yosupo/zalgorithm.test.cpp
   - name: verify/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yukicoder/468.test.cpp
       title: verify/yukicoder/468.test.cpp
 layout: toppage

@@ -2,6 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
+  - icon: ':x:'
+    path: graph/low_link.hpp
+    title: graph/low_link.hpp
+  - icon: ':x:'
+    path: graph/topological_sort.hpp
+    title: graph/topological_sort.hpp
   - icon: ':heavy_check_mark:'
     path: misc/compress.hpp
     title: misc/compress.hpp
@@ -9,9 +15,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/DSL_4_A.test.cpp
     title: verify/aoj/DSL_4_A.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/aoj/GRL_3_A.test.cpp
+    title: verify/aoj/GRL_3_A.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/GRL_3_B.test.cpp
+    title: verify/aoj/GRL_3_B.test.cpp
+  - icon: ':x:'
+    path: verify/aoj/GRL_4_A.test.cpp
+    title: verify/aoj/GRL_4_A.test.cpp
+  - icon: ':x:'
+    path: verify/yukicoder/468.test.cpp
+    title: verify/yukicoder/468.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"checker/build_checker.hpp\"\n\nclass BuildChecker{\n\tprivate:\n\
@@ -27,11 +45,17 @@ data:
   isVerificationFile: false
   path: checker/build_checker.hpp
   requiredBy:
+  - graph/low_link.hpp
+  - graph/topological_sort.hpp
   - misc/compress.hpp
   timestamp: '2024-04-24 17:00:28+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/yukicoder/468.test.cpp
   - verify/aoj/DSL_4_A.test.cpp
+  - verify/aoj/GRL_4_A.test.cpp
+  - verify/aoj/GRL_3_A.test.cpp
+  - verify/aoj/GRL_3_B.test.cpp
 documentation_of: checker/build_checker.hpp
 layout: document
 redirect_from:
