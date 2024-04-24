@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: checker
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: checker/build_checker.hpp
       title: checker/build_checker.hpp
   - name: data_structure
@@ -31,7 +31,7 @@ data:
       title: data_structure/weighted_union_find.hpp
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/low_link.hpp
       title: graph/low_link.hpp
     - icon: ':heavy_check_mark:'
@@ -95,10 +95,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_5_B.test.cpp
       title: verify/aoj/DSL_5_B.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/GRL_3_A.test.cpp
       title: verify/aoj/GRL_3_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/aoj/GRL_3_B.test.cpp
       title: verify/aoj/GRL_3_B.test.cpp
     - icon: ':heavy_check_mark:'

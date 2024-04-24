@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: checker/build_checker.hpp
     title: checker/build_checker.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/low_link.hpp
     title: graph/low_link.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_3_B
@@ -41,7 +41,7 @@ data:
     \n\t\t\treturn comp;\n\t\t}\n\n\t\tint get_art(int v) const {\n\t\t\tbuild_checker.after();\n\
     \n\t\t\treturn art[v];\n\t\t}\n\n\t\tbool is_art(int v) const {\n\t\t\tbuild_checker.after();\n\
     \n\t\t\treturn 0<get_art(v);\n\t\t}\n\n\t\tbool is_bridge(int u, int v) const\
-    \ {\n\t\t\tbuild_checker.after();\n\n\t\t\treturn bri.contains(make_pair(min(u,v),max(u,v)));\n\
+    \ {\n\t\t\tbuild_checker.after();\n\n\t\t\treturn bri.count(make_pair(min(u,v),max(u,v)));\n\
     \t\t}\n};\n#line 7 \"verify/aoj/GRL_3_B.test.cpp\"\n\nint main(){\n\tint N, M;\n\
     \tcin >> N >> M;\n\tLowLink lo(N);\n\tvector<pair<int,int>> edge(M);\n\tfor(int\
     \ i=0; i<M; i++){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\tedge[i] = make_pair(min(u,\
@@ -63,8 +63,8 @@ data:
   isVerificationFile: true
   path: verify/aoj/GRL_3_B.test.cpp
   requiredBy: []
-  timestamp: '2024-04-24 17:08:54+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-04-24 17:23:11+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/GRL_3_B.test.cpp
 layout: document

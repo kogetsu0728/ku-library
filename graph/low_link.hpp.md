@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: checker/build_checker.hpp
     title: checker/build_checker.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/GRL_3_A.test.cpp
     title: verify/aoj/GRL_3_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/aoj/GRL_3_B.test.cpp
     title: verify/aoj/GRL_3_B.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/low_link.hpp\"\n\n#line 2 \"checker/build_checker.hpp\"\
@@ -40,7 +40,7 @@ data:
     \n\t\t\treturn comp;\n\t\t}\n\n\t\tint get_art(int v) const {\n\t\t\tbuild_checker.after();\n\
     \n\t\t\treturn art[v];\n\t\t}\n\n\t\tbool is_art(int v) const {\n\t\t\tbuild_checker.after();\n\
     \n\t\t\treturn 0<get_art(v);\n\t\t}\n\n\t\tbool is_bridge(int u, int v) const\
-    \ {\n\t\t\tbuild_checker.after();\n\n\t\t\treturn bri.contains(make_pair(min(u,v),max(u,v)));\n\
+    \ {\n\t\t\tbuild_checker.after();\n\n\t\t\treturn bri.count(make_pair(min(u,v),max(u,v)));\n\
     \t\t}\n};\n"
   code: "#pragma once\n\n#include \"checker/build_checker.hpp\"\n\nclass LowLink{\n\
     \tprivate:\n\t\tBuildChecker build_checker;\n\t\tint n, comp;\n\t\tvector<vector<int>>\
@@ -60,15 +60,15 @@ data:
     \n\t\t\treturn comp;\n\t\t}\n\n\t\tint get_art(int v) const {\n\t\t\tbuild_checker.after();\n\
     \n\t\t\treturn art[v];\n\t\t}\n\n\t\tbool is_art(int v) const {\n\t\t\tbuild_checker.after();\n\
     \n\t\t\treturn 0<get_art(v);\n\t\t}\n\n\t\tbool is_bridge(int u, int v) const\
-    \ {\n\t\t\tbuild_checker.after();\n\n\t\t\treturn bri.contains(make_pair(min(u,v),max(u,v)));\n\
+    \ {\n\t\t\tbuild_checker.after();\n\n\t\t\treturn bri.count(make_pair(min(u,v),max(u,v)));\n\
     \t\t}\n};\n"
   dependsOn:
   - checker/build_checker.hpp
   isVerificationFile: false
   path: graph/low_link.hpp
   requiredBy: []
-  timestamp: '2024-04-24 17:08:54+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-04-24 17:23:11+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/GRL_3_A.test.cpp
   - verify/aoj/GRL_3_B.test.cpp
