@@ -11,7 +11,7 @@ class TopologicalSort{
 
 	public:
 		TopologicalSort(): TopologicalSort(0) {}
-		TopologicalSort(int _n): build_checker(), init(false), n(_n), g(_n){}
+		TopologicalSort(int _n): build_checker(), n(_n), g(_n){}
 
 		void add_edge(int u, int v){
 			build_checker.before();
