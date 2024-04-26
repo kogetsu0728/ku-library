@@ -6,8 +6,8 @@ using ull = unsigned long long;
 using ld = long double;
 template<class T> using graph = vector<vector<T>>;
 template<class T> using min_priority_queue = priority_queue<T,vector<T>,greater<T>>;
-#define rep(i,s,n) for(ll i=(ll)(s);i<(ll)(n);i++)
-#define rrep(i,s,n) for(ll i=(ll)(s);i>=(ll)(n);i--)
+#define rep(i,s,n) for(ll i=(ll)(s); i<(ll)(n); i++)
+#define rrep(i,s,n) for(ll i=(ll)(s); i>=(ll)(n); i--)
 constexpr int INF32 = INT_MAX/2;
 constexpr ll INF64 = 1LL<<60;
 constexpr ld PI = 3.14159265358979323846;
