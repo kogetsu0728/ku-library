@@ -16,7 +16,7 @@ constexpr array<int,8> DX8 = {0,1,1,1,0,-1,-1,-1}, DY8 = {-1,-1,0,1,1,1,0,-1};
 inline int popcnt(const ull &n){ return __builtin_popcountll(n); }
 template<class T> inline bool chmax(T& a,const T& b){ return a<b?a=b,true:false; }
 template<class T> inline bool chmin(T& a,const T& b){ return b<a?a=b,true:false; }
-__attribute__((constructor)) void constructor() {
+__attribute__((constructor)) void constructor(){
 	cin.tie(nullptr);
 	ios_base::sync_with_stdio(false);
 	cout << fixed << setprecision(16);
