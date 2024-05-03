@@ -19,7 +19,7 @@ data:
     \ DY8 = {-1,-1,0,1,1,1,0,-1};\ninline int popcnt(const ull &n){ return __builtin_popcountll(n);\
     \ }\ntemplate<class T> inline bool chmax(T& a,const T& b){ return a<b?a=b,true:false;\
     \ }\ntemplate<class T> inline bool chmin(T& a,const T& b){ return b<a?a=b,true:false;\
-    \ }\n__attribute__((constructor)) void constructor() {\n\tcin.tie(nullptr);\n\t\
+    \ }\n__attribute__((constructor)) void constructor(){\n\tcin.tie(nullptr);\n\t\
     ios_base::sync_with_stdio(false);\n\tcout << fixed << setprecision(16);\n}\n"
   code: "#include <bits/stdc++.h>\nusing namespace std;\nusing uint = unsigned int;\n\
     using ll = long long;\nusing ull = unsigned long long;\nusing ld = long double;\n\
@@ -32,13 +32,13 @@ data:
     \ ull &n){ return __builtin_popcountll(n); }\ntemplate<class T> inline bool chmax(T&\
     \ a,const T& b){ return a<b?a=b,true:false; }\ntemplate<class T> inline bool chmin(T&\
     \ a,const T& b){ return b<a?a=b,true:false; }\n__attribute__((constructor)) void\
-    \ constructor() {\n\tcin.tie(nullptr);\n\tios_base::sync_with_stdio(false);\n\t\
+    \ constructor(){\n\tcin.tie(nullptr);\n\tios_base::sync_with_stdio(false);\n\t\
     cout << fixed << setprecision(16);\n}\n"
   dependsOn: []
   isVerificationFile: false
   path: template/template.hpp
   requiredBy: []
-  timestamp: '2024-05-03 12:00:41+09:00'
+  timestamp: '2024-05-03 17:16:01+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: template/template.hpp
