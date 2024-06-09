@@ -1,13 +1,13 @@
 #pragma once
 
 template<class T>
-class Combination{
+class Binomial{
 	private:
 		vector<T> fac, ifac;
 
 	public:
-		Combination():Combination(0){}
-		Combination(int _n):
+		Binomial():Binomial(0){}
+		Binomial(int _n):
 			fac(_n+1,1),ifac(_n+1,1){
 				for(int i=0; i<_n; i++) fac[i+1] = fac[i]*(i+1);
 				ifac[_n] = 1/fac[_n];
