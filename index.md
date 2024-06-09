@@ -40,8 +40,8 @@ data:
   - name: math
     pages:
     - icon: ':warning:'
-      path: math/combination.hpp
-      title: math/combination.hpp
+      path: math/binomial.hpp
+      title: math/binomial.hpp
     - icon: ':heavy_check_mark:'
       path: math/ext_gcd.hpp
       title: math/ext_gcd.hpp

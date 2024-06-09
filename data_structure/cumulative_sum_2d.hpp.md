@@ -57,8 +57,8 @@ data:
   timestamp: '2024-04-24 17:23:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/aoj/DSL_4_A.test.cpp
   - verify/aoj/DSL_5_B.test.cpp
+  - verify/aoj/DSL_4_A.test.cpp
 documentation_of: data_structure/cumulative_sum_2d.hpp
 layout: document
 redirect_from:
