@@ -87,8 +87,8 @@ data:
   timestamp: '2024-04-24 17:23:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/vertex_add_subtree_sum.test.cpp
   - verify/yosupo/vertex_add_path_sum.test.cpp
+  - verify/yosupo/vertex_add_subtree_sum.test.cpp
   - verify/yosupo/lca.test.cpp
 documentation_of: tree/heavy_light_decomposition.hpp
 layout: document
