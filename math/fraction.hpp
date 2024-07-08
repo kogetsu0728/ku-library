@@ -34,6 +34,12 @@ template<class T> class Fraction{
 		bool operator==(const Fraction<T> &rhs) const {
 			return num*rhs.denom() == rhs.numer()*den;
 		}
+		bool operator<=(const Fraction<T> &rhs) const {
+			return num*rhs.denom() <= rhs.numer()*den;
+		}
+		bool operator>=(const Fraction<T> &rhs) const {
+			return num*rhs.denom() >= rhs.numer()*den;
+		}
 
 		Fraction<T> &operator+=(const Fraction<T> &rhs){
 			num = num*rhs.denom() + rhs.numer()*den;
