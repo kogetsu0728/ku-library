@@ -19,16 +19,19 @@ data:
     \ operator<(const Fraction<T> &rhs) const {\n\t\t\treturn num*rhs.denom() < rhs.numer()*den;\n\
     \t\t}\n\t\tbool operator>(const Fraction<T> &rhs) const {\n\t\t\treturn num*rhs.denom()\
     \ > rhs.numer()*den;\n\t\t}\n\t\tbool operator==(const Fraction<T> &rhs) const\
-    \ {\n\t\t\treturn num*rhs.denom() == rhs.numer()*den;\n\t\t}\n\n\t\tFraction<T>\
-    \ &operator+=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.denom() + rhs.numer()*den;\n\
-    \t\t\tden = den*rhs.denom();\n\t\t\treturn reduce();\n\t\t}\n\t\tFraction<T> operator+(const\
-    \ Fraction<T> &rhs) const {\n\t\t\treturn Fraction(*this) += rhs;\n\t\t}\n\t\t\
-    Fraction<T> operator+() const {\n\t\t\treturn Fraction(*this);\n\t\t}\n\n\t\t\
-    Fraction<T> &operator-=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.denom()\
-    \ - rhs.numer()*den;\n\t\t\tden = den*rhs.denom();\n\t\t\treturn reduce();\n\t\
-    \t}\n\t\tFraction<T> operator-(const Fraction<T> &rhs) const {\n\t\t\treturn Fraction(*this)\
-    \ -= rhs;\n\t\t}\n\t\tFraction<T> operator-() const {\n\t\t\treturn Fraction()-Fraction(*this);\n\
-    \t\t}\n\n\t\tFraction<T> &operator*=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.numer();\n\
+    \ {\n\t\t\treturn num*rhs.denom() == rhs.numer()*den;\n\t\t}\n\t\tbool operator<=(const\
+    \ Fraction<T> &rhs) const {\n\t\t\treturn num*rhs.denom() <= rhs.numer()*den;\n\
+    \t\t}\n\t\tbool operator>=(const Fraction<T> &rhs) const {\n\t\t\treturn num*rhs.denom()\
+    \ >= rhs.numer()*den;\n\t\t}\n\n\t\tFraction<T> &operator+=(const Fraction<T>\
+    \ &rhs){\n\t\t\tnum = num*rhs.denom() + rhs.numer()*den;\n\t\t\tden = den*rhs.denom();\n\
+    \t\t\treturn reduce();\n\t\t}\n\t\tFraction<T> operator+(const Fraction<T> &rhs)\
+    \ const {\n\t\t\treturn Fraction(*this) += rhs;\n\t\t}\n\t\tFraction<T> operator+()\
+    \ const {\n\t\t\treturn Fraction(*this);\n\t\t}\n\n\t\tFraction<T> &operator-=(const\
+    \ Fraction<T> &rhs){\n\t\t\tnum = num*rhs.denom() - rhs.numer()*den;\n\t\t\tden\
+    \ = den*rhs.denom();\n\t\t\treturn reduce();\n\t\t}\n\t\tFraction<T> operator-(const\
+    \ Fraction<T> &rhs) const {\n\t\t\treturn Fraction(*this) -= rhs;\n\t\t}\n\t\t\
+    Fraction<T> operator-() const {\n\t\t\treturn Fraction()-Fraction(*this);\n\t\t\
+    }\n\n\t\tFraction<T> &operator*=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.numer();\n\
     \t\t\tden = den*rhs.denom();\n\t\t\treturn reduce();\n\t\t}\n\t\tFraction<T> operator*(const\
     \ Fraction<T> &rhs) const {\n\t\t\treturn Fraction(*this) *= rhs;\n\t\t}\n\n\t\
     \tFraction<T> &operator/=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.denom();\n\
@@ -47,16 +50,19 @@ data:
     \ &rhs) const {\n\t\t\treturn num*rhs.denom() < rhs.numer()*den;\n\t\t}\n\t\t\
     bool operator>(const Fraction<T> &rhs) const {\n\t\t\treturn num*rhs.denom() >\
     \ rhs.numer()*den;\n\t\t}\n\t\tbool operator==(const Fraction<T> &rhs) const {\n\
-    \t\t\treturn num*rhs.denom() == rhs.numer()*den;\n\t\t}\n\n\t\tFraction<T> &operator+=(const\
-    \ Fraction<T> &rhs){\n\t\t\tnum = num*rhs.denom() + rhs.numer()*den;\n\t\t\tden\
-    \ = den*rhs.denom();\n\t\t\treturn reduce();\n\t\t}\n\t\tFraction<T> operator+(const\
-    \ Fraction<T> &rhs) const {\n\t\t\treturn Fraction(*this) += rhs;\n\t\t}\n\t\t\
-    Fraction<T> operator+() const {\n\t\t\treturn Fraction(*this);\n\t\t}\n\n\t\t\
-    Fraction<T> &operator-=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.denom()\
-    \ - rhs.numer()*den;\n\t\t\tden = den*rhs.denom();\n\t\t\treturn reduce();\n\t\
-    \t}\n\t\tFraction<T> operator-(const Fraction<T> &rhs) const {\n\t\t\treturn Fraction(*this)\
-    \ -= rhs;\n\t\t}\n\t\tFraction<T> operator-() const {\n\t\t\treturn Fraction()-Fraction(*this);\n\
-    \t\t}\n\n\t\tFraction<T> &operator*=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.numer();\n\
+    \t\t\treturn num*rhs.denom() == rhs.numer()*den;\n\t\t}\n\t\tbool operator<=(const\
+    \ Fraction<T> &rhs) const {\n\t\t\treturn num*rhs.denom() <= rhs.numer()*den;\n\
+    \t\t}\n\t\tbool operator>=(const Fraction<T> &rhs) const {\n\t\t\treturn num*rhs.denom()\
+    \ >= rhs.numer()*den;\n\t\t}\n\n\t\tFraction<T> &operator+=(const Fraction<T>\
+    \ &rhs){\n\t\t\tnum = num*rhs.denom() + rhs.numer()*den;\n\t\t\tden = den*rhs.denom();\n\
+    \t\t\treturn reduce();\n\t\t}\n\t\tFraction<T> operator+(const Fraction<T> &rhs)\
+    \ const {\n\t\t\treturn Fraction(*this) += rhs;\n\t\t}\n\t\tFraction<T> operator+()\
+    \ const {\n\t\t\treturn Fraction(*this);\n\t\t}\n\n\t\tFraction<T> &operator-=(const\
+    \ Fraction<T> &rhs){\n\t\t\tnum = num*rhs.denom() - rhs.numer()*den;\n\t\t\tden\
+    \ = den*rhs.denom();\n\t\t\treturn reduce();\n\t\t}\n\t\tFraction<T> operator-(const\
+    \ Fraction<T> &rhs) const {\n\t\t\treturn Fraction(*this) -= rhs;\n\t\t}\n\t\t\
+    Fraction<T> operator-() const {\n\t\t\treturn Fraction()-Fraction(*this);\n\t\t\
+    }\n\n\t\tFraction<T> &operator*=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.numer();\n\
     \t\t\tden = den*rhs.denom();\n\t\t\treturn reduce();\n\t\t}\n\t\tFraction<T> operator*(const\
     \ Fraction<T> &rhs) const {\n\t\t\treturn Fraction(*this) *= rhs;\n\t\t}\n\n\t\
     \tFraction<T> &operator/=(const Fraction<T> &rhs){\n\t\t\tnum = num*rhs.denom();\n\
@@ -68,7 +74,7 @@ data:
   isVerificationFile: false
   path: math/fraction.hpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-07-08 21:49:13+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/fraction.hpp
