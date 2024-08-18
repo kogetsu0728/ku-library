@@ -54,9 +54,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/vertex_add_path_sum.test.cpp
-  - verify/yosupo/static_range_min.test.cpp
   - verify/yosupo/vertex_add_subtree_sum.test.cpp
   - verify/yosupo/static_range_sum.test.cpp
+  - verify/yosupo/static_range_min.test.cpp
 documentation_of: data_structure/segment_tree.hpp
 layout: document
 redirect_from:

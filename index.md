@@ -1,11 +1,6 @@
 ---
 data:
   libraryCategories:
-  - name: checker
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: checker/build_checker.hpp
-      title: checker/build_checker.hpp
   - name: data_structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -34,7 +29,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/low_link.hpp
       title: graph/low_link.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/topological_sort.hpp
       title: graph/topological_sort.hpp
   - name: math
@@ -138,7 +133,7 @@ data:
       title: verify/yosupo/zalgorithm.test.cpp
   - name: verify/yukicoder
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yukicoder/468.test.cpp
       title: verify/yukicoder/468.test.cpp
 layout: toppage
