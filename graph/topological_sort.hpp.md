@@ -6,18 +6,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/aoj/GRL_4_A.test.cpp
     title: verify/aoj/GRL_4_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yukicoder/468.test.cpp
     title: verify/yukicoder/468.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/topological_sort.hpp\"\n\nclass TopologicalSort{\n\
     \tprivate:\n\t\tbool init;\n\t\tint n;\n\t\tvector<vector<int>> g;\n\t\tvector<int>\
     \ p;\n\n\tpublic:\n\t\tTopologicalSort(): TopologicalSort(0) {}\n\t\tTopologicalSort(int\
-    \ _n): init(false), n(_n), g(_n){}\n\n\t\tvoid add_edge(int u, int v){\n\t\t\t\
+    \ _n): init(false), n(_n), g(_n) {}\n\n\t\tvoid add_edge(int u, int v){\n\t\t\t\
     assert(!init);\n\n\t\t\tg[u].push_back(v);\n\t\t}\n\n\t\tbool build(){\n\t\t\t\
     assert(!init);\n\t\t\tinit = true;\n\n\t\t\tvector<int> cnt(n);\n\t\t\tfor(int\
     \ v=0; v<n; v++){\n\t\t\t\tfor(int nv:g[v]){\n\t\t\t\t\tcnt[nv]++;\n\t\t\t\t}\n\
@@ -31,8 +31,8 @@ data:
     \ p[i];\n\t\t}\n};\n"
   code: "#pragma once\n\nclass TopologicalSort{\n\tprivate:\n\t\tbool init;\n\t\t\
     int n;\n\t\tvector<vector<int>> g;\n\t\tvector<int> p;\n\n\tpublic:\n\t\tTopologicalSort():\
-    \ TopologicalSort(0) {}\n\t\tTopologicalSort(int _n): init(false), n(_n), g(_n){}\n\
-    \n\t\tvoid add_edge(int u, int v){\n\t\t\tassert(!init);\n\n\t\t\tg[u].push_back(v);\n\
+    \ TopologicalSort(0) {}\n\t\tTopologicalSort(int _n): init(false), n(_n), g(_n)\
+    \ {}\n\n\t\tvoid add_edge(int u, int v){\n\t\t\tassert(!init);\n\n\t\t\tg[u].push_back(v);\n\
     \t\t}\n\n\t\tbool build(){\n\t\t\tassert(!init);\n\t\t\tinit = true;\n\n\t\t\t\
     vector<int> cnt(n);\n\t\t\tfor(int v=0; v<n; v++){\n\t\t\t\tfor(int nv:g[v]){\n\
     \t\t\t\t\tcnt[nv]++;\n\t\t\t\t}\n\t\t\t}\n\t\t\tqueue<int> que;\n\t\t\tfor(int\
@@ -47,8 +47,8 @@ data:
   isVerificationFile: false
   path: graph/topological_sort.hpp
   requiredBy: []
-  timestamp: '2024-08-18 22:40:10+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2024-08-18 22:49:30+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/468.test.cpp
   - verify/aoj/GRL_4_A.test.cpp

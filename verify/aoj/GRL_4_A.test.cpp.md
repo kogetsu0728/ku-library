@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/topological_sort.hpp
     title: graph/topological_sort.hpp
   _extendedRequiredBy: []
@@ -18,7 +18,7 @@ data:
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"graph/topological_sort.hpp\"\
     \n\nclass TopologicalSort{\n\tprivate:\n\t\tbool init;\n\t\tint n;\n\t\tvector<vector<int>>\
     \ g;\n\t\tvector<int> p;\n\n\tpublic:\n\t\tTopologicalSort(): TopologicalSort(0)\
-    \ {}\n\t\tTopologicalSort(int _n): init(false), n(_n), g(_n){}\n\n\t\tvoid add_edge(int\
+    \ {}\n\t\tTopologicalSort(int _n): init(false), n(_n), g(_n) {}\n\n\t\tvoid add_edge(int\
     \ u, int v){\n\t\t\tassert(!init);\n\n\t\t\tg[u].push_back(v);\n\t\t}\n\n\t\t\
     bool build(){\n\t\t\tassert(!init);\n\t\t\tinit = true;\n\n\t\t\tvector<int> cnt(n);\n\
     \t\t\tfor(int v=0; v<n; v++){\n\t\t\t\tfor(int nv:g[v]){\n\t\t\t\t\tcnt[nv]++;\n\
@@ -43,7 +43,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/GRL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2024-08-18 22:40:10+09:00'
+  timestamp: '2024-08-18 22:49:30+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/GRL_4_A.test.cpp

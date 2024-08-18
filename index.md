@@ -29,7 +29,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/low_link.hpp
       title: graph/low_link.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/topological_sort.hpp
       title: graph/topological_sort.hpp
   - name: math
@@ -133,7 +133,7 @@ data:
       title: verify/yosupo/zalgorithm.test.cpp
   - name: verify/yukicoder
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yukicoder/468.test.cpp
       title: verify/yukicoder/468.test.cpp
 layout: toppage
