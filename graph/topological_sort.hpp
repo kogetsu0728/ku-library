@@ -9,7 +9,7 @@ class TopologicalSort{
 
 	public:
 		TopologicalSort(): TopologicalSort(0) {}
-		TopologicalSort(int _n): init(false), n(_n), g(_n){}
+		TopologicalSort(int _n): init(false), n(_n), g(_n) {}
 
 		void add_edge(int u, int v){
 			assert(!init);
