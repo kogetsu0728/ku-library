@@ -1,12 +1,15 @@
 #pragma once
 
-template<class T> class Matrix{
+template<class T>
+class Matrix{
 	private:
 		int ro, co;
 		vector<vector<T>> vec;
+
 	public:
-		Matrix(int _ro, int _co, T _e=0):
-			ro(_ro), co(_co), vec(_ro,vector<T>(_co,_e)){}
+		Matrix(): Matrix(0, 0) {}
+		Matrix(const int _ro, const int _co, const T _e=0):
+			ro(_ro), co(_co), vec(_ro, vector<T>(_co, _e)) {}
 
 		int row() const { return ro; }
 		int col() const { return co; }
