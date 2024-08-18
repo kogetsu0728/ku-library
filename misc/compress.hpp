@@ -1,44 +1,45 @@
 #pragma once
 
-#include "checker/build_checker.hpp"
-
 template<class T,class C=less<T>>
 class Compress{
 	private:
-		BuildChecker build_checker;
+		bool init;
 		vector<T> vec;
 
 	public:
-		Compress(): build_checker(), vec() {}
+		Compress(): Compress(vector<T>()) {}
+		Compress(const vector<T>& _vec):
+			init(false), vec(_vec) {}
 
 		void push(const T x){
-			build_checker.before();
+			assert(!init);
 
 			vec.push_back(x);
 		}
 
 		void build(){
-			build_checker.build();
+			assert(!init);
+			init = true;
 
 			sort(vec.begin(), vec.end(), C());
 			vec.erase(unique(vec.begin(),vec.end()),vec.end());
 		}
 
 		size_t size() const {
-			build_checker.after();
+			assert(init);
 
 			return vec.size();
 		}
 
 		T nth(const int i) const {
-			build_checker.after();
+			assert(init);
 
 			assert(0<=i && i<int(vec.size()));
 			return vec[i];
 		}
 
 		int get(const T x) const {
-			build_checker.after();
+			assert(init);
 
 			int ng=-1, ok=int(vec.size())-1;
 			while(1<ok-ng){
@@ -50,7 +51,7 @@ class Compress{
 		}
 
 		bool contains(const T x) const {
-			build_checker.after();
+			assert(init);
 
 			return nth(get(x))==x;
 		}

@@ -1,26 +1,25 @@
 #pragma once
 
-#include "checker/build_checker.hpp"
-
 class TopologicalSort{
 	private:
-		BuildChecker build_checker;
+		bool init;
 		int n;
 		vector<vector<int>> g;
 		vector<int> p;
 
 	public:
 		TopologicalSort(): TopologicalSort(0) {}
-		TopologicalSort(int _n): build_checker(), n(_n), g(_n){}
+		TopologicalSort(int _n): init(false), n(_n), g(_n){}
 
 		void add_edge(int u, int v){
-			build_checker.before();
+			assert(!init);
 
 			g[u].push_back(v);
 		}
 
 		bool build(){
-			build_checker.build();
+			assert(!init);
+			init = true;
 
 			vector<int> cnt(n);
 			for(int v=0; v<n; v++){
@@ -53,7 +52,7 @@ class TopologicalSort{
 		}
 
 		int operator[](const int i) const {
-			build_checker.after();
+			assert(init);
 
 			return p[i];
 		}
