@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/ordered_map_and_range_query.hpp
-    title: Ordered Map And Range Query
+    title: Ordered Map and Range Query
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -18,7 +18,7 @@ data:
     https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F\"\n\n// #define\
     \ _GLIBCXX_DEBUG\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"\
     data_structure/ordered_map_and_range_query.hpp\"\n\n/**\n * @brief Ordered Map\
-    \ And Range Query\n */\ntemplate <class K, bool (*compare)(K, K), class S, S (*op)(S,\
+    \ and Range Query\n */\ntemplate <class K, bool (*compare)(K, K), class S, S (*op)(S,\
     \ S), S (*e)(),\n          class F, S (*mapping)(F, S), F (*composition)(F, F),\
     \ F (*id)()>\nclass OrderedMapAndRangeQuery {\n private:\n  class Node {\n   public:\n\
     \    int size;\n    Node *left, *right;\n    K key;\n    S value, sum;\n    F\
@@ -115,7 +115,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/DSL_2_F.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:53:45+09:00'
+  timestamp: '2024-09-06 19:04:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/DSL_2_F.test.cpp

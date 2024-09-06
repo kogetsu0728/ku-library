@@ -3,7 +3,8 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/topological_sort.hpp
-    title: graph/topological_sort.hpp
+    title: "Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
+      )"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,8 +18,9 @@ data:
   bundledCode: "#line 1 \"verify/aoj/GRL_4_A.test.cpp\"\n#define PROBLEM \\\n  \"\
     https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"graph/topological_sort.hpp\"\
-    \n\nclass TopologicalSort {\n private:\n  bool init;\n  int n;\n  vector<vector<int>>\
-    \ g;\n  vector<int> p;\n\n public:\n  TopologicalSort() : TopologicalSort(0) {}\n\
+    \n\n/**\n * @brief Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\
+    \u30FC\u30C8)\n */\nclass TopologicalSort {\n private:\n  bool init;\n  int n;\n\
+    \  vector<vector<int>> g;\n  vector<int> p;\n\n public:\n  TopologicalSort() {}\n\
     \  TopologicalSort(int _n) : init(false), n(_n), g(_n) {}\n\n  void add_edge(int\
     \ u, int v) {\n    assert(!init);\n\n    g[u].push_back(v);\n  }\n\n  bool build()\
     \ {\n    assert(!init);\n    init = true;\n\n    vector<int> cnt(n);\n    for\
@@ -44,7 +46,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/GRL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:14:41+09:00'
+  timestamp: '2024-09-06 19:04:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/GRL_4_A.test.cpp

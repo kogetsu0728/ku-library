@@ -13,10 +13,10 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    document_title: Ordered Map And Range Query
+    document_title: Ordered Map and Range Query
     links: []
   bundledCode: "#line 2 \"data_structure/ordered_map_and_range_query.hpp\"\n\n/**\n\
-    \ * @brief Ordered Map And Range Query\n */\ntemplate <class K, bool (*compare)(K,\
+    \ * @brief Ordered Map and Range Query\n */\ntemplate <class K, bool (*compare)(K,\
     \ K), class S, S (*op)(S, S), S (*e)(),\n          class F, S (*mapping)(F, S),\
     \ F (*composition)(F, F), F (*id)()>\nclass OrderedMapAndRangeQuery {\n private:\n\
     \  class Node {\n   public:\n    int size;\n    Node *left, *right;\n    K key;\n\
@@ -75,7 +75,7 @@ data:
     \  void apply(int a, int b, F f) {\n    pair<Node*, Node*> s = split(root, a);\n\
     \    pair<Node*, Node*> t = split(s.second, b - a);\n    propagate(t.first, f);\n\
     \    root = merge(s.first, merge(t.first, t.second));\n  }\n};\n"
-  code: "#pragma once\n\n/**\n * @brief Ordered Map And Range Query\n */\ntemplate\
+  code: "#pragma once\n\n/**\n * @brief Ordered Map and Range Query\n */\ntemplate\
     \ <class K, bool (*compare)(K, K), class S, S (*op)(S, S), S (*e)(),\n       \
     \   class F, S (*mapping)(F, S), F (*composition)(F, F), F (*id)()>\nclass OrderedMapAndRangeQuery\
     \ {\n private:\n  class Node {\n   public:\n    int size;\n    Node *left, *right;\n\
@@ -138,7 +138,7 @@ data:
   isVerificationFile: false
   path: data_structure/ordered_map_and_range_query.hpp
   requiredBy: []
-  timestamp: '2024-09-06 18:53:45+09:00'
+  timestamp: '2024-09-06 19:04:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/DSL_2_F.test.cpp
@@ -148,5 +148,5 @@ layout: document
 redirect_from:
 - /library/data_structure/ordered_map_and_range_query.hpp
 - /library/data_structure/ordered_map_and_range_query.hpp.html
-title: Ordered Map And Range Query
+title: Ordered Map and Range Query
 ---
