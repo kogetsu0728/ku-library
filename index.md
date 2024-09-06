@@ -73,12 +73,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_2_H.test.cpp
       title: verify/aoj/DSL_2_H.test.cpp
-    - icon: ':x:'
-      path: verify/aoj/DSL_4_A.test.cpp
-      title: verify/aoj/DSL_4_A.test.cpp
-    - icon: ':x:'
-      path: verify/aoj/DSL_5_B.test.cpp
-      title: verify/aoj/DSL_5_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/aoj/GRL_3_A.test.cpp
       title: verify/aoj/GRL_3_A.test.cpp
@@ -93,9 +87,6 @@ data:
       title: verify/aoj/NTL_1_E.test.cpp
   - name: verify/yosupo
     pages:
-    - icon: ':x:'
-      path: verify/yosupo/double_ended_priority_queue.test.cpp
-      title: verify/yosupo/double_ended_priority_queue.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/lca.test.cpp
       title: verify/yosupo/lca.test.cpp
