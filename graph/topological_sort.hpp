@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Topological Sort (トポロジカルソート)
+ */
 class TopologicalSort {
  private:
   bool init;
@@ -8,7 +11,7 @@ class TopologicalSort {
   vector<int> p;
 
  public:
-  TopologicalSort() : TopologicalSort(0) {}
+  TopologicalSort() {}
   TopologicalSort(int _n) : init(false), n(_n), g(_n) {}
 
   void add_edge(int u, int v) {

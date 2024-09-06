@@ -1,9 +1,14 @@
 #pragma once
 
+/**
+ * @brief Next Combination
+ */
 template <typename T>
 bool next_combination(const T &begin, const T &end, int k) {
   const T &sub = begin + k;
+
   if (begin == end || begin == sub || end == sub) return false;
+
   T src = sub;
   while (begin != src) {
     src--;
@@ -15,7 +20,9 @@ bool next_combination(const T &begin, const T &end, int k) {
       rotate(sub, sub + (end - des) - 1, end);
       return true;
     }
+
   }
   rotate(begin, sub, end);
+
   return false;
 }

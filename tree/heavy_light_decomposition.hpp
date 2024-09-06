@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Heavy Light Decomposition (HL分解)
+ */
 class HeavyLightDecomposition {
  private:
   bool init;
@@ -37,10 +40,9 @@ class HeavyLightDecomposition {
   }
 
  public:
-  HeavyLightDecomposition() : HeavyLightDecomposition(0) {}
+  HeavyLightDecomposition() {}
   HeavyLightDecomposition(const int _n)
       : init(false),
-        n(_n),
         g(_n),
         siz(_n, 1),
         par(_n, -1),

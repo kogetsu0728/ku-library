@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Low Link
+ */
 class LowLink {
  private:
   bool init;
@@ -28,7 +31,7 @@ class LowLink {
   }
 
  public:
-  LowLink() : LowLink(0) {}
+  LowLink() {}
   LowLink(const int _n)
       : init(false),
         n(_n),

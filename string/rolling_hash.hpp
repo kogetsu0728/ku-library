@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Rolling Hash (ローリングハッシュ)
+ */
 class RollingHash {
   using ll = long long;
 
@@ -10,6 +13,7 @@ class RollingHash {
   vector<ll> hash1, hash2, pow1, pow2;
 
  public:
+	RollingHash() {}
   RollingHash(const string &s, const ll _base1 = 2525, const ll _base2 = 4649)
       : base1(_base1), base2(_base2) {
     n = s.length();

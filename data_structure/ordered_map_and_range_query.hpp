@@ -1,7 +1,7 @@
 #pragma once
 
 /**
- * @brief Ordered Map And Range Query
+ * @brief Ordered Map and Range Query
  */
 template <class K, bool (*compare)(K, K), class S, S (*op)(S, S), S (*e)(),
           class F, S (*mapping)(F, S), F (*composition)(F, F), F (*id)()>
