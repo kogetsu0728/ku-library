@@ -1,34 +1,24 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: data_structure/double_ended_priority_queue.hpp
-    title: data_structure/double_ended_priority_queue.hpp
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
-  attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/double_ended_priority_queue
-    links:
-    - https://judge.yosupo.jp/problem/double_ended_priority_queue
-  bundledCode: "#line 1 \"verify/yosupo/double_ended_priority_queue.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\n\n\
-    #include <iostream>\n#include <set>\nusing namespace std;\n\n#line 2 \"data_structure/double_ended_priority_queue.hpp\"\
-    \n\ntemplate <class T, class C = less<T>>\nclass DoubleEndedPriorityQueue : public\
-    \ multiset<T, C> {\n public:\n  DoubleEndedPriorityQueue() : multiset<T>() {}\n\
-    \n  void push(T val) { this->insert(val); }\n\n  T min() const { return *(this->begin());\
-    \ }\n\n  T max() const { return *(--(this->end())); }\n\n  void pop_min() { this->erase(this->begin());\
-    \ }\n\n  void pop_max() { this->erase(--(this->end())); }\n};\n#line 8 \"verify/yosupo/double_ended_priority_queue.test.cpp\"\
-    \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  DoubleEndedPriorityQueue<long\
-    \ long> que;\n  for (int i = 0; i < N; i++) {\n    long long s;\n    cin >> s;\n\
-    \    que.push(s);\n  }\n\n  for (; Q--;) {\n    int t;\n    cin >> t;\n    if\
-    \ (t == 0) {\n      long long x;\n      cin >> x;\n      que.push(x);\n    } else\
-    \ if (t == 1) {\n      cout << que.min() << endl;\n      que.pop_min();\n    }\
-    \ else {\n      cout << que.max() << endl;\n      que.pop_max();\n    }\n  }\n\
-    }\n"
+  _verificationStatusIcon: ':x:'
+  attributes: {}
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n          \
+    \         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\
+    \  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n \
+    \ File \"/opt/hostedtoolcache/Python/3.12.5/x64/lib/python3.12/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
+    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../../data_structure/double_ended_priority_queue.hpp:\
+    \ line -1: no such header\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\
     \n\n#include <iostream>\n#include <set>\nusing namespace std;\n\n#include \"../../data_structure/double_ended_priority_queue.hpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  DoubleEndedPriorityQueue<long\
@@ -38,13 +28,12 @@ data:
     \ if (t == 1) {\n      cout << que.min() << endl;\n      que.pop_min();\n    }\
     \ else {\n      cout << que.max() << endl;\n      que.pop_max();\n    }\n  }\n\
     }\n"
-  dependsOn:
-  - data_structure/double_ended_priority_queue.hpp
+  dependsOn: []
   isVerificationFile: true
   path: verify/yosupo/double_ended_priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:14:41+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '1970-01-01 00:00:00+00:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/double_ended_priority_queue.test.cpp
 layout: document

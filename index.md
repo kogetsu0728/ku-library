@@ -3,12 +3,6 @@ data:
   libraryCategories:
   - name: data_structure
     pages:
-    - icon: ':heavy_check_mark:'
-      path: data_structure/cumulative_sum_2d.hpp
-      title: data_structure/cumulative_sum_2d.hpp
-    - icon: ':heavy_check_mark:'
-      path: data_structure/double_ended_priority_queue.hpp
-      title: data_structure/double_ended_priority_queue.hpp
     - icon: ':warning:'
       path: data_structure/merge_sort_tree.hpp
       title: merge-sort tree
@@ -54,9 +48,6 @@ data:
       title: math/sieve_of_eratosthenes.hpp
   - name: misc
     pages:
-    - icon: ':heavy_check_mark:'
-      path: misc/compress.hpp
-      title: misc/compress.hpp
     - icon: ':warning:'
       path: misc/next_combination.hpp
       title: misc/next_combination.hpp
@@ -65,11 +56,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/rolling_hash.hpp
       title: string/rolling_hash.hpp
-  - name: template
-    pages:
-    - icon: ':warning:'
-      path: template/template.hpp
-      title: template/template.hpp
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -87,10 +73,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/aoj/DSL_2_H.test.cpp
       title: verify/aoj/DSL_2_H.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aoj/DSL_4_A.test.cpp
       title: verify/aoj/DSL_4_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/aoj/DSL_5_B.test.cpp
       title: verify/aoj/DSL_5_B.test.cpp
     - icon: ':heavy_check_mark:'
@@ -107,7 +93,7 @@ data:
       title: verify/aoj/NTL_1_E.test.cpp
   - name: verify/yosupo
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/double_ended_priority_queue.test.cpp
       title: verify/yosupo/double_ended_priority_queue.test.cpp
     - icon: ':heavy_check_mark:'
