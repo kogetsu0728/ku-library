@@ -8,69 +8,69 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"math/sieve_of_eratosthenes.hpp\"\n\nclass SieveOfEratosthenes{\n\
-    \tprivate:\n\t\tint siz;\n\t\tvector<int> div, pr, cnt;\n\tpublic:\n\t\tSieveOfEratosthenes(int\
-    \ n):\n\t\t\tsiz(n),div(n+1),pr(0),cnt(n+1){\n\t\t\t\tdiv[1] = 1;\n\t\t\t\tfor(int\
-    \ i=2; i<=n; i++){\n\t\t\t\t\tif(div[i]!=0) continue;\n\t\t\t\t\tpr.push_back(i);\n\
-    \t\t\t\t\tfor(int j=i; j<=n; j+=i){\n\t\t\t\t\t\tif(div[j]==0) div[j] = i;\n\t\
-    \t\t\t\t\tcnt[j]++;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\tint nth_prime(int\
-    \ n) const {\n\t\t\treturn pr[n];\n\t\t}\n\n\t\tint count_prime(int n) const {\n\
-    \t\t\tif(n<2) return 0;\n\t\t\treturn cnt[n];\n\t\t}\n\n\t\tint count_divisors(int\
-    \ n) const {\n\t\t\tauto f = prime_factors(n);\n\t\t\tint res = 1;\n\t\t\tfor(auto\
-    \ p:f){\n\t\t\t\tres *= (1+p.second);\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n\n\t\
-    \tint totient(int n) const {\n\t\t\tauto f = prime_factors(n);\n\t\t\tint res\
-    \ = n;\n\t\t\tfor(auto p:f){\n\t\t\t\tres /= p.first;\n\t\t\t}\n\t\t\tfor(auto\
-    \ p:f){\n\t\t\t\tres *= p.first-1;\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n\n\t\t\
-    int prev_prime(int n) const {\n\t\t\tint l=0, r=pr.size();\n\t\t\twhile(r-l>1){\n\
-    \t\t\t\tint m=(l+r)/2;\n\t\t\t\tif(pr[m]<n) l=m;\n\t\t\t\telse r=m;\n\t\t\t}\n\
-    \t\t\treturn pr[l];\n\t\t}\n\n\t\tint next_prime(int n) const {\n\t\t\tint l=0,\
-    \ r=pr.size();\n\t\t\twhile(r-l>1){\n\t\t\t\tint m=(l+r)/2;\n\t\t\t\tif(pr[m]<=n)\
-    \ l=m;\n\t\t\t\telse r=m;\n\t\t\t}\n\t\t\treturn pr[r];\n\t\t}\n\n\t\tbool is_prime(int\
-    \ n) const {\n\t\t\tif(n<2) return false;\n\t\t\treturn div[n]==n;\n\t\t}\n\n\t\
-    \tvector<pair<int,int>> prime_factors(int n) const {\n\t\t\tvector<pair<int,int>>\
-    \ res;\n\t\t\tint x = n;\n\t\t\twhile(2<=x){\n\t\t\t\tif(res.empty() || res.back().first!=div[x]){\n\
-    \t\t\t\t\tres.push_back({div[x], 1});\n\t\t\t\t}else{\n\t\t\t\t\tres.back().second++;\n\
-    \t\t\t\t}\n\t\t\t\tx /= div[x];\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n\n\t\tvector<int>\
-    \ get_divisors(int n) const {\n\t\t\tvector<int> res = {1};\n\t\t\tauto pf = prime_factors(n);\n\
-    \t\t\tfor(auto p:pf){\n\t\t\t\tint s=(int)res.size();\n\t\t\t\tfor(int i=0; i<s;\
-    \ i++){\n\t\t\t\t\tint m = 1;\n\t\t\t\t\tfor(int j=0; j<(int)p.second; j++){\n\
-    \t\t\t\t\t\tm *= p.first;\n\t\t\t\t\t\tres.push_back(res[i]*m);\n\t\t\t\t\t}\n\
-    \t\t\t\t}\n\t\t\t}\n\t\t\tsort(res.begin(), res.end());\n\t\t\treturn res;\n\t\
-    \t}\n};\n"
-  code: "#pragma once\n\nclass SieveOfEratosthenes{\n\tprivate:\n\t\tint siz;\n\t\t\
-    vector<int> div, pr, cnt;\n\tpublic:\n\t\tSieveOfEratosthenes(int n):\n\t\t\t\
-    siz(n),div(n+1),pr(0),cnt(n+1){\n\t\t\t\tdiv[1] = 1;\n\t\t\t\tfor(int i=2; i<=n;\
-    \ i++){\n\t\t\t\t\tif(div[i]!=0) continue;\n\t\t\t\t\tpr.push_back(i);\n\t\t\t\
-    \t\tfor(int j=i; j<=n; j+=i){\n\t\t\t\t\t\tif(div[j]==0) div[j] = i;\n\t\t\t\t\
-    \t\tcnt[j]++;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\tint nth_prime(int n) const\
-    \ {\n\t\t\treturn pr[n];\n\t\t}\n\n\t\tint count_prime(int n) const {\n\t\t\t\
-    if(n<2) return 0;\n\t\t\treturn cnt[n];\n\t\t}\n\n\t\tint count_divisors(int n)\
-    \ const {\n\t\t\tauto f = prime_factors(n);\n\t\t\tint res = 1;\n\t\t\tfor(auto\
-    \ p:f){\n\t\t\t\tres *= (1+p.second);\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n\n\t\
-    \tint totient(int n) const {\n\t\t\tauto f = prime_factors(n);\n\t\t\tint res\
-    \ = n;\n\t\t\tfor(auto p:f){\n\t\t\t\tres /= p.first;\n\t\t\t}\n\t\t\tfor(auto\
-    \ p:f){\n\t\t\t\tres *= p.first-1;\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n\n\t\t\
-    int prev_prime(int n) const {\n\t\t\tint l=0, r=pr.size();\n\t\t\twhile(r-l>1){\n\
-    \t\t\t\tint m=(l+r)/2;\n\t\t\t\tif(pr[m]<n) l=m;\n\t\t\t\telse r=m;\n\t\t\t}\n\
-    \t\t\treturn pr[l];\n\t\t}\n\n\t\tint next_prime(int n) const {\n\t\t\tint l=0,\
-    \ r=pr.size();\n\t\t\twhile(r-l>1){\n\t\t\t\tint m=(l+r)/2;\n\t\t\t\tif(pr[m]<=n)\
-    \ l=m;\n\t\t\t\telse r=m;\n\t\t\t}\n\t\t\treturn pr[r];\n\t\t}\n\n\t\tbool is_prime(int\
-    \ n) const {\n\t\t\tif(n<2) return false;\n\t\t\treturn div[n]==n;\n\t\t}\n\n\t\
-    \tvector<pair<int,int>> prime_factors(int n) const {\n\t\t\tvector<pair<int,int>>\
-    \ res;\n\t\t\tint x = n;\n\t\t\twhile(2<=x){\n\t\t\t\tif(res.empty() || res.back().first!=div[x]){\n\
-    \t\t\t\t\tres.push_back({div[x], 1});\n\t\t\t\t}else{\n\t\t\t\t\tres.back().second++;\n\
-    \t\t\t\t}\n\t\t\t\tx /= div[x];\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n\n\t\tvector<int>\
-    \ get_divisors(int n) const {\n\t\t\tvector<int> res = {1};\n\t\t\tauto pf = prime_factors(n);\n\
-    \t\t\tfor(auto p:pf){\n\t\t\t\tint s=(int)res.size();\n\t\t\t\tfor(int i=0; i<s;\
-    \ i++){\n\t\t\t\t\tint m = 1;\n\t\t\t\t\tfor(int j=0; j<(int)p.second; j++){\n\
-    \t\t\t\t\t\tm *= p.first;\n\t\t\t\t\t\tres.push_back(res[i]*m);\n\t\t\t\t\t}\n\
-    \t\t\t\t}\n\t\t\t}\n\t\t\tsort(res.begin(), res.end());\n\t\t\treturn res;\n\t\
-    \t}\n};\n"
+  bundledCode: "#line 2 \"math/sieve_of_eratosthenes.hpp\"\n\nclass SieveOfEratosthenes\
+    \ {\n private:\n  int siz;\n  vector<int> div, pr, cnt;\n\n public:\n  SieveOfEratosthenes(int\
+    \ n) : siz(n), div(n + 1), pr(0), cnt(n + 1) {\n    div[1] = 1;\n    for (int\
+    \ i = 2; i <= n; i++) {\n      if (div[i] != 0) continue;\n      pr.push_back(i);\n\
+    \      for (int j = i; j <= n; j += i) {\n        if (div[j] == 0) div[j] = i;\n\
+    \        cnt[j]++;\n      }\n    }\n  }\n\n  int nth_prime(int n) const { return\
+    \ pr[n]; }\n\n  int count_prime(int n) const {\n    if (n < 2) return 0;\n   \
+    \ return cnt[n];\n  }\n\n  int count_divisors(int n) const {\n    auto f = prime_factors(n);\n\
+    \    int res = 1;\n    for (auto p : f) {\n      res *= (1 + p.second);\n    }\n\
+    \    return res;\n  }\n\n  int totient(int n) const {\n    auto f = prime_factors(n);\n\
+    \    int res = n;\n    for (auto p : f) {\n      res /= p.first;\n    }\n    for\
+    \ (auto p : f) {\n      res *= p.first - 1;\n    }\n    return res;\n  }\n\n \
+    \ int prev_prime(int n) const {\n    int l = 0, r = pr.size();\n    while (r -\
+    \ l > 1) {\n      int m = (l + r) / 2;\n      if (pr[m] < n)\n        l = m;\n\
+    \      else\n        r = m;\n    }\n    return pr[l];\n  }\n\n  int next_prime(int\
+    \ n) const {\n    int l = 0, r = pr.size();\n    while (r - l > 1) {\n      int\
+    \ m = (l + r) / 2;\n      if (pr[m] <= n)\n        l = m;\n      else\n      \
+    \  r = m;\n    }\n    return pr[r];\n  }\n\n  bool is_prime(int n) const {\n \
+    \   if (n < 2) return false;\n    return div[n] == n;\n  }\n\n  vector<pair<int,\
+    \ int>> prime_factors(int n) const {\n    vector<pair<int, int>> res;\n    int\
+    \ x = n;\n    while (2 <= x) {\n      if (res.empty() || res.back().first != div[x])\
+    \ {\n        res.push_back({div[x], 1});\n      } else {\n        res.back().second++;\n\
+    \      }\n      x /= div[x];\n    }\n    return res;\n  }\n\n  vector<int> get_divisors(int\
+    \ n) const {\n    vector<int> res = {1};\n    auto pf = prime_factors(n);\n  \
+    \  for (auto p : pf) {\n      int s = (int)res.size();\n      for (int i = 0;\
+    \ i < s; i++) {\n        int m = 1;\n        for (int j = 0; j < (int)p.second;\
+    \ j++) {\n          m *= p.first;\n          res.push_back(res[i] * m);\n    \
+    \    }\n      }\n    }\n    sort(res.begin(), res.end());\n    return res;\n \
+    \ }\n};\n"
+  code: "#pragma once\n\nclass SieveOfEratosthenes {\n private:\n  int siz;\n  vector<int>\
+    \ div, pr, cnt;\n\n public:\n  SieveOfEratosthenes(int n) : siz(n), div(n + 1),\
+    \ pr(0), cnt(n + 1) {\n    div[1] = 1;\n    for (int i = 2; i <= n; i++) {\n \
+    \     if (div[i] != 0) continue;\n      pr.push_back(i);\n      for (int j = i;\
+    \ j <= n; j += i) {\n        if (div[j] == 0) div[j] = i;\n        cnt[j]++;\n\
+    \      }\n    }\n  }\n\n  int nth_prime(int n) const { return pr[n]; }\n\n  int\
+    \ count_prime(int n) const {\n    if (n < 2) return 0;\n    return cnt[n];\n \
+    \ }\n\n  int count_divisors(int n) const {\n    auto f = prime_factors(n);\n \
+    \   int res = 1;\n    for (auto p : f) {\n      res *= (1 + p.second);\n    }\n\
+    \    return res;\n  }\n\n  int totient(int n) const {\n    auto f = prime_factors(n);\n\
+    \    int res = n;\n    for (auto p : f) {\n      res /= p.first;\n    }\n    for\
+    \ (auto p : f) {\n      res *= p.first - 1;\n    }\n    return res;\n  }\n\n \
+    \ int prev_prime(int n) const {\n    int l = 0, r = pr.size();\n    while (r -\
+    \ l > 1) {\n      int m = (l + r) / 2;\n      if (pr[m] < n)\n        l = m;\n\
+    \      else\n        r = m;\n    }\n    return pr[l];\n  }\n\n  int next_prime(int\
+    \ n) const {\n    int l = 0, r = pr.size();\n    while (r - l > 1) {\n      int\
+    \ m = (l + r) / 2;\n      if (pr[m] <= n)\n        l = m;\n      else\n      \
+    \  r = m;\n    }\n    return pr[r];\n  }\n\n  bool is_prime(int n) const {\n \
+    \   if (n < 2) return false;\n    return div[n] == n;\n  }\n\n  vector<pair<int,\
+    \ int>> prime_factors(int n) const {\n    vector<pair<int, int>> res;\n    int\
+    \ x = n;\n    while (2 <= x) {\n      if (res.empty() || res.back().first != div[x])\
+    \ {\n        res.push_back({div[x], 1});\n      } else {\n        res.back().second++;\n\
+    \      }\n      x /= div[x];\n    }\n    return res;\n  }\n\n  vector<int> get_divisors(int\
+    \ n) const {\n    vector<int> res = {1};\n    auto pf = prime_factors(n);\n  \
+    \  for (auto p : pf) {\n      int s = (int)res.size();\n      for (int i = 0;\
+    \ i < s; i++) {\n        int m = 1;\n        for (int j = 0; j < (int)p.second;\
+    \ j++) {\n          m *= p.first;\n          res.push_back(res[i] * m);\n    \
+    \    }\n      }\n    }\n    sort(res.begin(), res.end());\n    return res;\n \
+    \ }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: math/sieve_of_eratosthenes.hpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/sieve_of_eratosthenes.hpp

@@ -17,33 +17,33 @@ data:
   bundledCode: "#line 1 \"verify/yosupo/double_ended_priority_queue.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\n\n\
     #include <iostream>\n#include <set>\nusing namespace std;\n\n#line 2 \"data_structure/double_ended_priority_queue.hpp\"\
-    \n\ntemplate<class T,class C=less<T>>\nclass DoubleEndedPriorityQueue: public\
-    \ multiset<T,C>{\n\tpublic:\n\t\tDoubleEndedPriorityQueue():\n\t\t\tmultiset<T>(){}\n\
-    \n\t\tvoid push(T val){\n\t\t\tthis->insert(val);\n\t\t}\n\n\t\tT min() const\
-    \ {\n\t\t\treturn *(this->begin());\n\t\t}\n\n\t\tT max() const {\n\t\t\treturn\
-    \ *(--(this->end()));\n\t\t}\n\n\t\tvoid pop_min(){\n\t\t\tthis->erase(this->begin());\n\
-    \t\t}\n\n\t\tvoid pop_max(){\n\t\t\tthis->erase(--(this->end()));\n\t\t}\n};\n\
-    #line 8 \"verify/yosupo/double_ended_priority_queue.test.cpp\"\n\nint main(){\n\
-    \tint N, Q;\n\tcin >> N >> Q;\n\tDoubleEndedPriorityQueue<long long> que;\n\t\
-    for(int i=0; i<N; i++){\n\t\tlong long s;\n\t\tcin >> s;\n\t\tque.push(s);\n\t\
-    }\n\n\tfor(;Q--;){\n\t\tint t;\n\t\tcin >> t;\n\t\tif(t==0){\n\t\t\tlong long\
-    \ x;\n\t\t\tcin >> x;\n\t\t\tque.push(x);\n\t\t}else if(t==1){\n\t\t\tcout <<\
-    \ que.min() << endl;\n\t\t\tque.pop_min();\n\t\t}else{\n\t\t\tcout << que.max()\
-    \ << endl;\n\t\t\tque.pop_max();\n\t\t}\n\t}\n}\n"
+    \n\ntemplate <class T, class C = less<T>>\nclass DoubleEndedPriorityQueue : public\
+    \ multiset<T, C> {\n public:\n  DoubleEndedPriorityQueue() : multiset<T>() {}\n\
+    \n  void push(T val) { this->insert(val); }\n\n  T min() const { return *(this->begin());\
+    \ }\n\n  T max() const { return *(--(this->end())); }\n\n  void pop_min() { this->erase(this->begin());\
+    \ }\n\n  void pop_max() { this->erase(--(this->end())); }\n};\n#line 8 \"verify/yosupo/double_ended_priority_queue.test.cpp\"\
+    \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  DoubleEndedPriorityQueue<long\
+    \ long> que;\n  for (int i = 0; i < N; i++) {\n    long long s;\n    cin >> s;\n\
+    \    que.push(s);\n  }\n\n  for (; Q--;) {\n    int t;\n    cin >> t;\n    if\
+    \ (t == 0) {\n      long long x;\n      cin >> x;\n      que.push(x);\n    } else\
+    \ if (t == 1) {\n      cout << que.min() << endl;\n      que.pop_min();\n    }\
+    \ else {\n      cout << que.max() << endl;\n      que.pop_max();\n    }\n  }\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/double_ended_priority_queue\"\
     \n\n#include <iostream>\n#include <set>\nusing namespace std;\n\n#include \"../../data_structure/double_ended_priority_queue.hpp\"\
-    \n\nint main(){\n\tint N, Q;\n\tcin >> N >> Q;\n\tDoubleEndedPriorityQueue<long\
-    \ long> que;\n\tfor(int i=0; i<N; i++){\n\t\tlong long s;\n\t\tcin >> s;\n\t\t\
-    que.push(s);\n\t}\n\n\tfor(;Q--;){\n\t\tint t;\n\t\tcin >> t;\n\t\tif(t==0){\n\
-    \t\t\tlong long x;\n\t\t\tcin >> x;\n\t\t\tque.push(x);\n\t\t}else if(t==1){\n\
-    \t\t\tcout << que.min() << endl;\n\t\t\tque.pop_min();\n\t\t}else{\n\t\t\tcout\
-    \ << que.max() << endl;\n\t\t\tque.pop_max();\n\t\t}\n\t}\n}\n"
+    \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  DoubleEndedPriorityQueue<long\
+    \ long> que;\n  for (int i = 0; i < N; i++) {\n    long long s;\n    cin >> s;\n\
+    \    que.push(s);\n  }\n\n  for (; Q--;) {\n    int t;\n    cin >> t;\n    if\
+    \ (t == 0) {\n      long long x;\n      cin >> x;\n      que.push(x);\n    } else\
+    \ if (t == 1) {\n      cout << que.min() << endl;\n      que.pop_min();\n    }\
+    \ else {\n      cout << que.max() << endl;\n      que.pop_max();\n    }\n  }\n\
+    }\n"
   dependsOn:
   - data_structure/double_ended_priority_queue.hpp
   isVerificationFile: true
   path: verify/yosupo/double_ended_priority_queue.test.cpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/double_ended_priority_queue.test.cpp

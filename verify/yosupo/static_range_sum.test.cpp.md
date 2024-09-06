@@ -17,37 +17,36 @@ data:
   bundledCode: "#line 1 \"verify/yosupo/static_range_sum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include <iostream>\n\
     #include <vector>\nusing namespace std;\n\n#line 2 \"data_structure/segment_tree.hpp\"\
-    \n\ntemplate<class S, S (*op)(S,S), S (*e)()>\nclass SegmentTree{\n\tprivate:\n\
-    \t\tint n;\n\t\tvector<S> v;\n\n\t\tvoid update(int i){\n\t\t\tv[i] = op(v[i<<1],\
-    \ v[(i<<1)|1]);\n\t\t}\n\n\tpublic:\n\t\tSegmentTree():SegmentTree(0){}\n\t\t\
-    SegmentTree(int _n):SegmentTree(vector<S>(_n, e())){}\n\t\tSegmentTree(const vector<S>\
-    \ &_v){\n\t\t\tn = (int)_v.size();\n\t\t\tv.assign(2*n, e());\n\t\t\tfor(int i=0;\
-    \ i<n; i++) v[n+i] = _v[i];\n\t\t\tfor(int i=n-1; i>=1; i--) update(i);\n\t\t\
-    }\n\n\t\tS get(int i) const {\n\t\t\ti += n;\n\t\t\treturn v[i];\n\t\t}\n\n\t\t\
-    S prod(int l, int r) const {\n\t\t\tl += n, r += n;\n\t\t\tS v_l = e(), v_r =\
-    \ e();\n\t\t\twhile(l<r){\n\t\t\t\tif(l&1) v_l = op(v_l, v[l++]);\n\t\t\t\tif(r&1)\
-    \ v_r = op(v[--r], v_r);\n\t\t\t\tl >>= 1, r >>= 1;\n\t\t\t}\n\t\t\treturn op(v_l,\
-    \ v_r);\n\t\t}\n\n\t\tvoid set(int i, S x){\n\t\t\ti += n;\n\t\t\tv[i] = x;\n\t\
-    \t\twhile(1<i){\n\t\t\t\ti >>= 1;\n\t\t\t\tupdate(i);\n\t\t\t}\n\t\t}\n};\n#line\
-    \ 8 \"verify/yosupo/static_range_sum.test.cpp\"\n\nlong long op(long long a, long\
-    \ long b){\n\treturn a+b;\n}\n\nlong long e(){\n\treturn 0LL;\n}\n\nint main(){\n\
-    \tint N, Q;\n\tcin >> N >> Q;\n\tvector<long long> A(N);\n\tfor(int i=0; i<N;\
-    \ i++){\n\t\tcin >> A[i];\n\t}\n\n\tSegmentTree<long long, op, e> seg(A);\n\t\
-    for(;Q--;){\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\tcout << seg.prod(l,r) << endl;\n\
-    \t}\n}\n"
+    \n\ntemplate <class S, S (*op)(S, S), S (*e)()>\nclass SegmentTree {\n private:\n\
+    \  int n;\n  vector<S> v;\n\n  void update(int i) { v[i] = op(v[i << 1], v[(i\
+    \ << 1) | 1]); }\n\n public:\n  SegmentTree() : SegmentTree(0) {}\n  SegmentTree(int\
+    \ _n) : SegmentTree(vector<S>(_n, e())) {}\n  SegmentTree(const vector<S> &_v)\
+    \ {\n    n = (int)_v.size();\n    v.assign(2 * n, e());\n    for (int i = 0; i\
+    \ < n; i++) v[n + i] = _v[i];\n    for (int i = n - 1; i >= 1; i--) update(i);\n\
+    \  }\n\n  S get(int i) const {\n    i += n;\n    return v[i];\n  }\n\n  S prod(int\
+    \ l, int r) const {\n    l += n, r += n;\n    S v_l = e(), v_r = e();\n    while\
+    \ (l < r) {\n      if (l & 1) v_l = op(v_l, v[l++]);\n      if (r & 1) v_r = op(v[--r],\
+    \ v_r);\n      l >>= 1, r >>= 1;\n    }\n    return op(v_l, v_r);\n  }\n\n  void\
+    \ set(int i, S x) {\n    i += n;\n    v[i] = x;\n    while (1 < i) {\n      i\
+    \ >>= 1;\n      update(i);\n    }\n  }\n};\n#line 8 \"verify/yosupo/static_range_sum.test.cpp\"\
+    \n\nlong long op(long long a, long long b) { return a + b; }\n\nlong long e()\
+    \ { return 0LL; }\n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  vector<long\
+    \ long> A(N);\n  for (int i = 0; i < N; i++) {\n    cin >> A[i];\n  }\n\n  SegmentTree<long\
+    \ long, op, e> seg(A);\n  for (; Q--;) {\n    int l, r;\n    cin >> l >> r;\n\
+    \    cout << seg.prod(l, r) << endl;\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n\
     #include <iostream>\n#include <vector>\nusing namespace std;\n\n#include \"../../data_structure/segment_tree.hpp\"\
-    \n\nlong long op(long long a, long long b){\n\treturn a+b;\n}\n\nlong long e(){\n\
-    \treturn 0LL;\n}\n\nint main(){\n\tint N, Q;\n\tcin >> N >> Q;\n\tvector<long\
-    \ long> A(N);\n\tfor(int i=0; i<N; i++){\n\t\tcin >> A[i];\n\t}\n\n\tSegmentTree<long\
-    \ long, op, e> seg(A);\n\tfor(;Q--;){\n\t\tint l, r;\n\t\tcin >> l >> r;\n\t\t\
-    cout << seg.prod(l,r) << endl;\n\t}\n}\n"
+    \n\nlong long op(long long a, long long b) { return a + b; }\n\nlong long e()\
+    \ { return 0LL; }\n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  vector<long\
+    \ long> A(N);\n  for (int i = 0; i < N; i++) {\n    cin >> A[i];\n  }\n\n  SegmentTree<long\
+    \ long, op, e> seg(A);\n  for (; Q--;) {\n    int l, r;\n    cin >> l >> r;\n\
+    \    cout << seg.prod(l, r) << endl;\n  }\n}\n"
   dependsOn:
   - data_structure/segment_tree.hpp
   isVerificationFile: true
   path: verify/yosupo/static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/static_range_sum.test.cpp

@@ -19,81 +19,81 @@ data:
     - https://judge.yosupo.jp/problem/vertex_add_path_sum
   bundledCode: "#line 1 \"verify/yosupo/vertex_add_path_sum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\n#include <bits/stdc++.h>\n\
-    using namespace std;\n\n#line 2 \"data_structure/segment_tree.hpp\"\n\ntemplate<class\
-    \ S, S (*op)(S,S), S (*e)()>\nclass SegmentTree{\n\tprivate:\n\t\tint n;\n\t\t\
-    vector<S> v;\n\n\t\tvoid update(int i){\n\t\t\tv[i] = op(v[i<<1], v[(i<<1)|1]);\n\
-    \t\t}\n\n\tpublic:\n\t\tSegmentTree():SegmentTree(0){}\n\t\tSegmentTree(int _n):SegmentTree(vector<S>(_n,\
-    \ e())){}\n\t\tSegmentTree(const vector<S> &_v){\n\t\t\tn = (int)_v.size();\n\t\
-    \t\tv.assign(2*n, e());\n\t\t\tfor(int i=0; i<n; i++) v[n+i] = _v[i];\n\t\t\t\
-    for(int i=n-1; i>=1; i--) update(i);\n\t\t}\n\n\t\tS get(int i) const {\n\t\t\t\
-    i += n;\n\t\t\treturn v[i];\n\t\t}\n\n\t\tS prod(int l, int r) const {\n\t\t\t\
-    l += n, r += n;\n\t\t\tS v_l = e(), v_r = e();\n\t\t\twhile(l<r){\n\t\t\t\tif(l&1)\
-    \ v_l = op(v_l, v[l++]);\n\t\t\t\tif(r&1) v_r = op(v[--r], v_r);\n\t\t\t\tl >>=\
-    \ 1, r >>= 1;\n\t\t\t}\n\t\t\treturn op(v_l, v_r);\n\t\t}\n\n\t\tvoid set(int\
-    \ i, S x){\n\t\t\ti += n;\n\t\t\tv[i] = x;\n\t\t\twhile(1<i){\n\t\t\t\ti >>= 1;\n\
-    \t\t\t\tupdate(i);\n\t\t\t}\n\t\t}\n};\n#line 2 \"tree/heavy_light_decomposition.hpp\"\
-    \n\nclass HeavyLightDecomposition{\n\tprivate:\n\t\tbool init;\n\t\tint n;\n\t\
-    \tvector<vector<int>> g;\n\t\tvector<int> siz, par, dep, top, in, out;\n\n\t\t\
-    void dfs_siz(int v, int p){\n\t\t\tpar[v] = p;\n\t\t\tfor(int &nv:g[v]){\n\t\t\
-    \t\tif(nv==p){\n\t\t\t\t\tif(nv==g[v].back()) break;\n\t\t\t\t\tswap(nv, g[v].back());\n\
-    \t\t\t\t}\n\t\t\t\tdfs_siz(nv, v);\n\t\t\t\tsiz[v] += siz[nv];\n\t\t\t\tif(siz[nv]>siz[g[v][0]]){\n\
-    \t\t\t\t\tswap(nv, g[v][0]);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tvoid dfs_hld(int\
-    \ v, int p, int &i){\n\t\t\tin[v] = i++;\n\t\t\tfor(int &nv:g[v]){\n\t\t\t\tif(nv==p)\
-    \ continue;\n\t\t\t\tdep[nv] = dep[v]+1;\n\t\t\t\tif(nv==g[v][0]) top[nv] = top[v];\n\
-    \t\t\t\telse top[nv] = nv;\n\t\t\t\tdfs_hld(nv, v, i);\n\t\t\t}\n\t\t\tout[v]\
-    \ = i;\n\t\t}\n\n\tpublic:\n\t\tHeavyLightDecomposition(): HeavyLightDecomposition(0)\
-    \ {}\n\t\tHeavyLightDecomposition(const int _n):\n\t\t\tinit(false), n(_n), g(_n),\
-    \ siz(_n, 1), par(_n, -1),\n\t\t\tdep(_n), top(_n), in(_n), out(_n){}\n\n\t\t\
-    void add_edge(int u, int v){\n\t\t\tassert(!init);\n\n\t\t\tg[u].push_back(v);\n\
-    \t\t\tg[v].push_back(u);\n\t\t}\n\n\t\tvoid build(){\n\t\t\tassert(!init);\n\t\
-    \t\tinit = true;\n\n\t\t\tdfs_siz(0, -1);\n\t\t\tint i{};\n\t\t\tdfs_hld(0, -1,\
-    \ i);\n\t\t}\n\n\t\tint depth(int v) const {\n\t\t\tassert(init);\n\n\t\t\treturn\
-    \ dep[v];\n\t\t}\n\n\t\tint lca(int u, int v) const {\n\t\t\tassert(init);\n\n\
-    \t\t\twhile(true){\n\t\t\t\tif(in[u]>in[v]) swap(u, v);\n\t\t\t\tif(top[u]==top[v])\
-    \ return u;\n\t\t\t\tv = par[top[v]];\n\t\t\t}\n\t\t}\n\n\t\tvoid node_query(int\
-    \ v, const function<void(int)> &func) const {\n\t\t\tassert(init);\n\n\t\t\tfunc(in[v]);\n\
-    \t\t}\n\n\t\tvoid subtree_query(int v, const function<void(int,int)> &func) const\
-    \ {\n\t\t\tassert(init);\n\n\t\t\tfunc(in[v], out[v]);\n\t\t}\n\n\t\tvoid path_query(int\
-    \ u, int v, const function<void(int,int)> &func) const {\n\t\t\tassert(init);\n\
-    \n\t\t\twhile(true){\n\t\t\t\tif(in[u]>in[v]) swap(u, v);\n\t\t\t\tfunc(max(in[u],\
-    \ in[top[v]]), in[v]+1);\n\t\t\t\tif(top[u]==top[v]) break;\n\t\t\t\tv = par[top[v]];\n\
-    \t\t\t}\n\t\t}\n};\n#line 8 \"verify/yosupo/vertex_add_path_sum.test.cpp\"\n\n\
-    long long op(long long a, long long b){\n\treturn a+b;\n}\n\nlong long e(){\n\t\
-    return 0LL;\n}\n\nint main(){\n\tint N, Q;\n\tcin >> N >> Q;\n\tvector<int> A(N);\n\
-    \tfor(int i=0; i<N; i++){\n\t\tcin >> A[i];\n\t}\n\n\tHeavyLightDecomposition\
-    \ hld(N);\n\tfor(int i=0; i<N-1; i++){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\t\
-    hld.add_edge(u, v);\n\t}\n\n\thld.build();\n\n\tSegmentTree<long long, op, e>\
-    \ seg(N);\n\tfor(int i=0; i<N; i++){\n\t\thld.node_query(i, [&](int j) -> void{\n\
-    \t\t\t\tseg.set(j, A[i]);\n\t\t\t\treturn;\n\t\t\t\t});\n\t}\n\n\tfor(;Q--;){\n\
-    \t\tint t;\n\t\tcin >> t;\n\t\tif(t==0){\n\t\t\tint i;\n\t\t\tcin >> i;\n\t\t\t\
-    long long x;\n\t\t\tcin >> x;\n\t\t\thld.node_query(i, [&](int j) -> void{\n\t\
-    \t\t\t\tseg.set(j, seg.get(j)+x);\n\t\t\t\t\treturn;\n\t\t\t\t\t});\n\t\t}else{\n\
-    \t\t\tint u, v;\n\t\t\tcin >> u >> v;\n\t\t\tlong long ans{};\n\t\t\thld.path_query(u,\
-    \ v, [&](int l, int r) -> void{\n\t\t\t\t\tans += seg.prod(l, r);\n\t\t\t\t\t\
-    return;\n\t\t\t\t\t});\n\t\t\tcout << ans << endl;\n\t\t}\n\t}\n}\n"
+    using namespace std;\n\n#line 2 \"data_structure/segment_tree.hpp\"\n\ntemplate\
+    \ <class S, S (*op)(S, S), S (*e)()>\nclass SegmentTree {\n private:\n  int n;\n\
+    \  vector<S> v;\n\n  void update(int i) { v[i] = op(v[i << 1], v[(i << 1) | 1]);\
+    \ }\n\n public:\n  SegmentTree() : SegmentTree(0) {}\n  SegmentTree(int _n) :\
+    \ SegmentTree(vector<S>(_n, e())) {}\n  SegmentTree(const vector<S> &_v) {\n \
+    \   n = (int)_v.size();\n    v.assign(2 * n, e());\n    for (int i = 0; i < n;\
+    \ i++) v[n + i] = _v[i];\n    for (int i = n - 1; i >= 1; i--) update(i);\n  }\n\
+    \n  S get(int i) const {\n    i += n;\n    return v[i];\n  }\n\n  S prod(int l,\
+    \ int r) const {\n    l += n, r += n;\n    S v_l = e(), v_r = e();\n    while\
+    \ (l < r) {\n      if (l & 1) v_l = op(v_l, v[l++]);\n      if (r & 1) v_r = op(v[--r],\
+    \ v_r);\n      l >>= 1, r >>= 1;\n    }\n    return op(v_l, v_r);\n  }\n\n  void\
+    \ set(int i, S x) {\n    i += n;\n    v[i] = x;\n    while (1 < i) {\n      i\
+    \ >>= 1;\n      update(i);\n    }\n  }\n};\n#line 2 \"tree/heavy_light_decomposition.hpp\"\
+    \n\nclass HeavyLightDecomposition {\n private:\n  bool init;\n  int n;\n  vector<vector<int>>\
+    \ g;\n  vector<int> siz, par, dep, top, in, out;\n\n  void dfs_siz(int v, int\
+    \ p) {\n    par[v] = p;\n    for (int &nv : g[v]) {\n      if (nv == p) {\n  \
+    \      if (nv == g[v].back()) break;\n        swap(nv, g[v].back());\n      }\n\
+    \      dfs_siz(nv, v);\n      siz[v] += siz[nv];\n      if (siz[nv] > siz[g[v][0]])\
+    \ {\n        swap(nv, g[v][0]);\n      }\n    }\n  }\n\n  void dfs_hld(int v,\
+    \ int p, int &i) {\n    in[v] = i++;\n    for (int &nv : g[v]) {\n      if (nv\
+    \ == p) continue;\n      dep[nv] = dep[v] + 1;\n      if (nv == g[v][0])\n   \
+    \     top[nv] = top[v];\n      else\n        top[nv] = nv;\n      dfs_hld(nv,\
+    \ v, i);\n    }\n    out[v] = i;\n  }\n\n public:\n  HeavyLightDecomposition()\
+    \ : HeavyLightDecomposition(0) {}\n  HeavyLightDecomposition(const int _n)\n \
+    \     : init(false),\n        n(_n),\n        g(_n),\n        siz(_n, 1),\n  \
+    \      par(_n, -1),\n        dep(_n),\n        top(_n),\n        in(_n),\n   \
+    \     out(_n) {}\n\n  void add_edge(int u, int v) {\n    assert(!init);\n\n  \
+    \  g[u].push_back(v);\n    g[v].push_back(u);\n  }\n\n  void build() {\n    assert(!init);\n\
+    \    init = true;\n\n    dfs_siz(0, -1);\n    int i{};\n    dfs_hld(0, -1, i);\n\
+    \  }\n\n  int depth(int v) const {\n    assert(init);\n\n    return dep[v];\n\
+    \  }\n\n  int lca(int u, int v) const {\n    assert(init);\n\n    while (true)\
+    \ {\n      if (in[u] > in[v]) swap(u, v);\n      if (top[u] == top[v]) return\
+    \ u;\n      v = par[top[v]];\n    }\n  }\n\n  void node_query(int v, const function<void(int)>\
+    \ &func) const {\n    assert(init);\n\n    func(in[v]);\n  }\n\n  void subtree_query(int\
+    \ v, const function<void(int, int)> &func) const {\n    assert(init);\n\n    func(in[v],\
+    \ out[v]);\n  }\n\n  void path_query(int u, int v, const function<void(int, int)>\
+    \ &func) const {\n    assert(init);\n\n    while (true) {\n      if (in[u] > in[v])\
+    \ swap(u, v);\n      func(max(in[u], in[top[v]]), in[v] + 1);\n      if (top[u]\
+    \ == top[v]) break;\n      v = par[top[v]];\n    }\n  }\n};\n#line 8 \"verify/yosupo/vertex_add_path_sum.test.cpp\"\
+    \n\nlong long op(long long a, long long b) { return a + b; }\n\nlong long e()\
+    \ { return 0LL; }\n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  vector<int>\
+    \ A(N);\n  for (int i = 0; i < N; i++) {\n    cin >> A[i];\n  }\n\n  HeavyLightDecomposition\
+    \ hld(N);\n  for (int i = 0; i < N - 1; i++) {\n    int u, v;\n    cin >> u >>\
+    \ v;\n    hld.add_edge(u, v);\n  }\n\n  hld.build();\n\n  SegmentTree<long long,\
+    \ op, e> seg(N);\n  for (int i = 0; i < N; i++) {\n    hld.node_query(i, [&](int\
+    \ j) -> void {\n      seg.set(j, A[i]);\n      return;\n    });\n  }\n\n  for\
+    \ (; Q--;) {\n    int t;\n    cin >> t;\n    if (t == 0) {\n      int i;\n   \
+    \   cin >> i;\n      long long x;\n      cin >> x;\n      hld.node_query(i, [&](int\
+    \ j) -> void {\n        seg.set(j, seg.get(j) + x);\n        return;\n      });\n\
+    \    } else {\n      int u, v;\n      cin >> u >> v;\n      long long ans{};\n\
+    \      hld.path_query(u, v, [&](int l, int r) -> void {\n        ans += seg.prod(l,\
+    \ r);\n        return;\n      });\n      cout << ans << endl;\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\
     \n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../data_structure/segment_tree.hpp\"\
     \n#include \"../../tree/heavy_light_decomposition.hpp\"\n\nlong long op(long long\
-    \ a, long long b){\n\treturn a+b;\n}\n\nlong long e(){\n\treturn 0LL;\n}\n\nint\
-    \ main(){\n\tint N, Q;\n\tcin >> N >> Q;\n\tvector<int> A(N);\n\tfor(int i=0;\
-    \ i<N; i++){\n\t\tcin >> A[i];\n\t}\n\n\tHeavyLightDecomposition hld(N);\n\tfor(int\
-    \ i=0; i<N-1; i++){\n\t\tint u, v;\n\t\tcin >> u >> v;\n\t\thld.add_edge(u, v);\n\
-    \t}\n\n\thld.build();\n\n\tSegmentTree<long long, op, e> seg(N);\n\tfor(int i=0;\
-    \ i<N; i++){\n\t\thld.node_query(i, [&](int j) -> void{\n\t\t\t\tseg.set(j, A[i]);\n\
-    \t\t\t\treturn;\n\t\t\t\t});\n\t}\n\n\tfor(;Q--;){\n\t\tint t;\n\t\tcin >> t;\n\
-    \t\tif(t==0){\n\t\t\tint i;\n\t\t\tcin >> i;\n\t\t\tlong long x;\n\t\t\tcin >>\
-    \ x;\n\t\t\thld.node_query(i, [&](int j) -> void{\n\t\t\t\t\tseg.set(j, seg.get(j)+x);\n\
-    \t\t\t\t\treturn;\n\t\t\t\t\t});\n\t\t}else{\n\t\t\tint u, v;\n\t\t\tcin >> u\
-    \ >> v;\n\t\t\tlong long ans{};\n\t\t\thld.path_query(u, v, [&](int l, int r)\
-    \ -> void{\n\t\t\t\t\tans += seg.prod(l, r);\n\t\t\t\t\treturn;\n\t\t\t\t\t});\n\
-    \t\t\tcout << ans << endl;\n\t\t}\n\t}\n}\n"
+    \ a, long long b) { return a + b; }\n\nlong long e() { return 0LL; }\n\nint main()\
+    \ {\n  int N, Q;\n  cin >> N >> Q;\n  vector<int> A(N);\n  for (int i = 0; i <\
+    \ N; i++) {\n    cin >> A[i];\n  }\n\n  HeavyLightDecomposition hld(N);\n  for\
+    \ (int i = 0; i < N - 1; i++) {\n    int u, v;\n    cin >> u >> v;\n    hld.add_edge(u,\
+    \ v);\n  }\n\n  hld.build();\n\n  SegmentTree<long long, op, e> seg(N);\n  for\
+    \ (int i = 0; i < N; i++) {\n    hld.node_query(i, [&](int j) -> void {\n    \
+    \  seg.set(j, A[i]);\n      return;\n    });\n  }\n\n  for (; Q--;) {\n    int\
+    \ t;\n    cin >> t;\n    if (t == 0) {\n      int i;\n      cin >> i;\n      long\
+    \ long x;\n      cin >> x;\n      hld.node_query(i, [&](int j) -> void {\n   \
+    \     seg.set(j, seg.get(j) + x);\n        return;\n      });\n    } else {\n\
+    \      int u, v;\n      cin >> u >> v;\n      long long ans{};\n      hld.path_query(u,\
+    \ v, [&](int l, int r) -> void {\n        ans += seg.prod(l, r);\n        return;\n\
+    \      });\n      cout << ans << endl;\n    }\n  }\n}\n"
   dependsOn:
   - data_structure/segment_tree.hpp
   - tree/heavy_light_decomposition.hpp
   isVerificationFile: true
   path: verify/yosupo/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-08-18 22:40:10+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/vertex_add_path_sum.test.cpp

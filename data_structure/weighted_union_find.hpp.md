@@ -11,49 +11,46 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"data_structure/weighted_union_find.hpp\"\n\ntemplate<class\
-    \ T> class WeightedUnionFind{\n\tprivate:\n\t\tint n, comp;\n\t\tvector<int> par,\
-    \ rank;\n\t\tvector<T> wei;\n\n\tpublic:\n\t\tWeightedUnionFind(const int _n=0,\
-    \ const T _e=0):\n\t\t\tn(_n), comp(_n), par(_n, -1), rank(_n), wei(n,_e){}\n\n\
-    \t\tint component() const {\n\t\t\treturn comp;\n\t\t}\n\n\t\tint size(int x){\n\
-    \t\t\treturn -par[leader(x)];\n\t\t}\n\n\t\tint leader(int x){\n\t\t\tif(par[x]<0)\
-    \ return x;\n\t\t\tint rx = leader(par[x]);\n\t\t\twei[x] += wei[par[x]];\n\t\t\
-    \treturn par[x] = rx;\n\t\t}\n\n\t\tT weight(int x){\n\t\t\tleader(x);\n\t\t\t\
-    return wei[x];\n\t\t}\n\n\t\tbool same(int x, int y){\n\t\t\treturn leader(x)==leader(y);\n\
-    \t\t}\n\n\t\tbool merge(int x, int y, T w){\n\t\t\tw += weight(x) - weight(y);\n\
-    \t\t\tx = leader(x), y = leader(y);\n\t\t\tif(x==y) return false;\n\t\t\tcomp--;\n\
-    \t\t\tif(rank[x]<rank[y]){\n\t\t\t\tswap(x, y);\n\t\t\t\tw = -w;\n\t\t\t}\n\t\t\
-    \tif(rank[x]==rank[y]) rank[x]++;\n\t\t\tpar[x] += par[y];\n\t\t\tpar[y] = x;\n\
-    \t\t\twei[y] = w;\n\t\t\treturn true;\n\t\t}\n\n\t\tT diff(int x, int y){\n\t\t\
-    \tassert(same(x, y));\n\t\t\treturn weight(y) - weight(x);\n\t\t}\n\n\t\tvector<vector<int>>\
-    \ groups(){\n\t\t\tvector<vector<int>> member(n), res;\n\t\t\tfor(int i=0; i<n;\
-    \ i++){\n\t\t\t\tmember[leader(i)].push_back(i);\n\t\t\t}\n\t\t\tfor(int i=0;\
-    \ i<n; i++){\n\t\t\t\tif(!member[i].empty()){\n\t\t\t\t\tres.push_back(member[i]);\n\
-    \t\t\t\t}\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n};\n"
-  code: "#pragma once\n\ntemplate<class T> class WeightedUnionFind{\n\tprivate:\n\t\
-    \tint n, comp;\n\t\tvector<int> par, rank;\n\t\tvector<T> wei;\n\n\tpublic:\n\t\
-    \tWeightedUnionFind(const int _n=0, const T _e=0):\n\t\t\tn(_n), comp(_n), par(_n,\
-    \ -1), rank(_n), wei(n,_e){}\n\n\t\tint component() const {\n\t\t\treturn comp;\n\
-    \t\t}\n\n\t\tint size(int x){\n\t\t\treturn -par[leader(x)];\n\t\t}\n\n\t\tint\
-    \ leader(int x){\n\t\t\tif(par[x]<0) return x;\n\t\t\tint rx = leader(par[x]);\n\
-    \t\t\twei[x] += wei[par[x]];\n\t\t\treturn par[x] = rx;\n\t\t}\n\n\t\tT weight(int\
-    \ x){\n\t\t\tleader(x);\n\t\t\treturn wei[x];\n\t\t}\n\n\t\tbool same(int x, int\
-    \ y){\n\t\t\treturn leader(x)==leader(y);\n\t\t}\n\n\t\tbool merge(int x, int\
-    \ y, T w){\n\t\t\tw += weight(x) - weight(y);\n\t\t\tx = leader(x), y = leader(y);\n\
-    \t\t\tif(x==y) return false;\n\t\t\tcomp--;\n\t\t\tif(rank[x]<rank[y]){\n\t\t\t\
-    \tswap(x, y);\n\t\t\t\tw = -w;\n\t\t\t}\n\t\t\tif(rank[x]==rank[y]) rank[x]++;\n\
-    \t\t\tpar[x] += par[y];\n\t\t\tpar[y] = x;\n\t\t\twei[y] = w;\n\t\t\treturn true;\n\
-    \t\t}\n\n\t\tT diff(int x, int y){\n\t\t\tassert(same(x, y));\n\t\t\treturn weight(y)\
-    \ - weight(x);\n\t\t}\n\n\t\tvector<vector<int>> groups(){\n\t\t\tvector<vector<int>>\
-    \ member(n), res;\n\t\t\tfor(int i=0; i<n; i++){\n\t\t\t\tmember[leader(i)].push_back(i);\n\
-    \t\t\t}\n\t\t\tfor(int i=0; i<n; i++){\n\t\t\t\tif(!member[i].empty()){\n\t\t\t\
-    \t\tres.push_back(member[i]);\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n\
-    };\n"
+  bundledCode: "#line 2 \"data_structure/weighted_union_find.hpp\"\n\ntemplate <class\
+    \ T>\nclass WeightedUnionFind {\n private:\n  int n, comp;\n  vector<int> par,\
+    \ rank;\n  vector<T> wei;\n\n public:\n  WeightedUnionFind(const int _n = 0, const\
+    \ T _e = 0)\n      : n(_n), comp(_n), par(_n, -1), rank(_n), wei(n, _e) {}\n\n\
+    \  int component() const { return comp; }\n\n  int size(int x) { return -par[leader(x)];\
+    \ }\n\n  int leader(int x) {\n    if (par[x] < 0) return x;\n    int rx = leader(par[x]);\n\
+    \    wei[x] += wei[par[x]];\n    return par[x] = rx;\n  }\n\n  T weight(int x)\
+    \ {\n    leader(x);\n    return wei[x];\n  }\n\n  bool same(int x, int y) { return\
+    \ leader(x) == leader(y); }\n\n  bool merge(int x, int y, T w) {\n    w += weight(x)\
+    \ - weight(y);\n    x = leader(x), y = leader(y);\n    if (x == y) return false;\n\
+    \    comp--;\n    if (rank[x] < rank[y]) {\n      swap(x, y);\n      w = -w;\n\
+    \    }\n    if (rank[x] == rank[y]) rank[x]++;\n    par[x] += par[y];\n    par[y]\
+    \ = x;\n    wei[y] = w;\n    return true;\n  }\n\n  T diff(int x, int y) {\n \
+    \   assert(same(x, y));\n    return weight(y) - weight(x);\n  }\n\n  vector<vector<int>>\
+    \ groups() {\n    vector<vector<int>> member(n), res;\n    for (int i = 0; i <\
+    \ n; i++) {\n      member[leader(i)].push_back(i);\n    }\n    for (int i = 0;\
+    \ i < n; i++) {\n      if (!member[i].empty()) {\n        res.push_back(member[i]);\n\
+    \      }\n    }\n    return res;\n  }\n};\n"
+  code: "#pragma once\n\ntemplate <class T>\nclass WeightedUnionFind {\n private:\n\
+    \  int n, comp;\n  vector<int> par, rank;\n  vector<T> wei;\n\n public:\n  WeightedUnionFind(const\
+    \ int _n = 0, const T _e = 0)\n      : n(_n), comp(_n), par(_n, -1), rank(_n),\
+    \ wei(n, _e) {}\n\n  int component() const { return comp; }\n\n  int size(int\
+    \ x) { return -par[leader(x)]; }\n\n  int leader(int x) {\n    if (par[x] < 0)\
+    \ return x;\n    int rx = leader(par[x]);\n    wei[x] += wei[par[x]];\n    return\
+    \ par[x] = rx;\n  }\n\n  T weight(int x) {\n    leader(x);\n    return wei[x];\n\
+    \  }\n\n  bool same(int x, int y) { return leader(x) == leader(y); }\n\n  bool\
+    \ merge(int x, int y, T w) {\n    w += weight(x) - weight(y);\n    x = leader(x),\
+    \ y = leader(y);\n    if (x == y) return false;\n    comp--;\n    if (rank[x]\
+    \ < rank[y]) {\n      swap(x, y);\n      w = -w;\n    }\n    if (rank[x] == rank[y])\
+    \ rank[x]++;\n    par[x] += par[y];\n    par[y] = x;\n    wei[y] = w;\n    return\
+    \ true;\n  }\n\n  T diff(int x, int y) {\n    assert(same(x, y));\n    return\
+    \ weight(y) - weight(x);\n  }\n\n  vector<vector<int>> groups() {\n    vector<vector<int>>\
+    \ member(n), res;\n    for (int i = 0; i < n; i++) {\n      member[leader(i)].push_back(i);\n\
+    \    }\n    for (int i = 0; i < n; i++) {\n      if (!member[i].empty()) {\n \
+    \       res.push_back(member[i]);\n      }\n    }\n    return res;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/weighted_union_find.hpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/DSL_1_B.test.cpp

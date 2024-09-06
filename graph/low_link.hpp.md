@@ -14,50 +14,51 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/low_link.hpp\"\n\nclass LowLink{\n\tprivate:\n\t\t\
-    bool init;\n\t\tint n, comp;\n\t\tvector<vector<int>> g;\n\t\tvector<bool> seen;\n\
-    \t\tvector<int> ord, low, art;\n\t\tset<pair<int,int>> bri;\n\n\t\tvoid dfs(int\
-    \ v, int p, int &i){\n\t\t\tseen[v] = true;\n\t\t\tord[v] = low[v] = i++;\n\t\t\
-    \tfor(const int &nv:g[v]){\n\t\t\t\tif(seen[nv]){\n\t\t\t\t\tif(nv!=p){\n\t\t\t\
-    \t\t\tlow[v] = min(low[v], ord[nv]);\n\t\t\t\t\t}\n\t\t\t\t}else{\n\t\t\t\t\t\
-    dfs(nv, v, i);\n\t\t\t\t\tlow[v] = min(low[v], low[nv]);\n\t\t\t\t\tif(ord[v]<=low[nv])\
-    \ art[v]++;\n\t\t\t\t\tif(ord[v]<low[nv]) bri.insert(make_pair(min(v,nv),max(v,nv)));\n\
-    \t\t\t\t}\n\t\t\t}\n\t\t\tif(p==-1) art[v]--;\n\t\t}\n\n\tpublic:\n\t\tLowLink():\
-    \ LowLink(0) {}\n\t\tLowLink(const int _n):\n\t\t\tinit(false), n(_n), comp(0),\
-    \ g(_n), seen(_n), ord(_n), low(_n), art(_n){}\n\n\t\tvoid add_edge(int u, int\
-    \ v){\n\t\t\tassert(!init);\n\n\t\t\tg[u].push_back(v);\n\t\t\tg[v].push_back(u);\n\
-    \t\t}\n\n\t\tvoid build(){\n\t\t\tassert(!init);\n\t\t\tinit = true;\n\n\t\t\t\
-    for(int v=0; v<n; v++) if(!seen[v]){\n\t\t\t\tcomp++;\n\t\t\t\tint i{};\n\t\t\t\
-    \tdfs(v, -1, i);\n\t\t\t}\n\t\t}\n\n\t\tint component() const {\n\t\t\tassert(init);\n\
-    \n\t\t\treturn comp;\n\t\t}\n\n\t\tint get_art(int v) const {\n\t\t\tassert(init);\n\
-    \n\t\t\treturn art[v];\n\t\t}\n\n\t\tbool is_art(int v) const {\n\t\t\tassert(init);\n\
-    \n\t\t\treturn 0<get_art(v);\n\t\t}\n\n\t\tbool is_bridge(int u, int v) const\
-    \ {\n\t\t\tassert(init);\n\n\t\t\treturn bri.count(make_pair(min(u,v),max(u,v)));\n\
-    \t\t}\n};\n"
-  code: "#pragma once\n\nclass LowLink{\n\tprivate:\n\t\tbool init;\n\t\tint n, comp;\n\
-    \t\tvector<vector<int>> g;\n\t\tvector<bool> seen;\n\t\tvector<int> ord, low,\
-    \ art;\n\t\tset<pair<int,int>> bri;\n\n\t\tvoid dfs(int v, int p, int &i){\n\t\
-    \t\tseen[v] = true;\n\t\t\tord[v] = low[v] = i++;\n\t\t\tfor(const int &nv:g[v]){\n\
-    \t\t\t\tif(seen[nv]){\n\t\t\t\t\tif(nv!=p){\n\t\t\t\t\t\tlow[v] = min(low[v],\
-    \ ord[nv]);\n\t\t\t\t\t}\n\t\t\t\t}else{\n\t\t\t\t\tdfs(nv, v, i);\n\t\t\t\t\t\
-    low[v] = min(low[v], low[nv]);\n\t\t\t\t\tif(ord[v]<=low[nv]) art[v]++;\n\t\t\t\
-    \t\tif(ord[v]<low[nv]) bri.insert(make_pair(min(v,nv),max(v,nv)));\n\t\t\t\t}\n\
-    \t\t\t}\n\t\t\tif(p==-1) art[v]--;\n\t\t}\n\n\tpublic:\n\t\tLowLink(): LowLink(0)\
-    \ {}\n\t\tLowLink(const int _n):\n\t\t\tinit(false), n(_n), comp(0), g(_n), seen(_n),\
-    \ ord(_n), low(_n), art(_n){}\n\n\t\tvoid add_edge(int u, int v){\n\t\t\tassert(!init);\n\
-    \n\t\t\tg[u].push_back(v);\n\t\t\tg[v].push_back(u);\n\t\t}\n\n\t\tvoid build(){\n\
-    \t\t\tassert(!init);\n\t\t\tinit = true;\n\n\t\t\tfor(int v=0; v<n; v++) if(!seen[v]){\n\
-    \t\t\t\tcomp++;\n\t\t\t\tint i{};\n\t\t\t\tdfs(v, -1, i);\n\t\t\t}\n\t\t}\n\n\t\
-    \tint component() const {\n\t\t\tassert(init);\n\n\t\t\treturn comp;\n\t\t}\n\n\
-    \t\tint get_art(int v) const {\n\t\t\tassert(init);\n\n\t\t\treturn art[v];\n\t\
-    \t}\n\n\t\tbool is_art(int v) const {\n\t\t\tassert(init);\n\n\t\t\treturn 0<get_art(v);\n\
-    \t\t}\n\n\t\tbool is_bridge(int u, int v) const {\n\t\t\tassert(init);\n\n\t\t\
-    \treturn bri.count(make_pair(min(u,v),max(u,v)));\n\t\t}\n};\n"
+  bundledCode: "#line 2 \"graph/low_link.hpp\"\n\nclass LowLink {\n private:\n  bool\
+    \ init;\n  int n, comp;\n  vector<vector<int>> g;\n  vector<bool> seen;\n  vector<int>\
+    \ ord, low, art;\n  set<pair<int, int>> bri;\n\n  void dfs(int v, int p, int &i)\
+    \ {\n    seen[v] = true;\n    ord[v] = low[v] = i++;\n    for (const int &nv :\
+    \ g[v]) {\n      if (seen[nv]) {\n        if (nv != p) {\n          low[v] = min(low[v],\
+    \ ord[nv]);\n        }\n      } else {\n        dfs(nv, v, i);\n        low[v]\
+    \ = min(low[v], low[nv]);\n        if (ord[v] <= low[nv]) art[v]++;\n        if\
+    \ (ord[v] < low[nv]) bri.insert(make_pair(min(v, nv), max(v, nv)));\n      }\n\
+    \    }\n    if (p == -1) art[v]--;\n  }\n\n public:\n  LowLink() : LowLink(0)\
+    \ {}\n  LowLink(const int _n)\n      : init(false),\n        n(_n),\n        comp(0),\n\
+    \        g(_n),\n        seen(_n),\n        ord(_n),\n        low(_n),\n     \
+    \   art(_n) {}\n\n  void add_edge(int u, int v) {\n    assert(!init);\n\n    g[u].push_back(v);\n\
+    \    g[v].push_back(u);\n  }\n\n  void build() {\n    assert(!init);\n    init\
+    \ = true;\n\n    for (int v = 0; v < n; v++)\n      if (!seen[v]) {\n        comp++;\n\
+    \        int i{};\n        dfs(v, -1, i);\n      }\n  }\n\n  int component() const\
+    \ {\n    assert(init);\n\n    return comp;\n  }\n\n  int get_art(int v) const\
+    \ {\n    assert(init);\n\n    return art[v];\n  }\n\n  bool is_art(int v) const\
+    \ {\n    assert(init);\n\n    return 0 < get_art(v);\n  }\n\n  bool is_bridge(int\
+    \ u, int v) const {\n    assert(init);\n\n    return bri.count(make_pair(min(u,\
+    \ v), max(u, v)));\n  }\n};\n"
+  code: "#pragma once\n\nclass LowLink {\n private:\n  bool init;\n  int n, comp;\n\
+    \  vector<vector<int>> g;\n  vector<bool> seen;\n  vector<int> ord, low, art;\n\
+    \  set<pair<int, int>> bri;\n\n  void dfs(int v, int p, int &i) {\n    seen[v]\
+    \ = true;\n    ord[v] = low[v] = i++;\n    for (const int &nv : g[v]) {\n    \
+    \  if (seen[nv]) {\n        if (nv != p) {\n          low[v] = min(low[v], ord[nv]);\n\
+    \        }\n      } else {\n        dfs(nv, v, i);\n        low[v] = min(low[v],\
+    \ low[nv]);\n        if (ord[v] <= low[nv]) art[v]++;\n        if (ord[v] < low[nv])\
+    \ bri.insert(make_pair(min(v, nv), max(v, nv)));\n      }\n    }\n    if (p ==\
+    \ -1) art[v]--;\n  }\n\n public:\n  LowLink() : LowLink(0) {}\n  LowLink(const\
+    \ int _n)\n      : init(false),\n        n(_n),\n        comp(0),\n        g(_n),\n\
+    \        seen(_n),\n        ord(_n),\n        low(_n),\n        art(_n) {}\n\n\
+    \  void add_edge(int u, int v) {\n    assert(!init);\n\n    g[u].push_back(v);\n\
+    \    g[v].push_back(u);\n  }\n\n  void build() {\n    assert(!init);\n    init\
+    \ = true;\n\n    for (int v = 0; v < n; v++)\n      if (!seen[v]) {\n        comp++;\n\
+    \        int i{};\n        dfs(v, -1, i);\n      }\n  }\n\n  int component() const\
+    \ {\n    assert(init);\n\n    return comp;\n  }\n\n  int get_art(int v) const\
+    \ {\n    assert(init);\n\n    return art[v];\n  }\n\n  bool is_art(int v) const\
+    \ {\n    assert(init);\n\n    return 0 < get_art(v);\n  }\n\n  bool is_bridge(int\
+    \ u, int v) const {\n    assert(init);\n\n    return bri.count(make_pair(min(u,\
+    \ v), max(u, v)));\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/low_link.hpp
   requiredBy: []
-  timestamp: '2024-08-18 22:40:10+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/GRL_3_A.test.cpp

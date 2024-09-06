@@ -14,40 +14,39 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/topological_sort.hpp\"\n\nclass TopologicalSort{\n\
-    \tprivate:\n\t\tbool init;\n\t\tint n;\n\t\tvector<vector<int>> g;\n\t\tvector<int>\
-    \ p;\n\n\tpublic:\n\t\tTopologicalSort(): TopologicalSort(0) {}\n\t\tTopologicalSort(int\
-    \ _n): init(false), n(_n), g(_n) {}\n\n\t\tvoid add_edge(int u, int v){\n\t\t\t\
-    assert(!init);\n\n\t\t\tg[u].push_back(v);\n\t\t}\n\n\t\tbool build(){\n\t\t\t\
-    assert(!init);\n\t\t\tinit = true;\n\n\t\t\tvector<int> cnt(n);\n\t\t\tfor(int\
-    \ v=0; v<n; v++){\n\t\t\t\tfor(int nv:g[v]){\n\t\t\t\t\tcnt[nv]++;\n\t\t\t\t}\n\
-    \t\t\t}\n\t\t\tqueue<int> que;\n\t\t\tfor(int v=0; v<n; v++){\n\t\t\t\tif(cnt[v]==0){\n\
-    \t\t\t\t\tque.push(v);\n\t\t\t\t}\n\t\t\t}\n\t\t\twhile(!que.empty()){\n\t\t\t\
-    \tint v = que.front();\n\t\t\t\tque.pop();\n\t\t\t\tp.push_back(v);\n\t\t\t\t\
-    for(int nv:g[v]){\n\t\t\t\t\tcnt[nv]--;\n\t\t\t\t\tif(cnt[nv]==0){\n\t\t\t\t\t\
-    \tque.push(nv);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tif(n!=int(p.size())){\n\
-    \t\t\t\tp.clear();\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\treturn true;\n\t\t}\n\
-    \n\t\tint operator[](const int i) const {\n\t\t\tassert(init);\n\n\t\t\treturn\
-    \ p[i];\n\t\t}\n};\n"
-  code: "#pragma once\n\nclass TopologicalSort{\n\tprivate:\n\t\tbool init;\n\t\t\
-    int n;\n\t\tvector<vector<int>> g;\n\t\tvector<int> p;\n\n\tpublic:\n\t\tTopologicalSort():\
-    \ TopologicalSort(0) {}\n\t\tTopologicalSort(int _n): init(false), n(_n), g(_n)\
-    \ {}\n\n\t\tvoid add_edge(int u, int v){\n\t\t\tassert(!init);\n\n\t\t\tg[u].push_back(v);\n\
-    \t\t}\n\n\t\tbool build(){\n\t\t\tassert(!init);\n\t\t\tinit = true;\n\n\t\t\t\
-    vector<int> cnt(n);\n\t\t\tfor(int v=0; v<n; v++){\n\t\t\t\tfor(int nv:g[v]){\n\
-    \t\t\t\t\tcnt[nv]++;\n\t\t\t\t}\n\t\t\t}\n\t\t\tqueue<int> que;\n\t\t\tfor(int\
-    \ v=0; v<n; v++){\n\t\t\t\tif(cnt[v]==0){\n\t\t\t\t\tque.push(v);\n\t\t\t\t}\n\
-    \t\t\t}\n\t\t\twhile(!que.empty()){\n\t\t\t\tint v = que.front();\n\t\t\t\tque.pop();\n\
-    \t\t\t\tp.push_back(v);\n\t\t\t\tfor(int nv:g[v]){\n\t\t\t\t\tcnt[nv]--;\n\t\t\
-    \t\t\tif(cnt[nv]==0){\n\t\t\t\t\t\tque.push(nv);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\
-    \t}\n\t\t\tif(n!=int(p.size())){\n\t\t\t\tp.clear();\n\t\t\t\treturn false;\n\t\
-    \t\t}\n\t\t\treturn true;\n\t\t}\n\n\t\tint operator[](const int i) const {\n\t\
-    \t\tassert(init);\n\n\t\t\treturn p[i];\n\t\t}\n};\n"
+  bundledCode: "#line 2 \"graph/topological_sort.hpp\"\n\nclass TopologicalSort {\n\
+    \ private:\n  bool init;\n  int n;\n  vector<vector<int>> g;\n  vector<int> p;\n\
+    \n public:\n  TopologicalSort() : TopologicalSort(0) {}\n  TopologicalSort(int\
+    \ _n) : init(false), n(_n), g(_n) {}\n\n  void add_edge(int u, int v) {\n    assert(!init);\n\
+    \n    g[u].push_back(v);\n  }\n\n  bool build() {\n    assert(!init);\n    init\
+    \ = true;\n\n    vector<int> cnt(n);\n    for (int v = 0; v < n; v++) {\n    \
+    \  for (int nv : g[v]) {\n        cnt[nv]++;\n      }\n    }\n    queue<int> que;\n\
+    \    for (int v = 0; v < n; v++) {\n      if (cnt[v] == 0) {\n        que.push(v);\n\
+    \      }\n    }\n    while (!que.empty()) {\n      int v = que.front();\n    \
+    \  que.pop();\n      p.push_back(v);\n      for (int nv : g[v]) {\n        cnt[nv]--;\n\
+    \        if (cnt[nv] == 0) {\n          que.push(nv);\n        }\n      }\n  \
+    \  }\n    if (n != int(p.size())) {\n      p.clear();\n      return false;\n \
+    \   }\n    return true;\n  }\n\n  int operator[](const int i) const {\n    assert(init);\n\
+    \n    return p[i];\n  }\n};\n"
+  code: "#pragma once\n\nclass TopologicalSort {\n private:\n  bool init;\n  int n;\n\
+    \  vector<vector<int>> g;\n  vector<int> p;\n\n public:\n  TopologicalSort() :\
+    \ TopologicalSort(0) {}\n  TopologicalSort(int _n) : init(false), n(_n), g(_n)\
+    \ {}\n\n  void add_edge(int u, int v) {\n    assert(!init);\n\n    g[u].push_back(v);\n\
+    \  }\n\n  bool build() {\n    assert(!init);\n    init = true;\n\n    vector<int>\
+    \ cnt(n);\n    for (int v = 0; v < n; v++) {\n      for (int nv : g[v]) {\n  \
+    \      cnt[nv]++;\n      }\n    }\n    queue<int> que;\n    for (int v = 0; v\
+    \ < n; v++) {\n      if (cnt[v] == 0) {\n        que.push(v);\n      }\n    }\n\
+    \    while (!que.empty()) {\n      int v = que.front();\n      que.pop();\n  \
+    \    p.push_back(v);\n      for (int nv : g[v]) {\n        cnt[nv]--;\n      \
+    \  if (cnt[nv] == 0) {\n          que.push(nv);\n        }\n      }\n    }\n \
+    \   if (n != int(p.size())) {\n      p.clear();\n      return false;\n    }\n\
+    \    return true;\n  }\n\n  int operator[](const int i) const {\n    assert(init);\n\
+    \n    return p[i];\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/topological_sort.hpp
   requiredBy: []
-  timestamp: '2024-08-18 22:49:30+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yukicoder/468.test.cpp

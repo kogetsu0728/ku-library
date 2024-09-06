@@ -11,52 +11,50 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"data_structure/rollback_union_find.hpp\"\n\nclass RollbackUnionFind{\n\
-    \tprivate:\n\t\tint n, comp;\n\t\tvector<int> par;\n\t\tstack<pair<int,int>> his;\n\
-    \n\tpublic:\n\t\tRollbackUnionFind():RollbackUnionFind(0){}\n\t\tRollbackUnionFind(const\
-    \ int _n):\n\t\t\tn(_n), comp(_n), par(_n,-1), his(){}\n\n\t\tint size(int x)\
-    \ const {\n\t\t\treturn -par[leader(x)];\n\t\t}\n\n\t\tint component() const {\n\
-    \t\t\treturn comp;\n\t\t}\n\n\t\tint leader(int x) const {\n\t\t\tif(par[x]<0)\
-    \ return x;\n\t\t\treturn leader(par[x]);\n\t\t}\n\n\t\tbool same(int x, int y)\
-    \ const {\n\t\t\treturn leader(x)==leader(y);\n\t\t}\n\n\t\tbool merge(int x,\
-    \ int y){\n\t\t\tx = leader(x), y = leader(y);\n\t\t\this.push(make_pair(x, par[x]));\n\
-    \t\t\this.push(make_pair(y, par[y]));\n\t\t\tif(x==y) return false;\n\t\t\tcomp--;\n\
-    \t\t\tif(par[x]>par[y]) swap(x, y);\n\t\t\tpar[x] += par[y];\n\t\t\tpar[y] = x;\n\
-    \t\t\treturn true;\n\t\t}\n\n\t\tbool undo(){\n\t\t\tif(his.empty()) return false;\n\
-    \t\t\tvector<int> x(2);\n\t\t\tfor(int i=0; i<2; i++){\n\t\t\t\tauto [v,p] = his.top();\n\
-    \t\t\t\this.pop();\n\t\t\t\tx[i] = v;\n\t\t\t\tpar[v] = p;\n\t\t\t}\n\t\t\tif(x[0]!=x[1])\
-    \ comp++;\n\t\t\treturn true;\n\t\t}\n\n\t\tvoid snapshot(){\n\t\t\twhile(!his.empty())\
-    \ his.pop();\n\t\t}\n\n\t\tvoid rollback(){\n\t\t\twhile(!his.empty()) undo();\n\
-    \t\t}\n\n\t\tvector<vector<int>> groups() const {\n\t\t\tvector<vector<int>> member(n),\
-    \ res;\n\t\t\tfor(int i=0; i<n; i++){\n\t\t\t\tmember[leader(i)].push_back(i);\n\
-    \t\t\t}\n\t\t\tfor(int i=0; i<n; i++){\n\t\t\t\tif(!member[i].empty()){\n\t\t\t\
-    \t\tres.push_back(member[i]);\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n\
-    };\n"
-  code: "#pragma once\n\nclass RollbackUnionFind{\n\tprivate:\n\t\tint n, comp;\n\t\
-    \tvector<int> par;\n\t\tstack<pair<int,int>> his;\n\n\tpublic:\n\t\tRollbackUnionFind():RollbackUnionFind(0){}\n\
-    \t\tRollbackUnionFind(const int _n):\n\t\t\tn(_n), comp(_n), par(_n,-1), his(){}\n\
-    \n\t\tint size(int x) const {\n\t\t\treturn -par[leader(x)];\n\t\t}\n\n\t\tint\
-    \ component() const {\n\t\t\treturn comp;\n\t\t}\n\n\t\tint leader(int x) const\
-    \ {\n\t\t\tif(par[x]<0) return x;\n\t\t\treturn leader(par[x]);\n\t\t}\n\n\t\t\
-    bool same(int x, int y) const {\n\t\t\treturn leader(x)==leader(y);\n\t\t}\n\n\
-    \t\tbool merge(int x, int y){\n\t\t\tx = leader(x), y = leader(y);\n\t\t\this.push(make_pair(x,\
-    \ par[x]));\n\t\t\this.push(make_pair(y, par[y]));\n\t\t\tif(x==y) return false;\n\
-    \t\t\tcomp--;\n\t\t\tif(par[x]>par[y]) swap(x, y);\n\t\t\tpar[x] += par[y];\n\t\
-    \t\tpar[y] = x;\n\t\t\treturn true;\n\t\t}\n\n\t\tbool undo(){\n\t\t\tif(his.empty())\
-    \ return false;\n\t\t\tvector<int> x(2);\n\t\t\tfor(int i=0; i<2; i++){\n\t\t\t\
-    \tauto [v,p] = his.top();\n\t\t\t\this.pop();\n\t\t\t\tx[i] = v;\n\t\t\t\tpar[v]\
-    \ = p;\n\t\t\t}\n\t\t\tif(x[0]!=x[1]) comp++;\n\t\t\treturn true;\n\t\t}\n\n\t\
-    \tvoid snapshot(){\n\t\t\twhile(!his.empty()) his.pop();\n\t\t}\n\n\t\tvoid rollback(){\n\
-    \t\t\twhile(!his.empty()) undo();\n\t\t}\n\n\t\tvector<vector<int>> groups() const\
-    \ {\n\t\t\tvector<vector<int>> member(n), res;\n\t\t\tfor(int i=0; i<n; i++){\n\
-    \t\t\t\tmember[leader(i)].push_back(i);\n\t\t\t}\n\t\t\tfor(int i=0; i<n; i++){\n\
-    \t\t\t\tif(!member[i].empty()){\n\t\t\t\t\tres.push_back(member[i]);\n\t\t\t\t\
-    }\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n};\n"
+  bundledCode: "#line 2 \"data_structure/rollback_union_find.hpp\"\n\nclass RollbackUnionFind\
+    \ {\n private:\n  int n, comp;\n  vector<int> par;\n  stack<pair<int, int>> his;\n\
+    \n public:\n  RollbackUnionFind() : RollbackUnionFind(0) {}\n  RollbackUnionFind(const\
+    \ int _n) : n(_n), comp(_n), par(_n, -1), his() {}\n\n  int size(int x) const\
+    \ { return -par[leader(x)]; }\n\n  int component() const { return comp; }\n\n\
+    \  int leader(int x) const {\n    if (par[x] < 0) return x;\n    return leader(par[x]);\n\
+    \  }\n\n  bool same(int x, int y) const { return leader(x) == leader(y); }\n\n\
+    \  bool merge(int x, int y) {\n    x = leader(x), y = leader(y);\n    his.push(make_pair(x,\
+    \ par[x]));\n    his.push(make_pair(y, par[y]));\n    if (x == y) return false;\n\
+    \    comp--;\n    if (par[x] > par[y]) swap(x, y);\n    par[x] += par[y];\n  \
+    \  par[y] = x;\n    return true;\n  }\n\n  bool undo() {\n    if (his.empty())\
+    \ return false;\n    vector<int> x(2);\n    for (int i = 0; i < 2; i++) {\n  \
+    \    auto [v, p] = his.top();\n      his.pop();\n      x[i] = v;\n      par[v]\
+    \ = p;\n    }\n    if (x[0] != x[1]) comp++;\n    return true;\n  }\n\n  void\
+    \ snapshot() {\n    while (!his.empty()) his.pop();\n  }\n\n  void rollback()\
+    \ {\n    while (!his.empty()) undo();\n  }\n\n  vector<vector<int>> groups() const\
+    \ {\n    vector<vector<int>> member(n), res;\n    for (int i = 0; i < n; i++)\
+    \ {\n      member[leader(i)].push_back(i);\n    }\n    for (int i = 0; i < n;\
+    \ i++) {\n      if (!member[i].empty()) {\n        res.push_back(member[i]);\n\
+    \      }\n    }\n    return res;\n  }\n};\n"
+  code: "#pragma once\n\nclass RollbackUnionFind {\n private:\n  int n, comp;\n  vector<int>\
+    \ par;\n  stack<pair<int, int>> his;\n\n public:\n  RollbackUnionFind() : RollbackUnionFind(0)\
+    \ {}\n  RollbackUnionFind(const int _n) : n(_n), comp(_n), par(_n, -1), his()\
+    \ {}\n\n  int size(int x) const { return -par[leader(x)]; }\n\n  int component()\
+    \ const { return comp; }\n\n  int leader(int x) const {\n    if (par[x] < 0) return\
+    \ x;\n    return leader(par[x]);\n  }\n\n  bool same(int x, int y) const { return\
+    \ leader(x) == leader(y); }\n\n  bool merge(int x, int y) {\n    x = leader(x),\
+    \ y = leader(y);\n    his.push(make_pair(x, par[x]));\n    his.push(make_pair(y,\
+    \ par[y]));\n    if (x == y) return false;\n    comp--;\n    if (par[x] > par[y])\
+    \ swap(x, y);\n    par[x] += par[y];\n    par[y] = x;\n    return true;\n  }\n\
+    \n  bool undo() {\n    if (his.empty()) return false;\n    vector<int> x(2);\n\
+    \    for (int i = 0; i < 2; i++) {\n      auto [v, p] = his.top();\n      his.pop();\n\
+    \      x[i] = v;\n      par[v] = p;\n    }\n    if (x[0] != x[1]) comp++;\n  \
+    \  return true;\n  }\n\n  void snapshot() {\n    while (!his.empty()) his.pop();\n\
+    \  }\n\n  void rollback() {\n    while (!his.empty()) undo();\n  }\n\n  vector<vector<int>>\
+    \ groups() const {\n    vector<vector<int>> member(n), res;\n    for (int i =\
+    \ 0; i < n; i++) {\n      member[leader(i)].push_back(i);\n    }\n    for (int\
+    \ i = 0; i < n; i++) {\n      if (!member[i].empty()) {\n        res.push_back(member[i]);\n\
+    \      }\n    }\n    return res;\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/rollback_union_find.hpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/persistent_unionfind.test.cpp

@@ -11,24 +11,23 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"data_structure/double_ended_priority_queue.hpp\"\n\ntemplate<class\
-    \ T,class C=less<T>>\nclass DoubleEndedPriorityQueue: public multiset<T,C>{\n\t\
-    public:\n\t\tDoubleEndedPriorityQueue():\n\t\t\tmultiset<T>(){}\n\n\t\tvoid push(T\
-    \ val){\n\t\t\tthis->insert(val);\n\t\t}\n\n\t\tT min() const {\n\t\t\treturn\
-    \ *(this->begin());\n\t\t}\n\n\t\tT max() const {\n\t\t\treturn *(--(this->end()));\n\
-    \t\t}\n\n\t\tvoid pop_min(){\n\t\t\tthis->erase(this->begin());\n\t\t}\n\n\t\t\
-    void pop_max(){\n\t\t\tthis->erase(--(this->end()));\n\t\t}\n};\n"
-  code: "#pragma once\n\ntemplate<class T,class C=less<T>>\nclass DoubleEndedPriorityQueue:\
-    \ public multiset<T,C>{\n\tpublic:\n\t\tDoubleEndedPriorityQueue():\n\t\t\tmultiset<T>(){}\n\
-    \n\t\tvoid push(T val){\n\t\t\tthis->insert(val);\n\t\t}\n\n\t\tT min() const\
-    \ {\n\t\t\treturn *(this->begin());\n\t\t}\n\n\t\tT max() const {\n\t\t\treturn\
-    \ *(--(this->end()));\n\t\t}\n\n\t\tvoid pop_min(){\n\t\t\tthis->erase(this->begin());\n\
-    \t\t}\n\n\t\tvoid pop_max(){\n\t\t\tthis->erase(--(this->end()));\n\t\t}\n};\n"
+  bundledCode: "#line 2 \"data_structure/double_ended_priority_queue.hpp\"\n\ntemplate\
+    \ <class T, class C = less<T>>\nclass DoubleEndedPriorityQueue : public multiset<T,\
+    \ C> {\n public:\n  DoubleEndedPriorityQueue() : multiset<T>() {}\n\n  void push(T\
+    \ val) { this->insert(val); }\n\n  T min() const { return *(this->begin()); }\n\
+    \n  T max() const { return *(--(this->end())); }\n\n  void pop_min() { this->erase(this->begin());\
+    \ }\n\n  void pop_max() { this->erase(--(this->end())); }\n};\n"
+  code: "#pragma once\n\ntemplate <class T, class C = less<T>>\nclass DoubleEndedPriorityQueue\
+    \ : public multiset<T, C> {\n public:\n  DoubleEndedPriorityQueue() : multiset<T>()\
+    \ {}\n\n  void push(T val) { this->insert(val); }\n\n  T min() const { return\
+    \ *(this->begin()); }\n\n  T max() const { return *(--(this->end())); }\n\n  void\
+    \ pop_min() { this->erase(this->begin()); }\n\n  void pop_max() { this->erase(--(this->end()));\
+    \ }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/double_ended_priority_queue.hpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/double_ended_priority_queue.test.cpp

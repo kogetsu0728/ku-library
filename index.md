@@ -9,6 +9,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data_structure/double_ended_priority_queue.hpp
       title: data_structure/double_ended_priority_queue.hpp
+    - icon: ':warning:'
+      path: data_structure/merge_sort_tree.hpp
+      title: merge-sort tree
     - icon: ':heavy_check_mark:'
       path: data_structure/ordered_map_and_range_query.hpp
       title: data_structure/ordered_map_and_range_query.hpp

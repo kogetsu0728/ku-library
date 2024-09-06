@@ -14,38 +14,38 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"data_structure/cumulative_sum_2d.hpp\"\n\ntemplate<class\
-    \ T>\nclass CumulativeSum2d{\n\tprivate:\n\t\tbool init;\n\t\tint h, w;\n\t\t\
-    vector<vector<T>> v;\n\n\tpublic:\n\t\tCumulativeSum2d(): CumulativeSum2d(0,0){}\n\
-    \t\tCumulativeSum2d(int _h, int _w, T _e=0):\n\t\t\tinit(false), h(_h), w(_w),\
-    \ v(_h+1,vector<T>(_w+1,_e)){}\n\n\t\tvoid add(int y, int x, T d){\n\t\t\tassert(!init);\n\
-    \n\t\t\tv[y+1][x+1] += d;\n\t\t}\n\n\t\tvoid add(int y1, int x1, int y2, int x2,\
-    \ T d){\n\t\t\tassert(!init);\n\n\t\t\tadd(y1, x1, d);\n\t\t\tadd(y1, x2, -d);\n\
-    \t\t\tadd(y2, x1, -d);\n\t\t\tadd(y2, x2, d);\n\t\t}\n\n\t\tvoid build(){\n\t\t\
-    \tassert(!init);\n\t\t\tinit = true;\n\n\t\t\tfor(int y=1; y<=h; y++){\n\t\t\t\
-    \tfor(int x=1; x<=w; x++){\n\t\t\t\t\tv[y][x] += v[y][x-1]+v[y-1][x]-v[y-1][x-1];\n\
-    \t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tT get(int y, int x) const {\n\t\t\tassert(init);\n\
-    \n\t\t\treturn v[y+1][x+1];\n\t\t}\n\n\t\tT sum(int y1, int x1, int y2, int x2)\
-    \ const {\n\t\t\tassert(init);\n\n\t\t\treturn v[y2][x2]-v[y1][x2]-v[y2][x1]+v[y1][x1];\n\
-    \t\t}\n};\n"
-  code: "#pragma once\n\ntemplate<class T>\nclass CumulativeSum2d{\n\tprivate:\n\t\
-    \tbool init;\n\t\tint h, w;\n\t\tvector<vector<T>> v;\n\n\tpublic:\n\t\tCumulativeSum2d():\
-    \ CumulativeSum2d(0,0){}\n\t\tCumulativeSum2d(int _h, int _w, T _e=0):\n\t\t\t\
-    init(false), h(_h), w(_w), v(_h+1,vector<T>(_w+1,_e)){}\n\n\t\tvoid add(int y,\
-    \ int x, T d){\n\t\t\tassert(!init);\n\n\t\t\tv[y+1][x+1] += d;\n\t\t}\n\n\t\t\
-    void add(int y1, int x1, int y2, int x2, T d){\n\t\t\tassert(!init);\n\n\t\t\t\
-    add(y1, x1, d);\n\t\t\tadd(y1, x2, -d);\n\t\t\tadd(y2, x1, -d);\n\t\t\tadd(y2,\
-    \ x2, d);\n\t\t}\n\n\t\tvoid build(){\n\t\t\tassert(!init);\n\t\t\tinit = true;\n\
-    \n\t\t\tfor(int y=1; y<=h; y++){\n\t\t\t\tfor(int x=1; x<=w; x++){\n\t\t\t\t\t\
-    v[y][x] += v[y][x-1]+v[y-1][x]-v[y-1][x-1];\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t\
-    T get(int y, int x) const {\n\t\t\tassert(init);\n\n\t\t\treturn v[y+1][x+1];\n\
-    \t\t}\n\n\t\tT sum(int y1, int x1, int y2, int x2) const {\n\t\t\tassert(init);\n\
-    \n\t\t\treturn v[y2][x2]-v[y1][x2]-v[y2][x1]+v[y1][x1];\n\t\t}\n};\n"
+  bundledCode: "#line 2 \"data_structure/cumulative_sum_2d.hpp\"\n\ntemplate <class\
+    \ T>\nclass CumulativeSum2d {\n private:\n  bool init;\n  int h, w;\n  vector<vector<T>>\
+    \ v;\n\n public:\n  CumulativeSum2d() : CumulativeSum2d(0, 0) {}\n  CumulativeSum2d(int\
+    \ _h, int _w, T _e = 0)\n      : init(false), h(_h), w(_w), v(_h + 1, vector<T>(_w\
+    \ + 1, _e)) {}\n\n  void add(int y, int x, T d) {\n    assert(!init);\n\n    v[y\
+    \ + 1][x + 1] += d;\n  }\n\n  void add(int y1, int x1, int y2, int x2, T d) {\n\
+    \    assert(!init);\n\n    add(y1, x1, d);\n    add(y1, x2, -d);\n    add(y2,\
+    \ x1, -d);\n    add(y2, x2, d);\n  }\n\n  void build() {\n    assert(!init);\n\
+    \    init = true;\n\n    for (int y = 1; y <= h; y++) {\n      for (int x = 1;\
+    \ x <= w; x++) {\n        v[y][x] += v[y][x - 1] + v[y - 1][x] - v[y - 1][x -\
+    \ 1];\n      }\n    }\n  }\n\n  T get(int y, int x) const {\n    assert(init);\n\
+    \n    return v[y + 1][x + 1];\n  }\n\n  T sum(int y1, int x1, int y2, int x2)\
+    \ const {\n    assert(init);\n\n    return v[y2][x2] - v[y1][x2] - v[y2][x1] +\
+    \ v[y1][x1];\n  }\n};\n"
+  code: "#pragma once\n\ntemplate <class T>\nclass CumulativeSum2d {\n private:\n\
+    \  bool init;\n  int h, w;\n  vector<vector<T>> v;\n\n public:\n  CumulativeSum2d()\
+    \ : CumulativeSum2d(0, 0) {}\n  CumulativeSum2d(int _h, int _w, T _e = 0)\n  \
+    \    : init(false), h(_h), w(_w), v(_h + 1, vector<T>(_w + 1, _e)) {}\n\n  void\
+    \ add(int y, int x, T d) {\n    assert(!init);\n\n    v[y + 1][x + 1] += d;\n\
+    \  }\n\n  void add(int y1, int x1, int y2, int x2, T d) {\n    assert(!init);\n\
+    \n    add(y1, x1, d);\n    add(y1, x2, -d);\n    add(y2, x1, -d);\n    add(y2,\
+    \ x2, d);\n  }\n\n  void build() {\n    assert(!init);\n    init = true;\n\n \
+    \   for (int y = 1; y <= h; y++) {\n      for (int x = 1; x <= w; x++) {\n   \
+    \     v[y][x] += v[y][x - 1] + v[y - 1][x] - v[y - 1][x - 1];\n      }\n    }\n\
+    \  }\n\n  T get(int y, int x) const {\n    assert(init);\n\n    return v[y + 1][x\
+    \ + 1];\n  }\n\n  T sum(int y1, int x1, int y2, int x2) const {\n    assert(init);\n\
+    \n    return v[y2][x2] - v[y1][x2] - v[y2][x1] + v[y1][x1];\n  }\n};\n"
   dependsOn: []
   isVerificationFile: false
   path: data_structure/cumulative_sum_2d.hpp
   requiredBy: []
-  timestamp: '2024-08-18 22:40:10+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/DSL_5_B.test.cpp

@@ -14,23 +14,24 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E
-  bundledCode: "#line 1 \"verify/aoj/NTL_1_E.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"math/ext_gcd.hpp\"\
-    \nlong long ext_gcd(long long a, long long b, long long &x, long long &y){\n\t\
-    if(b==0){\n\t\tx = 1;\n\t\ty = 0;\n\t\treturn a;\n\t}\n\tlong long res = ext_gcd(b,\
-    \ a%b, y, x);\n\ty -= (a/b)*x;\n\treturn res;\n}\n#line 7 \"verify/aoj/NTL_1_E.test.cpp\"\
-    \n\nint main(){\n\tlong long a, b; cin >> a >> b;\n\n\tlong long x, y;\n\text_gcd(a,\
-    \ b, x, y);\n\tcout << x << ' ' << y << endl;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
+  bundledCode: "#line 1 \"verify/aoj/NTL_1_E.test.cpp\"\n#define PROBLEM \\\n  \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#line 1 \"math/ext_gcd.hpp\"\nlong\
+    \ long ext_gcd(long long a, long long b, long long &x, long long &y) {\n  if (b\
+    \ == 0) {\n    x = 1;\n    y = 0;\n    return a;\n  }\n  long long res = ext_gcd(b,\
+    \ a % b, y, x);\n  y -= (a / b) * x;\n  return res;\n}\n#line 8 \"verify/aoj/NTL_1_E.test.cpp\"\
+    \n\nint main() {\n  long long a, b;\n  cin >> a >> b;\n\n  long long x, y;\n \
+    \ ext_gcd(a, b, x, y);\n  cout << x << ' ' << y << endl;\n}\n"
+  code: "#define PROBLEM \\\n  \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=NTL_1_E\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../math/ext_gcd.hpp\"\
-    \n\nint main(){\n\tlong long a, b; cin >> a >> b;\n\n\tlong long x, y;\n\text_gcd(a,\
-    \ b, x, y);\n\tcout << x << ' ' << y << endl;\n}\n"
+    \n\nint main() {\n  long long a, b;\n  cin >> a >> b;\n\n  long long x, y;\n \
+    \ ext_gcd(a, b, x, y);\n  cout << x << ' ' << y << endl;\n}\n"
   dependsOn:
   - math/ext_gcd.hpp
   isVerificationFile: true
   path: verify/aoj/NTL_1_E.test.cpp
   requiredBy: []
-  timestamp: '2024-03-15 14:05:58+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/NTL_1_E.test.cpp

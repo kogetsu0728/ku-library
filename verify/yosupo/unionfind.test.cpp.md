@@ -16,33 +16,34 @@ data:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"verify/yosupo/unionfind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
     \n\n#include <iostream>\n#include <vector>\nusing namespace std;\n\n#line 2 \"\
-    data_structure/union_find.hpp\"\nclass UnionFind{\n\tprivate:\n\t\tint n, comp;\n\
-    \t\tvector<int> par;\n\n\tpublic:\n\t\tUnionFind(const int _n=0):\n\t\t\tn(_n),\
-    \ comp(_n), par(_n,-1){}\n\n\t\tint component() const {\n\t\t\treturn comp;\n\t\
-    \t}\n\n\t\tint size(int x){\n\t\t\treturn -par[leader(x)];\n\t\t}\n\n\t\tint leader(int\
-    \ x){\n\t\t\tif(par[x]<0) return x;\n\t\t\treturn par[x]=leader(par[x]);\n\t\t\
-    }\n\n\t\tbool same(int x, int y){\n\t\t\treturn leader(x)==leader(y);\n\t\t}\n\
-    \n\t\tbool merge(int x, int y){\n\t\t\tx=leader(x), y=leader(y);\n\t\t\tif(x==y)\
-    \ return false;\n\t\t\tcomp--;\n\t\t\tif(par[x]>par[y]) swap(x, y);\n\t\t\tpar[x]\
-    \ += par[y];\n\t\t\tpar[y] = x;\n\t\t\treturn true;\n\t\t}\n\n\t\tvector<vector<int>>\
-    \ groups(){\n\t\t\tvector<vector<int>> member(n), res;\n\t\t\tfor(int i=0; i<n;\
-    \ i++){\n\t\t\t\tmember[leader(i)].push_back(i);\n\t\t\t}\n\t\t\tfor(int i=0;\
-    \ i<n; i++){\n\t\t\t\tif(!member[i].empty()){\n\t\t\t\t\tres.push_back(member[i]);\n\
-    \t\t\t\t}\n\t\t\t}\n\t\t\treturn res;\n\t\t}\n};\n#line 8 \"verify/yosupo/unionfind.test.cpp\"\
-    \n\nint main(){\n\tint N, Q;\n\tcin >> N >> Q;\n\t\n\tUnionFind uf(N);\n\tfor(;Q--;){\n\
-    \t\tint t, u, v;\n\t\tcin >> t >> u >> v;\n\t\tif(t==0){\n\t\t\tuf.merge(u, v);\n\
-    \t\t}else{\n\t\t\tcout << (uf.same(u,v)?1:0) << endl;\n\t\t}\n\t}\n}\n"
+    data_structure/union_find.hpp\"\nclass UnionFind {\n private:\n  int n, comp;\n\
+    \  vector<int> par;\n\n public:\n  UnionFind(const int _n = 0) : n(_n), comp(_n),\
+    \ par(_n, -1) {}\n\n  int component() const { return comp; }\n\n  int size(int\
+    \ x) { return -par[leader(x)]; }\n\n  int leader(int x) {\n    if (par[x] < 0)\
+    \ return x;\n    return par[x] = leader(par[x]);\n  }\n\n  bool same(int x, int\
+    \ y) { return leader(x) == leader(y); }\n\n  bool merge(int x, int y) {\n    x\
+    \ = leader(x), y = leader(y);\n    if (x == y) return false;\n    comp--;\n  \
+    \  if (par[x] > par[y]) swap(x, y);\n    par[x] += par[y];\n    par[y] = x;\n\
+    \    return true;\n  }\n\n  vector<vector<int>> groups() {\n    vector<vector<int>>\
+    \ member(n), res;\n    for (int i = 0; i < n; i++) {\n      member[leader(i)].push_back(i);\n\
+    \    }\n    for (int i = 0; i < n; i++) {\n      if (!member[i].empty()) {\n \
+    \       res.push_back(member[i]);\n      }\n    }\n    return res;\n  }\n};\n\
+    #line 8 \"verify/yosupo/unionfind.test.cpp\"\n\nint main() {\n  int N, Q;\n  cin\
+    \ >> N >> Q;\n\n  UnionFind uf(N);\n  for (; Q--;) {\n    int t, u, v;\n    cin\
+    \ >> t >> u >> v;\n    if (t == 0) {\n      uf.merge(u, v);\n    } else {\n  \
+    \    cout << (uf.same(u, v) ? 1 : 0) << endl;\n    }\n  }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <iostream>\n#include <vector>\nusing namespace std;\n\n#include \"../../data_structure/union_find.hpp\"\
-    \n\nint main(){\n\tint N, Q;\n\tcin >> N >> Q;\n\t\n\tUnionFind uf(N);\n\tfor(;Q--;){\n\
-    \t\tint t, u, v;\n\t\tcin >> t >> u >> v;\n\t\tif(t==0){\n\t\t\tuf.merge(u, v);\n\
-    \t\t}else{\n\t\t\tcout << (uf.same(u,v)?1:0) << endl;\n\t\t}\n\t}\n}\n"
+    \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n\n  UnionFind uf(N);\n  for (;\
+    \ Q--;) {\n    int t, u, v;\n    cin >> t >> u >> v;\n    if (t == 0) {\n    \
+    \  uf.merge(u, v);\n    } else {\n      cout << (uf.same(u, v) ? 1 : 0) << endl;\n\
+    \    }\n  }\n}\n"
   dependsOn:
   - data_structure/union_find.hpp
   isVerificationFile: true
   path: verify/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-01-07 12:12:23+09:00'
+  timestamp: '2024-09-06 18:14:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/unionfind.test.cpp
