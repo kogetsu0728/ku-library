@@ -5,22 +5,22 @@ data:
     pages:
     - icon: ':warning:'
       path: data_structure/merge_sort_tree.hpp
-      title: merge-sort tree
+      title: Merge-Sort Tree
     - icon: ':heavy_check_mark:'
       path: data_structure/ordered_map_and_range_query.hpp
-      title: data_structure/ordered_map_and_range_query.hpp
+      title: Ordered Map And Range Query
     - icon: ':heavy_check_mark:'
       path: data_structure/rollback_union_find.hpp
-      title: data_structure/rollback_union_find.hpp
+      title: "Rollback Union Find (Rollback\u4ED8\u304DUnion Find)"
     - icon: ':heavy_check_mark:'
       path: data_structure/segment_tree.hpp
-      title: data_structure/segment_tree.hpp
+      title: "Segment Tree (\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
     - icon: ':heavy_check_mark:'
       path: data_structure/union_find.hpp
-      title: data_structure/union_find.hpp
+      title: Union Find
     - icon: ':heavy_check_mark:'
       path: data_structure/weighted_union_find.hpp
-      title: data_structure/weighted_union_find.hpp
+      title: "Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)"
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -33,19 +33,21 @@ data:
     pages:
     - icon: ':warning:'
       path: math/binomial.hpp
-      title: math/binomial.hpp
+      title: "Binomial (\u4E8C\u9805\u4FC2\u6570)"
     - icon: ':heavy_check_mark:'
       path: math/ext_gcd.hpp
-      title: math/ext_gcd.hpp
+      title: "Extended Euclidean algorithm (\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\
+        \u30C9\u306E\u4E92\u9664\u6CD5)"
     - icon: ':warning:'
       path: math/fraction.hpp
-      title: math/fraction.hpp
+      title: "Fraction (\u5206\u6570)"
     - icon: ':warning:'
       path: math/matrix.hpp
-      title: math/matrix.hpp
+      title: "Matrix (\u884C\u5217)"
     - icon: ':warning:'
       path: math/sieve_of_eratosthenes.hpp
-      title: math/sieve_of_eratosthenes.hpp
+      title: "Sieve of Eratosthenes (\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
+        \u7BE9)"
   - name: misc
     pages:
     - icon: ':warning:'

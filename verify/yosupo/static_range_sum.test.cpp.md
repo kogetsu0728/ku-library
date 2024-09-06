@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/segment_tree.hpp
-    title: data_structure/segment_tree.hpp
+    title: "Segment Tree (\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,7 +17,8 @@ data:
   bundledCode: "#line 1 \"verify/yosupo/static_range_sum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include <iostream>\n\
     #include <vector>\nusing namespace std;\n\n#line 2 \"data_structure/segment_tree.hpp\"\
-    \n\ntemplate <class S, S (*op)(S, S), S (*e)()>\nclass SegmentTree {\n private:\n\
+    \n\n/**\n * @brief Segment Tree (\u30BB\u30B0\u30E1\u30F3\u30C8\u6728) \n */\n\
+    template <class S, S (*op)(S, S), S (*e)()>\nclass SegmentTree {\n private:\n\
     \  int n;\n  vector<S> v;\n\n  void update(int i) { v[i] = op(v[i << 1], v[(i\
     \ << 1) | 1]); }\n\n public:\n  SegmentTree() : SegmentTree(0) {}\n  SegmentTree(int\
     \ _n) : SegmentTree(vector<S>(_n, e())) {}\n  SegmentTree(const vector<S> &_v)\
@@ -46,7 +47,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:14:41+09:00'
+  timestamp: '2024-09-06 18:53:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/static_range_sum.test.cpp

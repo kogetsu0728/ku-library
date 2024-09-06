@@ -7,10 +7,10 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':warning:'
   attributes:
-    document_title: merge-sort tree
+    document_title: Merge-Sort Tree
     links: []
-  bundledCode: "#line 2 \"data_structure/merge_sort_tree.hpp\"\n\n/**\n * @brief merge-sort\
-    \ tree\n */\nclass MergeSortTree {\n  using ll = long long;\n\n private:\n  int\
+  bundledCode: "#line 2 \"data_structure/merge_sort_tree.hpp\"\n\n/**\n * @brief Merge-Sort\
+    \ Tree\n */\nclass MergeSortTree {\n  using ll = long long;\n\n private:\n  int\
     \ n;\n  vector<vector<ll>> v, s;\n\n  void update(int i) {\n    v[i] = vector<ll>();\n\
     \    queue<ll> a, b;\n    for (ll x : v[i << 1]) {\n      a.emplace(x);\n    }\n\
     \    for (ll x : v[(i << 1) | 1]) {\n      b.emplace(x);\n    }\n\n    while (!a.empty()\
@@ -40,7 +40,7 @@ data:
     \ {\n        r--;\n        int t =\n            distance(v[r].begin(), upper_bound(v[r].begin(),\
     \ v[r].end(), a));\n        res += t;\n      }\n      l >>= 1;\n      r >>= 1;\n\
     \    }\n\n    return res;\n  }\n};\n"
-  code: "#pragma once\n\n/**\n * @brief merge-sort tree\n */\nclass MergeSortTree\
+  code: "#pragma once\n\n/**\n * @brief Merge-Sort Tree\n */\nclass MergeSortTree\
     \ {\n  using ll = long long;\n\n private:\n  int n;\n  vector<vector<ll>> v, s;\n\
     \n  void update(int i) {\n    v[i] = vector<ll>();\n    queue<ll> a, b;\n    for\
     \ (ll x : v[i << 1]) {\n      a.emplace(x);\n    }\n    for (ll x : v[(i << 1)\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: data_structure/merge_sort_tree.hpp
   requiredBy: []
-  timestamp: '2024-09-06 18:14:41+09:00'
+  timestamp: '2024-09-06 18:53:45+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data_structure/merge_sort_tree.hpp
@@ -82,5 +82,5 @@ layout: document
 redirect_from:
 - /library/data_structure/merge_sort_tree.hpp
 - /library/data_structure/merge_sort_tree.hpp.html
-title: merge-sort tree
+title: Merge-Sort Tree
 ---

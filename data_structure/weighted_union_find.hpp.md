@@ -10,8 +10,10 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    document_title: "Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)"
     links: []
-  bundledCode: "#line 2 \"data_structure/weighted_union_find.hpp\"\n\ntemplate <class\
+  bundledCode: "#line 2 \"data_structure/weighted_union_find.hpp\"\n\n/**\n * @brief\
+    \ Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)\n */\ntemplate <class\
     \ T>\nclass WeightedUnionFind {\n private:\n  int n, comp;\n  vector<int> par,\
     \ rank;\n  vector<T> wei;\n\n public:\n  WeightedUnionFind(const int _n = 0, const\
     \ T _e = 0)\n      : n(_n), comp(_n), par(_n, -1), rank(_n), wei(n, _e) {}\n\n\
@@ -29,8 +31,9 @@ data:
     \ n; i++) {\n      member[leader(i)].push_back(i);\n    }\n    for (int i = 0;\
     \ i < n; i++) {\n      if (!member[i].empty()) {\n        res.push_back(member[i]);\n\
     \      }\n    }\n    return res;\n  }\n};\n"
-  code: "#pragma once\n\ntemplate <class T>\nclass WeightedUnionFind {\n private:\n\
-    \  int n, comp;\n  vector<int> par, rank;\n  vector<T> wei;\n\n public:\n  WeightedUnionFind(const\
+  code: "#pragma once\n\n/**\n * @brief Weighted Union Find (\u91CD\u307F\u4ED8\u304D\
+    Union Find)\n */\ntemplate <class T>\nclass WeightedUnionFind {\n private:\n \
+    \ int n, comp;\n  vector<int> par, rank;\n  vector<T> wei;\n\n public:\n  WeightedUnionFind(const\
     \ int _n = 0, const T _e = 0)\n      : n(_n), comp(_n), par(_n, -1), rank(_n),\
     \ wei(n, _e) {}\n\n  int component() const { return comp; }\n\n  int size(int\
     \ x) { return -par[leader(x)]; }\n\n  int leader(int x) {\n    if (par[x] < 0)\
@@ -50,7 +53,7 @@ data:
   isVerificationFile: false
   path: data_structure/weighted_union_find.hpp
   requiredBy: []
-  timestamp: '2024-09-06 18:14:41+09:00'
+  timestamp: '2024-09-06 18:53:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/aoj/DSL_1_B.test.cpp
@@ -59,5 +62,5 @@ layout: document
 redirect_from:
 - /library/data_structure/weighted_union_find.hpp
 - /library/data_structure/weighted_union_find.hpp.html
-title: data_structure/weighted_union_find.hpp
+title: "Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)"
 ---

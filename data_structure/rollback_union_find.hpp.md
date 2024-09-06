@@ -10,8 +10,10 @@ data:
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    document_title: "Rollback Union Find (Rollback\u4ED8\u304DUnion Find)"
     links: []
-  bundledCode: "#line 2 \"data_structure/rollback_union_find.hpp\"\n\nclass RollbackUnionFind\
+  bundledCode: "#line 2 \"data_structure/rollback_union_find.hpp\"\n\n/**\n * @brief\
+    \ Rollback Union Find (Rollback\u4ED8\u304DUnion Find)\n */\nclass RollbackUnionFind\
     \ {\n private:\n  int n, comp;\n  vector<int> par;\n  stack<pair<int, int>> his;\n\
     \n public:\n  RollbackUnionFind() : RollbackUnionFind(0) {}\n  RollbackUnionFind(const\
     \ int _n) : n(_n), comp(_n), par(_n, -1), his() {}\n\n  int size(int x) const\
@@ -31,7 +33,8 @@ data:
     \ {\n      member[leader(i)].push_back(i);\n    }\n    for (int i = 0; i < n;\
     \ i++) {\n      if (!member[i].empty()) {\n        res.push_back(member[i]);\n\
     \      }\n    }\n    return res;\n  }\n};\n"
-  code: "#pragma once\n\nclass RollbackUnionFind {\n private:\n  int n, comp;\n  vector<int>\
+  code: "#pragma once\n\n/**\n * @brief Rollback Union Find (Rollback\u4ED8\u304D\
+    Union Find)\n */\nclass RollbackUnionFind {\n private:\n  int n, comp;\n  vector<int>\
     \ par;\n  stack<pair<int, int>> his;\n\n public:\n  RollbackUnionFind() : RollbackUnionFind(0)\
     \ {}\n  RollbackUnionFind(const int _n) : n(_n), comp(_n), par(_n, -1), his()\
     \ {}\n\n  int size(int x) const { return -par[leader(x)]; }\n\n  int component()\
@@ -54,7 +57,7 @@ data:
   isVerificationFile: false
   path: data_structure/rollback_union_find.hpp
   requiredBy: []
-  timestamp: '2024-09-06 18:14:41+09:00'
+  timestamp: '2024-09-06 18:53:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/persistent_unionfind.test.cpp
@@ -63,5 +66,5 @@ layout: document
 redirect_from:
 - /library/data_structure/rollback_union_find.hpp
 - /library/data_structure/rollback_union_find.hpp.html
-title: data_structure/rollback_union_find.hpp
+title: "Rollback Union Find (Rollback\u4ED8\u304DUnion Find)"
 ---

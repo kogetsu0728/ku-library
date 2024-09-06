@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/weighted_union_find.hpp
-    title: data_structure/weighted_union_find.hpp
+    title: "Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,7 +17,8 @@ data:
   bundledCode: "#line 1 \"verify/aoj/DSL_1_B.test.cpp\"\n#define PROBLEM \\\n  \"\
     https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"data_structure/weighted_union_find.hpp\"\
-    \n\ntemplate <class T>\nclass WeightedUnionFind {\n private:\n  int n, comp;\n\
+    \n\n/**\n * @brief Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)\n\
+    \ */\ntemplate <class T>\nclass WeightedUnionFind {\n private:\n  int n, comp;\n\
     \  vector<int> par, rank;\n  vector<T> wei;\n\n public:\n  WeightedUnionFind(const\
     \ int _n = 0, const T _e = 0)\n      : n(_n), comp(_n), par(_n, -1), rank(_n),\
     \ wei(n, _e) {}\n\n  int component() const { return comp; }\n\n  int size(int\
@@ -52,7 +53,7 @@ data:
   isVerificationFile: true
   path: verify/aoj/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:14:41+09:00'
+  timestamp: '2024-09-06 18:53:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/aoj/DSL_1_B.test.cpp

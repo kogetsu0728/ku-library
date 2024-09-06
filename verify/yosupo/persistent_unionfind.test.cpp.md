@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: data_structure/rollback_union_find.hpp
-    title: data_structure/rollback_union_find.hpp
+    title: "Rollback Union Find (Rollback\u4ED8\u304DUnion Find)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -17,7 +17,8 @@ data:
   bundledCode: "#line 1 \"verify/yosupo/persistent_unionfind.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/persistent_unionfind\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#line 2 \"data_structure/rollback_union_find.hpp\"\n\n\
-    class RollbackUnionFind {\n private:\n  int n, comp;\n  vector<int> par;\n  stack<pair<int,\
+    /**\n * @brief Rollback Union Find (Rollback\u4ED8\u304DUnion Find)\n */\nclass\
+    \ RollbackUnionFind {\n private:\n  int n, comp;\n  vector<int> par;\n  stack<pair<int,\
     \ int>> his;\n\n public:\n  RollbackUnionFind() : RollbackUnionFind(0) {}\n  RollbackUnionFind(const\
     \ int _n) : n(_n), comp(_n), par(_n, -1), his() {}\n\n  int size(int x) const\
     \ { return -par[leader(x)]; }\n\n  int component() const { return comp; }\n\n\
@@ -63,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/persistent_unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:14:41+09:00'
+  timestamp: '2024-09-06 18:53:45+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/persistent_unionfind.test.cpp
