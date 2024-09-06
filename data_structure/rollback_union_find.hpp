@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Rollback Union Find (Rollback付きUnion Find)
+ */
 class RollbackUnionFind {
  private:
   int n, comp;

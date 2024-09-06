@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Segment Tree (セグメント木) 
+ */
 template <class S, S (*op)(S, S), S (*e)()>
 class SegmentTree {
  private:

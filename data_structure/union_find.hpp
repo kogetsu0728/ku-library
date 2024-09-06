@@ -1,4 +1,8 @@
 #pragma once
+
+/**
+ * @brief Union Find
+ */
 class UnionFind {
  private:
   int n, comp;

@@ -1,7 +1,7 @@
 #pragma once
 
 /**
- * @brief merge-sort tree
+ * @brief Merge-Sort Tree
  */
 class MergeSortTree {
   using ll = long long;

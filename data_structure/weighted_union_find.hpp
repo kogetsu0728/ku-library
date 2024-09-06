@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Weighted Union Find (重み付きUnion Find)
+ */
 template <class T>
 class WeightedUnionFind {
  private:
