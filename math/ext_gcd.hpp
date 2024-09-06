@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Extended Euclidean algorithm (拡張ユークリッドの互除法)
+ */
 long long ext_gcd(long long a, long long b, long long &x, long long &y) {
   if (b == 0) {
     x = 1;

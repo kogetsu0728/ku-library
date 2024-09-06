@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Fraction (分数)
+ */
 template <class T>
 class Fraction {
  private:
@@ -19,7 +22,8 @@ class Fraction {
   }
 
  public:
-  Fraction(const T _num = 0, const T _den = 1) : num(_num), den(_den) {
+	Fraction(): Fraction(0) {}
+  Fraction(const T _num, const T _den = 1) : num(_num), den(_den) {
     reduce();
   }
 

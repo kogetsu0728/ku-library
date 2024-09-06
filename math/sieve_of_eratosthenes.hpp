@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Sieve of Eratosthenes (エラトステネスの篩)
+ */
 class SieveOfEratosthenes {
  private:
   int siz;

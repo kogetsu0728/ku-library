@@ -1,5 +1,8 @@
 #pragma once
 
+/**
+ * @brief Matrix (行列)
+ */
 template <class T>
 class Matrix {
  private:

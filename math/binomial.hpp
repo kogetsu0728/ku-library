@@ -1,16 +1,23 @@
 #pragma once
 
+/**
+ * @brief Binomial (二項係数)
+ */
 template <class T>
 class Binomial {
  private:
   vector<T> fac, ifac;
 
  public:
-  Binomial() : Binomial(0) {}
+  Binomial() {}
   Binomial(int _n) : fac(_n + 1, 1), ifac(_n + 1, 1) {
-    for (int i = 0; i < _n; i++) fac[i + 1] = fac[i] * (i + 1);
+    for (int i = 0; i < _n; i++){
+			fac[i + 1] = fac[i] * (i + 1);
+		}
     ifac[_n] = 1 / fac[_n];
-    for (int i = _n; i > 0; i--) ifac[i - 1] = ifac[i] * i;
+    for (int i = _n; i > 0; i--){
+			ifac[i - 1] = ifac[i] * i;
+		}
   }
 
   T p(int a, int b) {
