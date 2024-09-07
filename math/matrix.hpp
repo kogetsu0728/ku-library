@@ -6,49 +6,67 @@
 template <class T>
 class Matrix {
  private:
-  int ro, co;
-  vector<vector<T>> vec;
+  vector<vector<T>> val;
 
  public:
-  Matrix() : Matrix(0, 0) {}
-  Matrix(const int _ro, const int _co, const T _e = 0)
-      : ro(_ro), co(_co), vec(_ro, vector<T>(_co, _e)) {}
+  Matrix() {}
+  Matrix(const size_t _height, const size_t _width, const T _v = T(0))
+      : val(_height, vector<T>(_width, _v)) {}
+  Matrix(const vector<vector<T>> _val) : val(_val) {}
 
-  int row() const { return ro; }
-  int col() const { return co; }
+  size_t height() const { return val.size(); }
+  size_t width() const { return (height() ? val[0].size() : 0); }
 
-  vector<T> operator[](int i) const { return vec[i]; }
-  vector<T> &operator[](int i) { return vec[i]; }
+  T get(const int i, const int j) const { return val[i][j]; }
+  T set(const int i, const int j, const T& v) { return val[i][j] = v; }
 
-  Matrix<T> &operator*=(const Matrix<T> &rhs) {
-    assert(ro == co && rhs.row() == rhs.col() && co == rhs.col());
-    return *this = (*this) * rhs;
-  }
-  Matrix<T> operator*(const Matrix<T> &rhs) const {
-    assert(co == rhs.row());
-    Matrix<T> res(ro, rhs.col());
-    for (int i = 0; i < ro; i++) {
-      for (int j = 0; j < rhs.col(); j++) {
-        for (int k = 0; k < co; k++) {
-          res[i][j] += vec[i][k] * rhs[k][j];
-        }
-      }
+  static Matrix identity(const size_t s) {
+    Matrix res(s, s);
+    for (int i = 0; i < int(s); i++) {
+      res.set(i, i, T(1));
     }
+
     return res;
   }
 
-  Matrix<T> pow(long long n) const {
-    assert(ro == co);
-    Matrix<T> res(ro, co);
-    for (int i = 0; i < ro; i++) {
-      res[i][i] = 1;
+  friend bool operator==(const Matrix<T>& lhs, const Matrix<T>& rhs) {
+    return lhs.val == rhs.val;
+  }
+
+  Matrix<T>& operator*=(const Matrix<T>& rhs) {
+    assert(height() == width() && rhs.height() == rhs.width() &&
+           height() == rhs.height());
+
+    return *this = (*this) * rhs;
+  }
+
+  friend Matrix<T> operator*(const Matrix<T>& lhs, const Matrix<T>& rhs) {
+    assert(lhs.width() == rhs.height());
+
+    Matrix<T> res(lhs.height(), rhs.width());
+    for (int i = 0; i < lhs.height(); i++) {
+      for (int j = 0; j < rhs.width(); j++) {
+        for (int k = 0; k < lhs.width(); k++) {
+          res.set(i, j, res.get(i, j) + lhs.get(i, k) * rhs.get(k, j));
+        }
+      }
     }
-    Matrix<T> x = *this;
-    while (n) {
-      if (n & 1) res *= x;
+
+    return res;
+  }
+
+  Matrix<T> pow(const long long n) const {
+    assert(height() == width());
+
+		long long m = n;
+    Matrix<T> res = identity(height());
+    Matrix<T> x(*this);
+    while (m) {
+      if (m & 1) res *= x;
       x *= x;
-      n >>= 1;
+      m >>= 1;
     }
+
     return res;
   }
 };
