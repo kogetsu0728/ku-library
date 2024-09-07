@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/unionfind.test.cpp
-    title: verify/yosupo/unionfind.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/yosupo/unionfind.test.cpp
+    title: test/yosupo/unionfind.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: Union Find
     links: []
@@ -43,9 +43,9 @@ data:
   path: data_structure/union_find.hpp
   requiredBy: []
   timestamp: '2024-09-06 18:53:45+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/unionfind.test.cpp
+  - test/yosupo/unionfind.test.cpp
 documentation_of: data_structure/union_find.hpp
 layout: document
 redirect_from:

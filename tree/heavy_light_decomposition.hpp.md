@@ -3,18 +3,18 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/lca.test.cpp
-    title: verify/yosupo/lca.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/vertex_add_path_sum.test.cpp
-    title: verify/yosupo/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/vertex_add_subtree_sum.test.cpp
-    title: verify/yosupo/vertex_add_subtree_sum.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/yosupo/lca.test.cpp
+    title: test/yosupo/lca.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/vertex_add_path_sum.test.cpp
+    title: test/yosupo/vertex_add_path_sum.test.cpp
+  - icon: ':x:'
+    path: test/yosupo/vertex_add_subtree_sum.test.cpp
+    title: test/yosupo/vertex_add_subtree_sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Heavy Light Decomposition (HL\u5206\u89E3)"
     links: []
@@ -77,11 +77,11 @@ data:
   path: tree/heavy_light_decomposition.hpp
   requiredBy: []
   timestamp: '2024-09-06 19:04:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/lca.test.cpp
-  - verify/yosupo/vertex_add_path_sum.test.cpp
-  - verify/yosupo/vertex_add_subtree_sum.test.cpp
+  - test/yosupo/lca.test.cpp
+  - test/yosupo/vertex_add_path_sum.test.cpp
+  - test/yosupo/vertex_add_subtree_sum.test.cpp
 documentation_of: tree/heavy_light_decomposition.hpp
 layout: document
 redirect_from:

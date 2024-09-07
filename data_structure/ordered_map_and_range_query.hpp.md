@@ -3,15 +3,15 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/aoj/DSL_2_F.test.cpp
-    title: verify/aoj/DSL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/aoj/DSL_2_H.test.cpp
-    title: verify/aoj/DSL_2_H.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/aoj/DSL_2_F.test.cpp
+    title: test/aoj/DSL_2_F.test.cpp
+  - icon: ':x:'
+    path: test/aoj/DSL_2_H.test.cpp
+    title: test/aoj/DSL_2_H.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: Ordered Map and Range Query
     links: []
@@ -139,10 +139,10 @@ data:
   path: data_structure/ordered_map_and_range_query.hpp
   requiredBy: []
   timestamp: '2024-09-06 19:04:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/aoj/DSL_2_F.test.cpp
-  - verify/aoj/DSL_2_H.test.cpp
+  - test/aoj/DSL_2_F.test.cpp
+  - test/aoj/DSL_2_H.test.cpp
 documentation_of: data_structure/ordered_map_and_range_query.hpp
 layout: document
 redirect_from:

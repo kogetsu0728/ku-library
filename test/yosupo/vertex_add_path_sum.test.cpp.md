@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data_structure/segment_tree.hpp
     title: "Segment Tree (\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tree/heavy_light_decomposition.hpp
     title: "Heavy Light Decomposition (HL\u5206\u89E3)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_add_path_sum
     links:
     - https://judge.yosupo.jp/problem/vertex_add_path_sum
-  bundledCode: "#line 1 \"verify/yosupo/vertex_add_path_sum.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"test/yosupo/vertex_add_path_sum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/vertex_add_path_sum\"\n\n#include <bits/stdc++.h>\n\
     using namespace std;\n\n#line 2 \"data_structure/segment_tree.hpp\"\n\n/**\n *\
     \ @brief Segment Tree (\u30BB\u30B0\u30E1\u30F3\u30C8\u6728) \n */\ntemplate <class\
@@ -58,7 +58,7 @@ data:
     \ out[v]);\n  }\n\n  void path_query(int u, int v, const function<void(int, int)>\
     \ &func) const {\n    assert(init);\n\n    while (true) {\n      if (in[u] > in[v])\
     \ swap(u, v);\n      func(max(in[u], in[top[v]]), in[v] + 1);\n      if (top[u]\
-    \ == top[v]) break;\n      v = par[top[v]];\n    }\n  }\n};\n#line 8 \"verify/yosupo/vertex_add_path_sum.test.cpp\"\
+    \ == top[v]) break;\n      v = par[top[v]];\n    }\n  }\n};\n#line 8 \"test/yosupo/vertex_add_path_sum.test.cpp\"\
     \n\nlong long op(long long a, long long b) { return a + b; }\n\nlong long e()\
     \ { return 0LL; }\n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  vector<int>\
     \ A(N);\n  for (int i = 0; i < N; i++) {\n    cin >> A[i];\n  }\n\n  HeavyLightDecomposition\
@@ -92,15 +92,15 @@ data:
   - data_structure/segment_tree.hpp
   - tree/heavy_light_decomposition.hpp
   isVerificationFile: true
-  path: verify/yosupo/vertex_add_path_sum.test.cpp
+  path: test/yosupo/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 19:04:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-07 12:18:32+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/yosupo/vertex_add_path_sum.test.cpp
+documentation_of: test/yosupo/vertex_add_path_sum.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/vertex_add_path_sum.test.cpp
-- /verify/verify/yosupo/vertex_add_path_sum.test.cpp.html
-title: verify/yosupo/vertex_add_path_sum.test.cpp
+- /verify/test/yosupo/vertex_add_path_sum.test.cpp
+- /verify/test/yosupo/vertex_add_path_sum.test.cpp.html
+title: test/yosupo/vertex_add_path_sum.test.cpp
 ---

@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data_structure/segment_tree.hpp
     title: "Segment Tree (\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
     links:
     - https://judge.yosupo.jp/problem/static_range_sum
-  bundledCode: "#line 1 \"verify/yosupo/static_range_sum.test.cpp\"\n#define PROBLEM\
+  bundledCode: "#line 1 \"test/yosupo/static_range_sum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/static_range_sum\"\n\n#include <iostream>\n\
     #include <vector>\nusing namespace std;\n\n#line 2 \"data_structure/segment_tree.hpp\"\
     \n\n/**\n * @brief Segment Tree (\u30BB\u30B0\u30E1\u30F3\u30C8\u6728) \n */\n\
@@ -29,7 +29,7 @@ data:
     \ (l < r) {\n      if (l & 1) v_l = op(v_l, v[l++]);\n      if (r & 1) v_r = op(v[--r],\
     \ v_r);\n      l >>= 1, r >>= 1;\n    }\n    return op(v_l, v_r);\n  }\n\n  void\
     \ set(int i, S x) {\n    i += n;\n    v[i] = x;\n    while (1 < i) {\n      i\
-    \ >>= 1;\n      update(i);\n    }\n  }\n};\n#line 8 \"verify/yosupo/static_range_sum.test.cpp\"\
+    \ >>= 1;\n      update(i);\n    }\n  }\n};\n#line 8 \"test/yosupo/static_range_sum.test.cpp\"\
     \n\nlong long op(long long a, long long b) { return a + b; }\n\nlong long e()\
     \ { return 0LL; }\n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n  vector<long\
     \ long> A(N);\n  for (int i = 0; i < N; i++) {\n    cin >> A[i];\n  }\n\n  SegmentTree<long\
@@ -45,15 +45,15 @@ data:
   dependsOn:
   - data_structure/segment_tree.hpp
   isVerificationFile: true
-  path: verify/yosupo/static_range_sum.test.cpp
+  path: test/yosupo/static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:53:45+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-07 12:18:32+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/yosupo/static_range_sum.test.cpp
+documentation_of: test/yosupo/static_range_sum.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/static_range_sum.test.cpp
-- /verify/verify/yosupo/static_range_sum.test.cpp.html
-title: verify/yosupo/static_range_sum.test.cpp
+- /verify/test/yosupo/static_range_sum.test.cpp
+- /verify/test/yosupo/static_range_sum.test.cpp.html
+title: test/yosupo/static_range_sum.test.cpp
 ---

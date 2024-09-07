@@ -1,22 +1,21 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data_structure/weighted_union_find.hpp
     title: "Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B
-  bundledCode: "#line 1 \"verify/aoj/DSL_1_B.test.cpp\"\n#define PROBLEM \\\n  \"\
-    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\"\n\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"data_structure/weighted_union_find.hpp\"\
+  bundledCode: "#line 1 \"test/aoj/DSL_1_B.test.cpp\"\n#define PROBLEM \\\n  \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"data_structure/weighted_union_find.hpp\"\
     \n\n/**\n * @brief Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)\n\
     \ */\ntemplate <class T>\nclass WeightedUnionFind {\n private:\n  int n, comp;\n\
     \  vector<int> par, rank;\n  vector<T> wei;\n\n public:\n  WeightedUnionFind(const\
@@ -35,8 +34,8 @@ data:
     \ member(n), res;\n    for (int i = 0; i < n; i++) {\n      member[leader(i)].push_back(i);\n\
     \    }\n    for (int i = 0; i < n; i++) {\n      if (!member[i].empty()) {\n \
     \       res.push_back(member[i]);\n      }\n    }\n    return res;\n  }\n};\n\
-    #line 8 \"verify/aoj/DSL_1_B.test.cpp\"\n\nint main() {\n  int N, Q;\n  cin >>\
-    \ N >> Q;\n  WeightedUnionFind<int> uf(N);\n  for (; Q--;) {\n    int t, x, y;\n\
+    #line 8 \"test/aoj/DSL_1_B.test.cpp\"\n\nint main() {\n  int N, Q;\n  cin >> N\
+    \ >> Q;\n  WeightedUnionFind<int> uf(N);\n  for (; Q--;) {\n    int t, x, y;\n\
     \    cin >> t >> x >> y;\n    if (t == 0) {\n      int z;\n      cin >> z;\n \
     \     uf.merge(x, y, z);\n    } else {\n      if (uf.same(x, y)) {\n        cout\
     \ << uf.diff(x, y) << endl;\n      } else {\n        cout << '?' << endl;\n  \
@@ -51,15 +50,15 @@ data:
   dependsOn:
   - data_structure/weighted_union_find.hpp
   isVerificationFile: true
-  path: verify/aoj/DSL_1_B.test.cpp
+  path: test/aoj/DSL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:53:45+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-07 12:18:32+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/aoj/DSL_1_B.test.cpp
+documentation_of: test/aoj/DSL_1_B.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aoj/DSL_1_B.test.cpp
-- /verify/verify/aoj/DSL_1_B.test.cpp.html
-title: verify/aoj/DSL_1_B.test.cpp
+- /verify/test/aoj/DSL_1_B.test.cpp
+- /verify/test/aoj/DSL_1_B.test.cpp.html
+title: test/aoj/DSL_1_B.test.cpp
 ---

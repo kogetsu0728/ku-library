@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/aoj/DSL_1_B.test.cpp
-    title: verify/aoj/DSL_1_B.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/aoj/DSL_1_B.test.cpp
+    title: test/aoj/DSL_1_B.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Weighted Union Find (\u91CD\u307F\u4ED8\u304DUnion Find)"
     links: []
@@ -54,9 +54,9 @@ data:
   path: data_structure/weighted_union_find.hpp
   requiredBy: []
   timestamp: '2024-09-06 18:53:45+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/aoj/DSL_1_B.test.cpp
+  - test/aoj/DSL_1_B.test.cpp
 documentation_of: data_structure/weighted_union_find.hpp
 layout: document
 redirect_from:

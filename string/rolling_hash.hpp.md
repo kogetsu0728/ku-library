@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/zalgorithm.test.cpp
-    title: verify/yosupo/zalgorithm.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: test/yosupo/zalgorithm.test.cpp
+    title: test/yosupo/zalgorithm.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     document_title: "Rolling Hash (\u30ED\u30FC\u30EA\u30F3\u30B0\u30CF\u30C3\u30B7\
       \u30E5)"
@@ -61,9 +61,9 @@ data:
   path: string/rolling_hash.hpp
   requiredBy: []
   timestamp: '2024-09-06 19:04:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/zalgorithm.test.cpp
+  - test/yosupo/zalgorithm.test.cpp
 documentation_of: string/rolling_hash.hpp
 layout: document
 redirect_from:

@@ -1,20 +1,20 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data_structure/union_find.hpp
     title: Union Find
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
     - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "#line 1 \"verify/yosupo/unionfind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
+  bundledCode: "#line 1 \"test/yosupo/unionfind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
     \n\n#include <iostream>\n#include <vector>\nusing namespace std;\n\n#line 2 \"\
     data_structure/union_find.hpp\"\n\n/**\n * @brief Union Find\n */\nclass UnionFind\
     \ {\n private:\n  int n, comp;\n  vector<int> par;\n\n public:\n  UnionFind(const\
@@ -28,7 +28,7 @@ data:
     \    vector<vector<int>> member(n), res;\n    for (int i = 0; i < n; i++) {\n\
     \      member[leader(i)].push_back(i);\n    }\n    for (int i = 0; i < n; i++)\
     \ {\n      if (!member[i].empty()) {\n        res.push_back(member[i]);\n    \
-    \  }\n    }\n    return res;\n  }\n};\n#line 8 \"verify/yosupo/unionfind.test.cpp\"\
+    \  }\n    }\n    return res;\n  }\n};\n#line 8 \"test/yosupo/unionfind.test.cpp\"\
     \n\nint main() {\n  int N, Q;\n  cin >> N >> Q;\n\n  UnionFind uf(N);\n  for (;\
     \ Q--;) {\n    int t, u, v;\n    cin >> t >> u >> v;\n    if (t == 0) {\n    \
     \  uf.merge(u, v);\n    } else {\n      cout << (uf.same(u, v) ? 1 : 0) << endl;\n\
@@ -42,15 +42,15 @@ data:
   dependsOn:
   - data_structure/union_find.hpp
   isVerificationFile: true
-  path: verify/yosupo/unionfind.test.cpp
+  path: test/yosupo/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 18:53:45+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-07 12:18:32+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/yosupo/unionfind.test.cpp
+documentation_of: test/yosupo/unionfind.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/unionfind.test.cpp
-- /verify/verify/yosupo/unionfind.test.cpp.html
-title: verify/yosupo/unionfind.test.cpp
+- /verify/test/yosupo/unionfind.test.cpp
+- /verify/test/yosupo/unionfind.test.cpp.html
+title: test/yosupo/unionfind.test.cpp
 ---

@@ -1,23 +1,22 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/topological_sort.hpp
     title: "Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
       )"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A
-  bundledCode: "#line 1 \"verify/aoj/GRL_4_A.test.cpp\"\n#define PROBLEM \\\n  \"\
-    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\n\n#include\
-    \ <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"graph/topological_sort.hpp\"\
+  bundledCode: "#line 1 \"test/aoj/GRL_4_A.test.cpp\"\n#define PROBLEM \\\n  \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_A\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"graph/topological_sort.hpp\"\
     \n\n/**\n * @brief Topological Sort (\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\
     \u30FC\u30C8)\n */\nclass TopologicalSort {\n private:\n  bool init;\n  int n;\n\
     \  vector<vector<int>> g;\n  vector<int> p;\n\n public:\n  TopologicalSort() {}\n\
@@ -32,7 +31,7 @@ data:
     \         que.push(nv);\n        }\n      }\n    }\n    if (n != int(p.size()))\
     \ {\n      p.clear();\n      return false;\n    }\n    return true;\n  }\n\n \
     \ int operator[](const int i) const {\n    assert(init);\n\n    return p[i];\n\
-    \  }\n};\n#line 8 \"verify/aoj/GRL_4_A.test.cpp\"\n\nint main() {\n  int N, M;\n\
+    \  }\n};\n#line 8 \"test/aoj/GRL_4_A.test.cpp\"\n\nint main() {\n  int N, M;\n\
     \  cin >> N >> M;\n  TopologicalSort ts(N);\n  for (int i = 0; i < M; i++) {\n\
     \    int u, v;\n    cin >> u >> v;\n    ts.add_edge(u, v);\n  }\n\n  cout << (ts.build()\
     \ ? 0 : 1) << endl;\n}\n"
@@ -44,15 +43,15 @@ data:
   dependsOn:
   - graph/topological_sort.hpp
   isVerificationFile: true
-  path: verify/aoj/GRL_4_A.test.cpp
+  path: test/aoj/GRL_4_A.test.cpp
   requiredBy: []
-  timestamp: '2024-09-06 19:04:49+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-09-07 12:18:32+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
-documentation_of: verify/aoj/GRL_4_A.test.cpp
+documentation_of: test/aoj/GRL_4_A.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/aoj/GRL_4_A.test.cpp
-- /verify/verify/aoj/GRL_4_A.test.cpp.html
-title: verify/aoj/GRL_4_A.test.cpp
+- /verify/test/aoj/GRL_4_A.test.cpp
+- /verify/test/aoj/GRL_4_A.test.cpp.html
+title: test/aoj/GRL_4_A.test.cpp
 ---
