@@ -42,7 +42,7 @@ data:
     - icon: ':warning:'
       path: math/fraction.hpp
       title: "Fraction (\u5206\u6570)"
-    - icon: ':warning:'
+    - icon: ':x:'
       path: math/matrix.hpp
       title: "Matrix (\u884C\u5217)"
     - icon: ':warning:'
@@ -117,6 +117,9 @@ data:
       title: test/yosupo/zalgorithm.test.cpp
   - name: test/yukicoder
     pages:
+    - icon: ':x:'
+      path: test/yukicoder/2441.test.cpp
+      title: test/yukicoder/2441.test.cpp
     - icon: ':x:'
       path: test/yukicoder/468.test.cpp
       title: test/yukicoder/468.test.cpp
