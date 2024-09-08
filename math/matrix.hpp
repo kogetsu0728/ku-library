@@ -34,13 +34,6 @@ class Matrix {
     return lhs.val == rhs.val;
   }
 
-  Matrix<T>& operator*=(const Matrix<T>& rhs) {
-    assert(height() == width() && rhs.height() == rhs.width() &&
-           height() == rhs.height());
-
-    return *this = (*this) * rhs;
-  }
-
   friend Matrix<T> operator*(const Matrix<T>& lhs, const Matrix<T>& rhs) {
     assert(lhs.width() == rhs.height());
 
@@ -54,6 +47,13 @@ class Matrix {
     }
 
     return res;
+  }
+
+  Matrix<T>& operator*=(const Matrix<T>& rhs) {
+    assert(height() == width() && rhs.height() == rhs.width() &&
+           height() == rhs.height());
+
+    return *this = (*this) * rhs;
   }
 
   Matrix<T> pow(const long long n) const {
