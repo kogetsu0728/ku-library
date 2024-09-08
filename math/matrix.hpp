@@ -10,8 +10,9 @@ class Matrix {
 
  public:
   Matrix() {}
-  Matrix(const size_t _height, const size_t _width, const T _v = T(0))
-      : val(_height, vector<T>(_width, _v)) {}
+  Matrix(const size_t _size) : Matrix(_size, _size) {}
+  Matrix(const size_t _height, const size_t _width)
+      : val(_height, vector<T>(_width)) {}
   Matrix(const vector<vector<T>> _val) : val(_val) {}
 
   size_t height() const { return val.size(); }
@@ -44,9 +45,9 @@ class Matrix {
     assert(lhs.width() == rhs.height());
 
     Matrix<T> res(lhs.height(), rhs.width());
-    for (int i = 0; i < lhs.height(); i++) {
-      for (int j = 0; j < rhs.width(); j++) {
-        for (int k = 0; k < lhs.width(); k++) {
+    for (int i = 0; i < int(lhs.height()); i++) {
+      for (int j = 0; j < int(rhs.width()); j++) {
+        for (int k = 0; k < int(lhs.width()); k++) {
           res.set(i, j, res.get(i, j) + lhs.get(i, k) * rhs.get(k, j));
         }
       }
@@ -58,7 +59,7 @@ class Matrix {
   Matrix<T> pow(const long long n) const {
     assert(height() == width());
 
-		long long m = n;
+    long long m = n;
     Matrix<T> res = identity(height());
     Matrix<T> x(*this);
     while (m) {
