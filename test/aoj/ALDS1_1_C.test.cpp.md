@@ -1,15 +1,15 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/sieve_of_eratosthenes.hpp
     title: "Sieve of Eratosthenes (\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
       \u7BE9)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
@@ -18,8 +18,8 @@ data:
   bundledCode: "#line 1 \"test/aoj/ALDS1_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"math/sieve_of_eratosthenes.hpp\"\
     \n\n/**\n * @brief Sieve of Eratosthenes (\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\
-    \u30B9\u306E\u7BE9)\n */\ntemplate <class T> class SieveOfEratosthenes {\n  private:\n\
-    \    vector<T> div, pr;\n\n  public:\n    SieveOfEratosthenes() {}\n    SieveOfEratosthenes(int\
+    \u30B9\u306E\u7BE9)\n */\nclass SieveOfEratosthenes {\n  private:\n    vector<int>\
+    \ div, pr;\n\n  public:\n    SieveOfEratosthenes() {}\n    SieveOfEratosthenes(int\
     \ n) : div(n + 1), pr() {\n        div[1] = 1;\n\n        for (long long i = 2;\
     \ i <= n; i++) {\n            if (div[i] != 0) continue;\n\n            div[i]\
     \ = i;\n            pr.emplace_back(i);\n\n            for (long long j = i *\
@@ -52,8 +52,8 @@ data:
   isVerificationFile: true
   path: test/aoj/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 22:59:58+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-09-11 23:01:44+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_1_C.test.cpp
 layout: document
