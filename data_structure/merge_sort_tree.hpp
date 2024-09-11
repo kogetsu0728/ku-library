@@ -3,55 +3,45 @@
 /**
  * @brief Merge Sort Tree
  */
+template<class T>
 class MergeSortTree {
-  using ll = long long;
-
  private:
   int n;
-  vector<vector<ll>> v, s;
+  vector<vector<T>> v, s;
 
   void update(int i) {
-    v[i] = vector<ll>();
-    queue<ll> a, b;
-    for (ll x : v[i << 1]) {
-      a.emplace(x);
-    }
-    for (ll x : v[(i << 1) | 1]) {
-      b.emplace(x);
-    }
+    v[i].clear();
+		v[i].reserve(v[i << 1].size() + v[(i << 1) | 1].size());
 
-    while (!a.empty() || !b.empty()) {
-      if (b.empty() || (!a.empty() && a.front() < b.front())) {
-        v[i].emplace_back(a.front());
-        a.pop();
-      } else {
-        v[i].emplace_back(b.front());
-        b.pop();
-      }
-    }
+		v[i].insert(v[i].end(), v[i << 1].begin(), v[i << 1].end());
+		v[i].insert(v[i].end(), v[(i << 1) | 1].begin(), v[(i << 1) | 1].end());
 
-    s[i] = vector<ll>(v[i].size() + 1);
+		sort(v[i].begin(), v[i].end());
+
+    s[i] = vector<T>(v[i].size() + 1);
     for (int j = 0; j < int(v[i].size()); j++) {
       s[i][j + 1] = s[i][j] + v[i][j];
     }
   }
 
  public:
-  MergeSortTree(vector<ll> _v) {
+  MergeSortTree(const vector<T>& _v, const T& inf) {
     n = 1;
     while (n < int(_v.size())) {
-      n *= 2;
-    }
-    while (int(_v.size()) < n) {
-      _v.emplace_back(LLONG_MAX);
+			n <<= 1;
     }
 
-    v = vector(2 * n, vector<ll>({MAX_A}));
-    s = vector(2 * n, vector<ll>({0LL, MAX_A}));
+    v = vector<vector<T>>(n * 2);
+    s = vector<vector<T>>(n * 2);
 
     for (int i = 0; i < n; i++) {
-      v[n + i] = vector<ll>({_v[i]});
-      s[n + i] = vector<ll>({0, _v[i]});
+			if(i < int(_v.size())){
+				v[n + i] = vector<T>({_v[i]});
+				s[n + i] = vector<T>({T(0), _v[i]});
+			}else{
+				v[n + i] = vector<T>({inf});
+				s[n + i] = vector<T>({T(0), inf});
+			}
     }
 
     for (int i = n - 1; i >= 1; i--) {
@@ -62,21 +52,19 @@ class MergeSortTree {
   /**
    * @brief [l, r)に含まれるa以下の数の総和
    */
-  ll sum(int l, int r, ll a) const {
+  T sum(int l, int r, const T& a) const {
     l += n;
     r += n;
-    ll res = 0;
+    T res = 0;
     while (l < r) {
       if (l & 1) {
-        int t =
-            distance(v[l].begin(), upper_bound(v[l].begin(), v[l].end(), a));
+        int t = upper_bound(v[l].begin(), v[l].end(), a) - v[l].begin();
         res += s[l][t];
         l++;
       }
       if (r & 1) {
         r--;
-        int t =
-            distance(v[r].begin(), upper_bound(v[r].begin(), v[r].end(), a));
+        int t = upper_bound(v[r].begin(), v[r].end(), a) - v[r].begin();
         res += s[r][t];
       }
       l >>= 1;
@@ -89,21 +77,20 @@ class MergeSortTree {
   /**
    * @brief [l, r)に含まれるa以下の数の個数
    */
-  int count(int l, int r, ll a) const {
+  int count(int l, int r, const T& a) const {
     l += n;
     r += n;
+
     int res = 0;
     while (l < r) {
       if (l & 1) {
-        int t =
-            distance(v[l].begin(), upper_bound(v[l].begin(), v[l].end(), a));
+        int t = upper_bound(v[l].begin(), v[l].end(), a) - v[l].begin();
         res += t;
         l++;
       }
       if (r & 1) {
         r--;
-        int t =
-            distance(v[r].begin(), upper_bound(v[r].begin(), v[r].end(), a));
+        int t = upper_bound(v[r].begin(), v[r].end(), a) - v[r].begin();
         res += t;
       }
       l >>= 1;
