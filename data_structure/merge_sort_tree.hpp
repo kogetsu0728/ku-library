@@ -12,7 +12,7 @@ template <class T> class MergeSortTree {
         v[i].clear();
         v[i].reserve(v[i << 1].size() + v[(i << 1) | 1].size());
 
-        merge(x[i << 1].begin(), x[i << 1].end(), v[(i << 1) | 1].begin(),
+        merge(v[i << 1].begin(), v[i << 1].end(), v[(i << 1) | 1].begin(),
               v[(i << 1) | 1].end(), back_inserter(v[i]));
 
         s[i] = vector<T>(v[i].size() + 1);
