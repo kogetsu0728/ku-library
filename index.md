@@ -42,7 +42,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/matrix.hpp
       title: "Matrix (\u884C\u5217)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/sieve_of_eratosthenes.hpp
       title: "Sieve of Eratosthenes (\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
         \u7BE9)"
@@ -68,7 +68,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj/2426.test.cpp
       title: test/aoj/2426.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj/ALDS1_1_C.test.cpp
       title: test/aoj/ALDS1_1_C.test.cpp
     - icon: ':heavy_check_mark:'
