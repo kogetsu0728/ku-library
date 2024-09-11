@@ -122,3 +122,4 @@ data:
       title: test/yukicoder/468.test.cpp
 layout: toppage
 ---
+ヘ(°◇、°)ノ
