@@ -5,11 +5,11 @@
  */
 class SieveOfEratosthenes {
   private:
-    vector<int> div, pr, cnt;
+    vector<int> div, pr;
 
   public:
     SieveOfEratosthenes() {}
-    SieveOfEratosthenes(int n) : div(n + 1), pr(0), cnt(n + 1) {
+    SieveOfEratosthenes(int n) : div(n + 1), pr() {
         div[1] = 1;
 
         for (int i = 2; i <= n; i++) {
@@ -17,15 +17,15 @@ class SieveOfEratosthenes {
 
             pr.emplace_back(i);
             for (int j = i; j <= n; j += i) {
-                if (div[j] == 0) div[j] = i;
-                cnt[j]++;
+                if (div[j] != 0) continue;
+                div[j] = i;
             }
         }
     }
 
     bool is_prime(int n) const { return (n < 2 ? false : div[n] == n); }
 
-		vector<int> get_primes() const { return pr; }
+    vector<int> get_primes() const { return pr; }
 
     vector<pair<int, int>> prime_factors(int n) const {
         vector<pair<int, int>> res;
@@ -62,34 +62,6 @@ class SieveOfEratosthenes {
         }
 
         sort(res.begin(), res.end());
-
-        return res;
-    }
-
-    int count_prime_factors(int n) const { return (n < 2 ? 0 : cnt[n]); }
-
-    int count_divisors(int n) const {
-        auto f = prime_factors(n);
-        int res = 1;
-
-        for (auto p : f) {
-            res *= (1 + p.second);
-        }
-
-        return res;
-    }
-
-    int totient(int n) const {
-        int res = n;
-        auto f = prime_factors(n);
-
-        for (const auto& p : f) {
-            res /= p.first;
-        }
-
-        for (const auto& p : f) {
-            res *= p.first - 1;
-        }
 
         return res;
     }
