@@ -3,21 +3,24 @@
 /**
  * @brief Sieve of Eratosthenes (エラトステネスの篩)
  */
-class SieveOfEratosthenes {
+template <class T> class SieveOfEratosthenes {
   private:
-    vector<int> div, pr;
+    vector<T> div, pr;
 
   public:
     SieveOfEratosthenes() {}
     SieveOfEratosthenes(int n) : div(n + 1), pr() {
         div[1] = 1;
 
-        for (int i = 2; i <= n; i++) {
+        for (long long i = 2; i <= n; i++) {
             if (div[i] != 0) continue;
 
+            div[i] = i;
             pr.emplace_back(i);
-            for (int j = i; j <= n; j += i) {
+
+            for (long long j = i * i; j <= n; j += i) {
                 if (div[j] != 0) continue;
+
                 div[j] = i;
             }
         }
