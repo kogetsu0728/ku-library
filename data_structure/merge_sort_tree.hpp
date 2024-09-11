@@ -12,17 +12,8 @@ template <class T> class MergeSortTree {
         v[i].clear();
         v[i].reserve(v[i << 1].size() + v[(i << 1) | 1].size());
 
-        int a = 0, b = 0;
-        while (a < int(v[i << 1].size()) || b < int(v[(i << 1) | 1].size())) {
-            if (b == int(v[(i << 1) | 1]) ||
-                v[i << 1][a] < v[(i << 1) | 1][b]) {
-                v[i].emplace_back(v[i << 1][a]);
-                a++;
-            } else {
-                v[i].emplace_back(v[(i << 1) | 1][b]);
-                b++;
-            }
-        }
+        merge(x[i << 1].begin(), x[i << 1].end(), v[(i << 1) | 1].begin(),
+              v[(i << 1) | 1].end(), back_inserter(v[i]));
 
         s[i] = vector<T>(v[i].size() + 1);
         for (int j = 0; j < int(v[i].size()); j++) {
