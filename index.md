@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: data_structure
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data_structure/merge_sort_tree.hpp
       title: Merge Sort Tree
     - icon: ':heavy_check_mark:'
@@ -65,6 +65,9 @@ data:
   verificationCategories:
   - name: test/aoj
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj/2426.test.cpp
+      title: test/aoj/2426.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj/DSL_1_B.test.cpp
       title: test/aoj/DSL_1_B.test.cpp
