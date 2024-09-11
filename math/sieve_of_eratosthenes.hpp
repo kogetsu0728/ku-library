@@ -25,21 +25,7 @@ class SieveOfEratosthenes {
 
     bool is_prime(int n) const { return (n < 2 ? false : div[n] == n); }
 
-    int nth_prime(int n) const { return pr[n]; }
-
-    int prev_prime(int n) const {
-        int ok = 0, ng = int(pr.size());
-
-        while (1 < ng - ok) {
-            int m = (ok + ng) / 2;
-            if (pr[m] < n)
-                ok = m;
-            else
-                ng = m;
-        }
-
-        return pr[ok];
-    }
+		vector<int> get_primes() const { return pr; }
 
     vector<pair<int, int>> prime_factors(int n) const {
         vector<pair<int, int>> res;
@@ -78,20 +64,6 @@ class SieveOfEratosthenes {
         sort(res.begin(), res.end());
 
         return res;
-    }
-
-    int next_prime(int n) const {
-        int ok = 0, ng = int(pr.size());
-
-        while (1 < ng - ok) {
-            int m = (ok + ng) / 2;
-            if (pr[m] <= n)
-                ok = m;
-            else
-                ng = m;
-        }
-
-        return pr[ng];
     }
 
     int count_prime_factors(int n) const { return (n < 2 ? 0 : cnt[n]); }
