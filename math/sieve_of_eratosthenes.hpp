@@ -15,7 +15,7 @@ class SieveOfEratosthenes {
         for (int i = 2; i <= n; i++) {
             if (div[i] != 0) continue;
 
-            pr.push_back(i);
+            pr.emplace_back(i);
             for (int j = i; j <= n; j += i) {
                 if (div[j] == 0) div[j] = i;
                 cnt[j]++;
