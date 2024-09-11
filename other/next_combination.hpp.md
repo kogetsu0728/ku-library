@@ -9,7 +9,7 @@ data:
   attributes:
     document_title: Next Combination
     links: []
-  bundledCode: "#line 2 \"misc/next_combination.hpp\"\n\n/**\n * @brief Next Combination\n\
+  bundledCode: "#line 2 \"other/next_combination.hpp\"\n\n/**\n * @brief Next Combination\n\
     \ */\ntemplate <typename T>\nbool next_combination(const T& begin, const T& end,\
     \ int k) {\n    const T& sub = begin + k;\n\n    if (begin == end || begin ==\
     \ sub || end == sub) return false;\n\n    T src = sub;\n    while (begin != src)\
@@ -29,15 +29,15 @@ data:
     \    return false;\n}\n"
   dependsOn: []
   isVerificationFile: false
-  path: misc/next_combination.hpp
+  path: other/next_combination.hpp
   requiredBy: []
-  timestamp: '2024-09-11 11:30:15+09:00'
+  timestamp: '2024-09-11 21:32:24+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: misc/next_combination.hpp
+documentation_of: other/next_combination.hpp
 layout: document
 redirect_from:
-- /library/misc/next_combination.hpp
-- /library/misc/next_combination.hpp.html
+- /library/other/next_combination.hpp
+- /library/other/next_combination.hpp.html
 title: Next Combination
 ---

@@ -46,10 +46,10 @@ data:
       path: math/sieve_of_eratosthenes.hpp
       title: "Sieve of Eratosthenes (\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
         \u7BE9)"
-  - name: misc
+  - name: other
     pages:
     - icon: ':warning:'
-      path: misc/next_combination.hpp
+      path: other/next_combination.hpp
       title: Next Combination
   - name: string
     pages:
