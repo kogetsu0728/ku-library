@@ -3,9 +3,9 @@
 /**
  * @brief Sieve of Eratosthenes (エラトステネスの篩)
  */
-template <class T> class SieveOfEratosthenes {
+class SieveOfEratosthenes {
   private:
-    vector<T> div, pr;
+    vector<int> div, pr;
 
   public:
     SieveOfEratosthenes() {}
