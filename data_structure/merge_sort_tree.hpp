@@ -3,7 +3,7 @@
 /**
  * @brief Merge Sort Tree
  */
-template<class T>
+template <class T>
 class MergeSortTree {
  private:
   int n;
@@ -11,12 +11,12 @@ class MergeSortTree {
 
   void update(int i) {
     v[i].clear();
-		v[i].reserve(v[i << 1].size() + v[(i << 1) | 1].size());
+    v[i].reserve(v[i << 1].size() + v[(i << 1) | 1].size());
 
-		v[i].insert(v[i].end(), v[i << 1].begin(), v[i << 1].end());
-		v[i].insert(v[i].end(), v[(i << 1) | 1].begin(), v[(i << 1) | 1].end());
+    v[i].insert(v[i].end(), v[i << 1].begin(), v[i << 1].end());
+    v[i].insert(v[i].end(), v[(i << 1) | 1].begin(), v[(i << 1) | 1].end());
 
-		sort(v[i].begin(), v[i].end());
+    sort(v[i].begin(), v[i].end());
 
     s[i] = vector<T>(v[i].size() + 1);
     for (int j = 0; j < int(v[i].size()); j++) {
@@ -28,20 +28,20 @@ class MergeSortTree {
   MergeSortTree(const vector<T>& _v, const T& inf) {
     n = 1;
     while (n < int(_v.size())) {
-			n <<= 1;
+      n <<= 1;
     }
 
     v = vector<vector<T>>(n * 2);
     s = vector<vector<T>>(n * 2);
 
     for (int i = 0; i < n; i++) {
-			if(i < int(_v.size())){
-				v[n + i] = vector<T>({_v[i]});
-				s[n + i] = vector<T>({T(0), _v[i]});
-			}else{
-				v[n + i] = vector<T>({inf});
-				s[n + i] = vector<T>({T(0), inf});
-			}
+      if (i < int(_v.size())) {
+        v[n + i] = vector<T>({_v[i]});
+        s[n + i] = vector<T>({T(0), _v[i]});
+      } else {
+        v[n + i] = vector<T>({inf});
+        s[n + i] = vector<T>({T(0), inf});
+      }
     }
 
     for (int i = n - 1; i >= 1; i--) {
