@@ -29,21 +29,23 @@ data:
     \ ifac[b];\n    }\n\n    T h(int a, int b) {\n        if (a == 0 && b == 0) return\
     \ 1;\n        if (a <= 0 || b < 0) return 0;\n        return c(a + b - 1, b);\n\
     \    }\n};\n#line 10 \"test/yosupo/binomial_coefficient_prime_mod.test.cpp\"\n\
-    \nint main(){\n\tint T, M;\n\tcin >> T >> M;\n\n\tmodint::set_mod(M);\n\n\tBinomial<modint>\
-    \ bin(min(M-1, 10000000));\n\n\tfor(;T--;){\n\t\tint n, k;\n\t\tcin >> n >> k;\n\
-    \n\t\tcout << bin.c(n, k).val() << '\\n';\n\t}\n\n\treturn 0;\n}\n"
+    \nint main() {\n    int T, M;\n    cin >> T >> M;\n\n    modint::set_mod(M);\n\
+    \n    Binomial<modint> bin(min(M - 1, 10000000));\n\n    for (; T--;) {\n    \
+    \    int n, k;\n        cin >> n >> k;\n\n        cout << bin.c(n, k).val() <<\
+    \ '\\n';\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/binomial_coefficient_prime_mod\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include <atcoder/modint>\n\
-    using namespace atcoder;\n\n#include \"../../math/binomial.hpp\"\n\nint main(){\n\
-    \tint T, M;\n\tcin >> T >> M;\n\n\tmodint::set_mod(M);\n\n\tBinomial<modint> bin(min(M-1,\
-    \ 10000000));\n\n\tfor(;T--;){\n\t\tint n, k;\n\t\tcin >> n >> k;\n\n\t\tcout\
-    \ << bin.c(n, k).val() << '\\n';\n\t}\n\n\treturn 0;\n}\n"
+    using namespace atcoder;\n\n#include \"../../math/binomial.hpp\"\n\nint main()\
+    \ {\n    int T, M;\n    cin >> T >> M;\n\n    modint::set_mod(M);\n\n    Binomial<modint>\
+    \ bin(min(M - 1, 10000000));\n\n    for (; T--;) {\n        int n, k;\n      \
+    \  cin >> n >> k;\n\n        cout << bin.c(n, k).val() << '\\n';\n    }\n\n  \
+    \  return 0;\n}\n"
   dependsOn:
   - math/binomial.hpp
   isVerificationFile: true
   path: test/yosupo/binomial_coefficient_prime_mod.test.cpp
   requiredBy: []
-  timestamp: '2024-09-12 11:58:39+09:00'
+  timestamp: '2024-09-12 12:01:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo/binomial_coefficient_prime_mod.test.cpp

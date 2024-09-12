@@ -15,8 +15,9 @@ data:
     PROBLEM: https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
     links:
     - https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C
-  bundledCode: "#line 1 \"test/aoj/ALDS1_1_C.test.cpp\"\n#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"math/sieve_of_eratosthenes.hpp\"\
+  bundledCode: "#line 1 \"test/aoj/ALDS1_1_C.test.cpp\"\n#define PROBLEM \\\n    \"\
+    https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\n\n#include\
+    \ <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"math/sieve_of_eratosthenes.hpp\"\
     \n\n/**\n * @brief Sieve of Eratosthenes (\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\
     \u30B9\u306E\u7BE9)\n */\nclass SieveOfEratosthenes {\n  private:\n    vector<int>\
     \ div, pr;\n\n  public:\n    SieveOfEratosthenes() {}\n    SieveOfEratosthenes(int\
@@ -38,21 +39,22 @@ data:
     \       for (int j = 0; j < int(p.second); j++) {\n                    m *= p.first;\n\
     \                    res.push_back(res[i] * m);\n                }\n         \
     \   }\n        }\n\n        sort(res.begin(), res.end());\n\n        return res;\n\
-    \    }\n};\n#line 7 \"test/aoj/ALDS1_1_C.test.cpp\"\n\nint main(){\n\tint N;\n\
-    \tcin >> N;\n\n\tSieveOfEratosthenes pr(100000000);\n\n\tint ans = 0;\n\tfor(;N--;){\n\
-    \t\tint a;\n\t\tcin >> a;\n\n\t\tif(pr.is_prime(a)) ans++;\n\t}\n\n\tcout << ans\
-    \ << endl;\n\n\treturn 0;\n}\n"
-  code: "#define PROBLEM \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
+    \    }\n};\n#line 8 \"test/aoj/ALDS1_1_C.test.cpp\"\n\nint main() {\n    int N;\n\
+    \    cin >> N;\n\n    SieveOfEratosthenes pr(100000000);\n\n    int ans = 0;\n\
+    \    for (; N--;) {\n        int a;\n        cin >> a;\n\n        if (pr.is_prime(a))\
+    \ ans++;\n    }\n\n    cout << ans << endl;\n\n    return 0;\n}\n"
+  code: "#define PROBLEM \\\n    \"https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_1_C\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../../math/sieve_of_eratosthenes.hpp\"\
-    \n\nint main(){\n\tint N;\n\tcin >> N;\n\n\tSieveOfEratosthenes pr(100000000);\n\
-    \n\tint ans = 0;\n\tfor(;N--;){\n\t\tint a;\n\t\tcin >> a;\n\n\t\tif(pr.is_prime(a))\
-    \ ans++;\n\t}\n\n\tcout << ans << endl;\n\n\treturn 0;\n}\n"
+    \n\nint main() {\n    int N;\n    cin >> N;\n\n    SieveOfEratosthenes pr(100000000);\n\
+    \n    int ans = 0;\n    for (; N--;) {\n        int a;\n        cin >> a;\n\n\
+    \        if (pr.is_prime(a)) ans++;\n    }\n\n    cout << ans << endl;\n\n   \
+    \ return 0;\n}\n"
   dependsOn:
   - math/sieve_of_eratosthenes.hpp
   isVerificationFile: true
   path: test/aoj/ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2024-09-11 23:01:44+09:00'
+  timestamp: '2024-09-12 12:01:22+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj/ALDS1_1_C.test.cpp
