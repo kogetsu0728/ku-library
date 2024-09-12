@@ -48,7 +48,7 @@ data:
         \u7BE9)"
   - name: other
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: other/next_combination.hpp
       title: Next Combination
   - name: string
@@ -123,6 +123,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/2441.test.cpp
       title: test/yukicoder/2441.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yukicoder/2561.test.cpp
+      title: test/yukicoder/2561.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yukicoder/468.test.cpp
       title: test/yukicoder/468.test.cpp
