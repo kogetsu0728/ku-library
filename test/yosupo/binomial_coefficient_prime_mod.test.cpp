@@ -14,7 +14,7 @@ int main(){
 
 	modint::set_mod(M);
 
-	Binomial<modint> bin(M-1);
+	Binomial<modint> bin(min(M-1, 10000000));
 
 	for(;T--;){
 		int n, k;
