@@ -2,10 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo/binomial_coefficient_prime_mod.test.cpp
+    title: test/yosupo/binomial_coefficient_prime_mod.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Binomial (\u4E8C\u9805\u4FC2\u6570)"
     links: []
@@ -37,8 +40,9 @@ data:
   path: math/binomial.hpp
   requiredBy: []
   timestamp: '2024-09-11 11:30:15+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo/binomial_coefficient_prime_mod.test.cpp
 documentation_of: math/binomial.hpp
 layout: document
 redirect_from:

@@ -32,7 +32,7 @@ data:
         )"
   - name: math
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: math/binomial.hpp
       title: "Binomial (\u4E8C\u9805\u4FC2\u6570)"
     - icon: ':heavy_check_mark:'
@@ -94,6 +94,9 @@ data:
       title: test/aoj/NTL_1_E.test.cpp
   - name: test/yosupo
     pages:
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo/binomial_coefficient_prime_mod.test.cpp
+      title: test/yosupo/binomial_coefficient_prime_mod.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo/lca.test.cpp
       title: test/yosupo/lca.test.cpp
