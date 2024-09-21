@@ -14,14 +14,14 @@ template <class S = _UnionFind::S,
           S (*e)() = _UnionFind::e>
 class UnionFind {
   private:
-    int n, comp;
+    int n, siz;
     vector<int> par;
     vector<S> val;
 
   public:
-    UnionFind(const int _n = 0) : n(_n), comp(_n), par(_n, -1), val(_n, e()) {}
+    UnionFind(const int _n = 0) : n(_n), siz(_n), par(_n, -1), val(_n, e()) {}
 
-    int component() const { return comp; }
+    int size() const { return siz; }
 
     int size(int x) { return -par[leader(x)]; }
 
@@ -39,7 +39,7 @@ class UnionFind {
 
         if (par[x] > par[y]) swap(x, y);
 
-        comp--;
+        siz--;
         par[x] += par[y];
         par[y] = x;
         val[x] = op(val[x], val[y]);
