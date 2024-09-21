@@ -1,8 +1,17 @@
 #pragma once
 
+namespace _UnionFind {
+using S = bool;
+S op(S a, S b) { return a ^ b; }
+S e() { return false; }
+};  // namespace _UnionFind
+
 /**
  * @brief Union Find
  */
+template <class S = _UnionFind::S,
+          S (*op)(S, S) = _UnionFind::op,
+          S (*e)() = _UnionFind::e>
 class UnionFind {
   private:
     int n, comp;
