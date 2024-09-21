@@ -16,9 +16,10 @@ class UnionFind {
   private:
     int n, comp;
     vector<int> par;
+    vector<S> val;
 
   public:
-    UnionFind(const int _n = 0) : n(_n), comp(_n), par(_n, -1) {}
+    UnionFind(const int _n = 0) : n(_n), comp(_n), par(_n, -1), val(_n, e()) {}
 
     int component() const { return comp; }
 
@@ -32,25 +33,41 @@ class UnionFind {
     bool same(int x, int y) { return leader(x) == leader(y); }
 
     bool merge(int x, int y) {
-        x = leader(x), y = leader(y);
+        x = leader(x);
+        y = leader(y);
         if (x == y) return false;
-        comp--;
+
         if (par[x] > par[y]) swap(x, y);
+
+        comp--;
         par[x] += par[y];
         par[y] = x;
+        val[x] = op(val[x], val[y]);
+
         return true;
     }
 
     vector<vector<int>> groups() {
-        vector<vector<int>> member(n), res;
+        vector<vector<int>> mem(n), res;
+
         for (int i = 0; i < n; i++) {
-            member[leader(i)].push_back(i);
+            mem[leader(i)].emplace_back(i);
         }
+
         for (int i = 0; i < n; i++) {
-            if (!member[i].empty()) {
-                res.push_back(member[i]);
+            if (!mem[i].empty()) {
+                res.emplace_back(mem[i]);
             }
         }
+
         return res;
     }
+
+    void set(int x, S v) {
+        val[leader(x)] = v;
+
+        return;
+    }
+
+    S get(int x) { return val[leader(x)]; }
 };
