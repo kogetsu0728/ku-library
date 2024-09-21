@@ -57,8 +57,8 @@ data:
   timestamp: '2024-09-11 11:30:15+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yukicoder/468.test.cpp
   - test/aoj/GRL_4_A.test.cpp
+  - test/yukicoder/468.test.cpp
 documentation_of: graph/topological_sort.hpp
 layout: document
 redirect_from:
