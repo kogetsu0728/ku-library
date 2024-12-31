@@ -1,0 +1,9 @@
+name: cache-clear
+
+on: workflow_dispatch
+
+jobs:
+  clear:
+    runs-on: ${{ vars.RUNNER_IMAGE }}
+    steps:
+      - uses: snnaplab/delete-branch-cache-action@v1
