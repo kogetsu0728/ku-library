@@ -7,7 +7,7 @@
  */
 template <int M> class StaticModInt {
     static_assert(2 < M);
-    static_assert(M <= LLONG_MAX / 2);
+    static_assert(M <= INT_MAX / 2);
 
   private:
     int v;
