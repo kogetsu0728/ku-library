@@ -1,17 +1,15 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/binomial_coefficient_prime_mod"
 
 #include "../../math/binomial.hpp"
+#include "../../math/dynamic_mod_int.hpp"
 #include "../../template/template.hpp"
-
-#include <atcoder/modint>
-using namespace atcoder;
 
 int main() {
     int T, M;
     cin >> T >> M;
 
-    modint::set_mod(M);
-    Binomial<modint> bin(min(M - 1, 10000000));
+    DynamicModInt::set_mod(M);
+    Binomial<DynamicModInt> bin(min(M - 1, 10000000));
 
     while (T--) {
         int n, k;
