@@ -53,7 +53,7 @@ template <int M> class StaticModInt {
     }
 
     StaticModInt& operator*=(const StaticModInt& rhs) {
-        v = ((ull)(v)*rhs.val()) % M;
+        v = (ull(v) * rhs.val()) % M;
 
         return *this;
     }
