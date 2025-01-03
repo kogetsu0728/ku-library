@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../template/template.hpp"
+
 /**
  * @brief Rollback Union Find (Rollback付きUnion Find)
  */
@@ -13,9 +15,8 @@ class RollbackUnionFind {
     RollbackUnionFind() : RollbackUnionFind(0) {}
     RollbackUnionFind(const int _n) : n(_n), comp(_n), par(_n, -1), his() {}
 
+    int size() const { return comp; }
     int size(int x) const { return -par[leader(x)]; }
-
-    int component() const { return comp; }
 
     int leader(int x) const {
         if (par[x] < 0) return x;
