@@ -9,7 +9,7 @@ int main() {
 
     vector<vector<int>> g(Q + 1);
     vector<int> t(Q), k(Q), u(Q), v(Q);
-		rep(i, 0, Q){
+    rep(i, 0, Q) {
         cin >> t[i] >> k[i] >> u[i] >> v[i];
         g[k[i] + 1].emplace_back(i + 1);
     }
@@ -28,24 +28,24 @@ int main() {
             }
         }
 
-        for (int nxt : g[now + 1]) {
-            self(self, nxt);
+        for (int nex : g[now + 1]) {
+            self(self, nex);
         }
 
         if (now != -1 && t[now] == 0) {
             uf.undo();
         }
 
-				return;
+        return;
     };
 
     dfs(dfs, 0);
 
-		rep(i, 0, Q){
+    rep(i, 0, Q) {
         if (t[i] == 1) {
             cout << (ans[i] ? 1 : 0) << LF;
         }
     }
 
-		return 0;
+    return 0;
 }
