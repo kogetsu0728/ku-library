@@ -22,10 +22,14 @@ int main() {
         int l, r;
         cin >> l >> r;
 
-        assert(fw1.sum(l, r) == fw2.sum(l, r));
-        assert(fw2.sum(l, r) == fw3.sum(l, r));
+        ll s1 = fw1.sum(l, r);
+        ll s2 = fw2.sum(l, r);
+        ll s3 = fw3.sum(l, r);
 
-        cout << fw1.sum(l, r) << LF;
+        assert(s1 == s2);
+        assert(s2 == s3);
+
+        cout << s1 << LF;
     }
 
     return 0;
