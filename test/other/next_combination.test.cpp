@@ -23,7 +23,7 @@ int main() {
         if (s2 <= s1) {
             ans = (ans + 1) % 998;
         }
-    } while (NextCombination(id.begin(), id.end(), K));
+    } while (next_combination(id.begin(), id.end(), K));
 
     cout << ans << LF;
 

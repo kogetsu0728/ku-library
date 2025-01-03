@@ -7,7 +7,7 @@
  * @note 速度が重要なら再帰を書く (e.g., func(index, count, sum))
  */
 template <class I>
-bool NextCombination(const I& begin, const I& end, const size_t k) {
+bool next_combination(const I& begin, const I& end, const size_t k) {
     const I sub = next(begin, k);
 
     if (begin == end || begin == sub || end == sub) {
