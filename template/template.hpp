@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-using uint = unsigned;
+using uint = unsigned int;
 using ll = long long;
 using ull = unsigned long long;
 using ld = long double;
@@ -29,6 +29,12 @@ const ld PI = acos(-1);
 
 #define all(a) (a).begin(), (a).end()
 #define rall(a) (a).rbegin(), (a).rend()
+
+#ifdef LOCAL
+#define IF_LOCAL if constexpr (true)
+#else
+#define IF_LOCAL if constexpr (false)
+#endif
 
 template <class T> bool chmin(T& a, const T& b) {
     return (a > b) ? (a = b, true) : false;
