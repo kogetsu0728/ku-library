@@ -12,8 +12,10 @@ using min_priority_queue = priority_queue<T, vector<T>, greater<T>>;
 
 constexpr int INF32 = INT_MAX / 2;
 constexpr ll INF64 = 1LL << 60;
-constexpr array<int, 8> DX = {0, 1, 0, -1, 1, 1, -1, -1};
-constexpr array<int, 8> DY = {-1, 0, 1, 0, -1, 1, 1, -1};
+constexpr array<int, 4> DY4 = {0, -1, 0, 1};
+constexpr array<int, 4> DX4 = {1, 0, -1, 0};
+constexpr array<int, 8> DY8 = {0, -1, -1, -1, 0, 1, 1, 1};
+constexpr array<int, 8> DX8 = {1, 1, 0, -1, -1, -1, 0, 1};
 constexpr char LF = '\n';
 const ld PI = acos(-1);
 
