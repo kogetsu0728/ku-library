@@ -11,7 +11,7 @@ template <class T> class RollingHash {
 
   public:
     RollingHash() : RollingHash("") {}
-    RollingHash(const string& _s, const T _base = T(2525))
+    RollingHash(const string& _s, const T& _base = T(2525))
         : hash(_s.length() + 1), pow(_s.length() + 1) {
         hash[0] = T(0);
         pow[0] = T(1);
