@@ -14,6 +14,8 @@ template <class T> class Binomial {
   public:
     Binomial() : Binomial(0) {}
     Binomial(int _n) : n(_n), fact(_n + 1), ifact(_n + 1) {
+        assert(0 <= _n);
+
         fact[0] = T(1);
         rep(i, 0, n) { fact[i + 1] = fact[i] * T(i + 1); }
 
@@ -27,6 +29,9 @@ template <class T> class Binomial {
             return T(0);
         }
 
+        assert(0 <= a && a <= n);
+        assert(0 <= a - b && a - b <= n);
+
         return fact[a] * ifact[a - b];
     }
 
@@ -35,6 +40,8 @@ template <class T> class Binomial {
         if (b < 0 || a < b) {
             return T(0);
         }
+
+        assert(0 <= b && b <= n);
 
         return p(a, b) * ifact[b];
     }
