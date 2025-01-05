@@ -39,9 +39,4 @@ constexpr bool IS_LOCAL = true;
 #define rrep2(i, a, b, c) for (ll i = (ll)(a); (i) >= (ll)(b); (i) -= (ll)(c))
 #define rrep(...) overload4(__VA_ARGS__, rrep2, rrep1)(__VA_ARGS__)
 
-template <class T> bool chmin(T& a, const T& b) {
-    return (a > b) ? (a = b, true) : false;
-}
-template <class T> bool chmax(T& a, const T& b) {
-    return (a < b) ? (a = b, true) : false;
-}
+#include "other/choose_min_max.hpp"
