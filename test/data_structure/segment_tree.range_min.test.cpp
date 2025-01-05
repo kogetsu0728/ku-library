@@ -4,7 +4,7 @@
 #include "../../template/template.hpp"
 
 ll op(ll a, ll b) { return min(a, b); }
-ll e() { return INF64; }
+ll e() { return INF<ll>; }
 
 int main() {
     int N, Q;

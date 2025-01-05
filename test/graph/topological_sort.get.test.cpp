@@ -27,7 +27,7 @@ int main() {
     assert(ts_inv.is_dag());
 
     vector<int> dp(N, 0);
-    vector<int> ep(N, INF32);
+    vector<int> ep(N, INF<int>);
     ep[0] = 0;
 
     rep(i, 0, N) {
