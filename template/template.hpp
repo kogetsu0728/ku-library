@@ -7,8 +7,9 @@ using uint = unsigned int;
 using ll = long long;
 using ull = unsigned long long;
 using ld = long double;
-template <class T>
-using min_priority_queue = priority_queue<T, vector<T>, greater<T>>;
+template <class T, bool R = false>
+using heap =
+    priority_queue<T, vector<T>, conditional_t<R, greater<T>, less<T>>>;
 
 template <class T> constexpr T INF = numeric_limits<T>::max() / 2;
 constexpr array<int, 4> DY4 = {0, -1, 0, 1};
