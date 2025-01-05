@@ -1,5 +1,6 @@
 #pragma once
 
+#include "constant.hpp"
 #include "include.hpp"
 #include "type_alias.hpp"
 
