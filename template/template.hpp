@@ -16,12 +16,12 @@ constexpr array<int, 4> DX4 = {1, 0, -1, 0};
 constexpr array<int, 8> DY8 = {0, -1, -1, -1, 0, 1, 1, 1};
 constexpr array<int, 8> DX8 = {1, 1, 0, -1, -1, -1, 0, 1};
 constexpr char LF = '\n';
-const ld PI = acos(-1);
+constexpr ld PI = acos(-1);
 
-#ifdef LOCAL
-constexpr bool IS_LOCAL = true;
-#else
+#ifdef ONLINE_JUDGE
 constexpr bool IS_LOCAL = false;
+#else
+constexpr bool IS_LOCAL = true;
 #endif
 
 #define IF_LOCAL if constexpr (IS_LOCAL)
