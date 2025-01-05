@@ -1,7 +1,7 @@
 [[languages.cpp.environments]]
 CXX = "g++"
 CXXFLAGS = [
-    "-std=gnu++20",
+    "-std=gnu++23",
     "-O2",
     "-march=native",
     "-fconstexpr-depth=2147483647",
