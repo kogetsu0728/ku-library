@@ -1,22 +1,7 @@
 #pragma once
 
-#include <bits/stdc++.h>
-using namespace std;
-
-using uint = unsigned int;
-using ll = long long;
-using ull = unsigned long long;
-using ld = long double;
-template <class T, bool R = false>
-using heap = priority_queue<T, vector<T>, conditional_t<R, greater<T>, less<T>>>;
-
-template <class T> constexpr T INF = numeric_limits<T>::max() / 2;
-constexpr array<int, 4> DY4 = {0, -1, 0, 1};
-constexpr array<int, 4> DX4 = {1, 0, -1, 0};
-constexpr array<int, 8> DY8 = {0, -1, -1, -1, 0, 1, 1, 1};
-constexpr array<int, 8> DX8 = {1, 1, 0, -1, -1, -1, 0, 1};
-constexpr char LF = '\n';
-constexpr ld PI = acos(-1);
+#include "include.hpp"
+#include "type_alias.hpp"
 
 #ifdef ONLINE_JUDGE
 constexpr bool IS_LOCAL = false;
@@ -39,4 +24,4 @@ constexpr bool IS_LOCAL = true;
 #define rrep2(i, a, b, c) for (ll i = (ll)(a); (i) >= (ll)(b); (i) -= (ll)(c))
 #define rrep(...) overload4(__VA_ARGS__, rrep2, rrep1)(__VA_ARGS__)
 
-#include "other/choose_min_max.hpp"
+#include "../other/choose_min_max.hpp"
