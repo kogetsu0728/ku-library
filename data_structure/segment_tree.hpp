@@ -19,9 +19,13 @@ template <class S, S (*op)(S, S), S (*e)()> class SegmentTree {
     SegmentTree() : SegmentTree(0) {}
     SegmentTree(int _n) : SegmentTree(vector<S>(_n, e())) {}
     SegmentTree(const vector<S>& _v) : n(int(_v.size())), v(_v.size() * 2, e()) {
-        rep(i, 0, n) { v[n + i] = _v[i]; }
+        rep (i, 0, n) {
+            v[n + i] = _v[i];
+        }
 
-        rrep(i, n - 1, 1) { update(i); }
+        rrep (i, n - 1, 1) {
+            update(i);
+        }
     }
 
     S get(int i) const { return v[i + n]; }

@@ -8,7 +8,7 @@ int main() {
     cin >> N >> M;
 
     TopologicalSort ts(N);
-    rep(i, 0, M) {
+    rep (i, 0, M) {
         int u, v;
         cin >> u >> v;
 

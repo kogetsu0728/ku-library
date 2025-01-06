@@ -18,7 +18,7 @@ int main() {
 
     vector<int> ans(N);
 
-    rep(i, 0, N) {
+    rep (i, 0, N) {
         auto check = [&](int m) -> bool {
             if (rh1.get(0, m) != rh1.get(i, i + m)) {
                 return false;
@@ -45,7 +45,7 @@ int main() {
         ans[i] = ok;
     }
 
-    rep(i, 0, N) {
+    rep (i, 0, N) {
         if (0 < i) {
             cout << ' ';
         }

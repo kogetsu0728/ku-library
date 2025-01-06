@@ -11,7 +11,7 @@ int main() {
     TopologicalSort ts(N);
     TopologicalSort ts_inv(N);
 
-    rep(i, 0, M) {
+    rep (i, 0, M) {
         int u, v, w;
         cin >> u >> v >> w;
 
@@ -30,7 +30,7 @@ int main() {
     vector<int> ep(N, INF<int>);
     ep[0] = 0;
 
-    rep(i, 0, N) {
+    rep (i, 0, N) {
         int v = ts.get(i);
         for (auto [nv, co] : g[v]) {
             dp[nv] = max(dp[nv], dp[v] + co);
@@ -39,7 +39,7 @@ int main() {
 
     ep[N - 1] = dp[N - 1];
 
-    rep(i, 0, N) {
+    rep (i, 0, N) {
         int v = ts_inv.get(i);
         for (auto [nv, co] : g[v]) {
             ep[v] = min(ep[v], ep[nv] - co);
@@ -47,7 +47,7 @@ int main() {
     }
 
     int cnt = N;
-    rep(i, 0, N) {
+    rep (i, 0, N) {
         if (dp[i] == ep[i]) {
             cnt--;
         }

@@ -12,7 +12,7 @@ class PrimeSieve {
   public:
     PrimeSieve() : PrimeSieve(0) {}
     PrimeSieve(int _n) : div(_n + 1), pri(0) {
-        rep(i, 2, _n + 1) {
+        rep (i, 2, _n + 1) {
             if (div[i] != 0) {
                 continue;
             }
@@ -59,10 +59,10 @@ class PrimeSieve {
         for (auto [p, q] : pf) {
             int s = res.size();
 
-            rep(i, 0, s) {
+            rep (i, 0, s) {
                 int m = 1;
 
-                rep(j, 0, q) {
+                rep (j, 0, q) {
                     m *= p;
                     res.emplace_back(res[i] * m);
                 }

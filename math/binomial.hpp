@@ -17,10 +17,14 @@ template <class T> class Binomial {
         assert(0 <= _n);
 
         fact[0] = T(1);
-        rep(i, 0, n) { fact[i + 1] = fact[i] * T(i + 1); }
+        rep (i, 0, n) {
+            fact[i + 1] = fact[i] * T(i + 1);
+        }
 
         ifact[n] = T(1) / fact[n];
-        rrep(i, n, 1) { ifact[i - 1] = ifact[i] * T(i); }
+        rrep (i, n, 1) {
+            ifact[i - 1] = ifact[i] * T(i);
+        }
     }
 
     //! 順列

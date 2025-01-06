@@ -13,10 +13,12 @@ int main() {
     cin >> N >> Q;
 
     vector<int> A(N);
-    rep(i, 0, N) { cin >> A[i]; }
+    rep (i, 0, N) {
+        cin >> A[i];
+    }
 
     HeavyLightDecomposition hld(N);
-    rep(i, 0, N - 1) {
+    rep (i, 0, N - 1) {
         int u, v;
         cin >> u >> v;
 
@@ -27,7 +29,7 @@ int main() {
 
     SegmentTree<ll, op, e> seg(N);
 
-    rep(i, 0, N) {
+    rep (i, 0, N) {
         hld.node_query(i, [&](int j) -> void {
             seg.set(j, A[i]);
             return;

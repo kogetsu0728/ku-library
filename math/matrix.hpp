@@ -19,7 +19,9 @@ template <class T> class Matrix {
     static Matrix identity(int s) {
         Matrix res(s);
 
-        rep(i, 0, s) { res.set(i, i, T(1)); }
+        rep (i, 0, s) {
+            res.set(i, i, T(1));
+        }
 
         return res;
     }
@@ -42,9 +44,9 @@ template <class T> class Matrix {
         assert(lhs.w == rhs.h);
 
         Matrix res(lhs.h, rhs.w);
-        rep(i, 0, lhs.h) {
-            rep(j, 0, rhs.w) {
-                rep(k, 0, lhs.w) {
+        rep (i, 0, lhs.h) {
+            rep (j, 0, rhs.w) {
+                rep (k, 0, lhs.w) {
                     res.set(i, j, res.get(i, j) + lhs.get(i, k) * rhs.get(k, j));
                 }
             }

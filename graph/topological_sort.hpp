@@ -28,14 +28,14 @@ class TopologicalSort {
         init = true;
 
         vector<int> cnt(n);
-        rep(v, 0, n) {
+        rep (v, 0, n) {
             for (int nv : g[v]) {
                 cnt[nv]++;
             }
         }
 
         queue<int> que;
-        rep(v, 0, n) {
+        rep (v, 0, n) {
             if (cnt[v] == 0) {
                 que.emplace(v);
             }

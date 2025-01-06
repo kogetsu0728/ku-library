@@ -9,7 +9,7 @@ int main() {
 
     vector<vector<int>> g(Q + 1);
     vector<int> t(Q), k(Q), u(Q), v(Q);
-    rep(i, 0, Q) {
+    rep (i, 0, Q) {
         cin >> t[i] >> k[i] >> u[i] >> v[i];
         g[k[i] + 1].emplace_back(i + 1);
     }
@@ -41,7 +41,7 @@ int main() {
 
     dfs(dfs, 0);
 
-    rep(i, 0, Q) {
+    rep (i, 0, Q) {
         if (t[i] == 1) {
             cout << (ans[i] ? 1 : 0) << LF;
         }

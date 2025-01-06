@@ -74,9 +74,11 @@ template <class T> class WeightedUnionFind {
     vector<vector<int>> groups() {
         vector<vector<int>> mem(n), res;
 
-        rep(i, 0, n) { mem[leader(i)].push_back(i); }
+        rep (i, 0, n) {
+            mem[leader(i)].push_back(i);
+        }
 
-        rep(i, 0, n) {
+        rep (i, 0, n) {
             if (!mem[i].empty()) {
                 res.push_back(mem[i]);
             }

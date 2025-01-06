@@ -10,7 +10,9 @@ int main() {
     int N, Q;
     cin >> N >> Q;
     vector<ll> A(N);
-    rep(i, 0, N) { cin >> A[i]; }
+    rep (i, 0, N) {
+        cin >> A[i];
+    }
 
     SegmentTree<ll, op, e> seg(A);
     while (Q--) {

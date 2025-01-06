@@ -16,7 +16,7 @@ template <class T> class RollingHash {
         hash[0] = T(0);
         pow[0] = T(1);
 
-        rep(i, 0, _s.length()) {
+        rep (i, 0, _s.length()) {
             hash[i + 1] = hash[i] * _base + T(_s[i]);
             pow[i + 1] = pow[i] * _base;
         }

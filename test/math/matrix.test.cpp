@@ -12,8 +12,8 @@ int main() {
 
     vector A(N, std::vector<StaticModInt<998244353>>(N));
     Matrix<StaticModInt<998244353>> mat(N);
-    rep(i, 0, N) {
-        rep(j, 0, N) {
+    rep (i, 0, N) {
+        rep (j, 0, N) {
             ll a;
             cin >> a;
 
@@ -23,8 +23,8 @@ int main() {
 
     mat = mat.pow(K);
 
-    rep(i, 0, N) {
-        rep(j, 0, N) {
+    rep (i, 0, N) {
+        rep (j, 0, N) {
             if (0 < j) {
                 cout << ' ';
             }

@@ -26,7 +26,9 @@ template <class T> class FenwickTree {
     FenwickTree() : FenwickTree(0) {}
     FenwickTree(int _n) : n(_n), v(_n, T(0)) { assert(0 <= n); }
     FenwickTree(const vector<T>& _v) : FenwickTree(_v.size()) {
-        rep(i, 0, _v.size()) { set(i, _v[i]); }
+        rep (i, 0, _v.size()) {
+            set(i, _v[i]);
+        }
     }
 
     T sum(int l, int r) const {

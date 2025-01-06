@@ -56,7 +56,7 @@ class RollbackUnionFind {
         }
 
         vector<int> x(2);
-        rep(i, 0, 2) {
+        rep (i, 0, 2) {
             auto [v, p] = his.top();
             his.pop();
 
@@ -80,7 +80,8 @@ class RollbackUnionFind {
     }
 
     void rollback() {
-        while (undo());
+        while (undo())
+            ;
 
         return;
     }
@@ -89,9 +90,11 @@ class RollbackUnionFind {
         vector<vector<int>> mem(n);
         vector<vector<int>> res;
 
-        rep(i, 0, n) { mem[leader(i)].emplace_back(i); }
+        rep (i, 0, n) {
+            mem[leader(i)].emplace_back(i);
+        }
 
-        rep(i, 0, n) {
+        rep (i, 0, n) {
             if (!mem[i].empty()) {
                 res.emplace_back(mem[i]);
             }

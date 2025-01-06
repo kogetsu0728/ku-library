@@ -8,7 +8,7 @@ int main() {
     cin >> N >> Q;
 
     HeavyLightDecomposition hld(N);
-    rep(i, 1, N) {
+    rep (i, 1, N) {
         int p;
         cin >> p;
 

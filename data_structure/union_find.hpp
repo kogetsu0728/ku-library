@@ -53,9 +53,11 @@ class UnionFind {
     vector<vector<int>> groups() {
         vector<vector<int>> mem(n), res;
 
-        rep(i, 0, n) { mem[leader(i)].emplace_back(i); }
+        rep (i, 0, n) {
+            mem[leader(i)].emplace_back(i);
+        }
 
-        rep(i, 0, n) {
+        rep (i, 0, n) {
             if (!mem[i].empty()) {
                 res.emplace_back(mem[i]);
             }
