@@ -72,13 +72,8 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Install clang-format
-      run: |
-        sudo apt-get update
-        sudo apt-get install clang-format
-
-    - name: Apply clang-format
-      run: clang-format --dry-run --Werror $(find . -name "*.cpp" -or -name "*.hpp")
+    - name: Run clang-format style check
+      uses: jidicula/clang-format-action@v4.14.0
 
   verify:
     runs-on: ${{ vars.RUNNER_IMAGE }}
