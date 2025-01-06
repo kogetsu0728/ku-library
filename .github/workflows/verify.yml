@@ -63,7 +63,7 @@ jobs:
           path: .competitive-verifier/bundled
           retention-days: 1
 
-  format:
+  lint:
     runs-on: ${{ vars.RUNNER_IMAGE }}
     needs: [setup]
 
@@ -72,10 +72,13 @@ jobs:
       with:
         fetch-depth: 0
 
-    - name: Run clang-format style check
-      uses: jidicula/clang-format-action@v4.14.0
+    - name: Run cpp-linter
+      uses: cpp-linter/cpp-linter-action@v2
       with:
-        clang-format-version: '14'
+        style: 'file'
+        version: 14
+        files-changed-only: false
+        step-summary: true
 
   verify:
     runs-on: ${{ vars.RUNNER_IMAGE }}
