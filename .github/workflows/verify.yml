@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-	check-format:
+  check-format:
     runs-on: ${{ vars.RUNNER_IMAGE }}
 
     steps:
