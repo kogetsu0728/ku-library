@@ -17,7 +17,10 @@ class HeavyLightDecomposition {
 
         for (int& nv : g[v]) {
             if (nv == p) {
-                if (nv == g[v].back()) break;
+                if (nv == g[v].back()) {
+                    break;
+                }
+
                 swap(nv, g[v].back());
             }
 
@@ -33,7 +36,8 @@ class HeavyLightDecomposition {
     }
 
     void dfs_hld(int v, int p, int& i) {
-        in[v] = i++;
+        in[v] = i;
+        i++;
 
         for (int& nv : g[v]) {
             if (nv == p) {
@@ -41,6 +45,7 @@ class HeavyLightDecomposition {
             }
 
             dep[nv] = dep[v] + 1;
+
             if (nv == g[v][0]) {
                 top[nv] = top[v];
             } else {
@@ -70,8 +75,8 @@ class HeavyLightDecomposition {
     void add_edge(int u, int v) {
         assert(!init);
 
-        g[u].push_back(v);
-        g[v].push_back(u);
+        g[u].emplace_back(v);
+        g[v].emplace_back(u);
 
         return;
     }
@@ -108,8 +113,6 @@ class HeavyLightDecomposition {
 
             v = par[top[v]];
         }
-
-        return;
     }
 
     void node_query(int v, const function<void(int)>& func) const {
