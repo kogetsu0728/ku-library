@@ -64,23 +64,19 @@ template <int M> class StaticModInt {
         return *this *= rhs.inv();
     }
 
-    friend StaticModInt operator+(const StaticModInt& lhs,
-                                  const StaticModInt& rhs) {
+    friend StaticModInt operator+(const StaticModInt& lhs, const StaticModInt& rhs) {
         return StaticModInt(lhs) += rhs;
     }
 
-    friend StaticModInt operator-(const StaticModInt& lhs,
-                                  const StaticModInt& rhs) {
+    friend StaticModInt operator-(const StaticModInt& lhs, const StaticModInt& rhs) {
         return StaticModInt(lhs) -= rhs;
     }
 
-    friend StaticModInt operator*(const StaticModInt& lhs,
-                                  const StaticModInt& rhs) {
+    friend StaticModInt operator*(const StaticModInt& lhs, const StaticModInt& rhs) {
         return StaticModInt(lhs) *= rhs;
     }
 
-    friend StaticModInt operator/(const StaticModInt& lhs,
-                                  const StaticModInt& rhs) {
+    friend StaticModInt operator/(const StaticModInt& lhs, const StaticModInt& rhs) {
         return StaticModInt(lhs) /= rhs;
     }
 

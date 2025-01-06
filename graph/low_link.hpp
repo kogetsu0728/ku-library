@@ -24,8 +24,7 @@ class LowLink {
                 dfs(nv, v, i);
                 low[v] = min(low[v], low[nv]);
                 if (ord[v] <= low[nv]) art[v]++;
-                if (ord[v] < low[nv])
-                    bri.insert(make_pair(min(v, nv), max(v, nv)));
+                if (ord[v] < low[nv]) bri.insert(make_pair(min(v, nv), max(v, nv)));
             }
         }
         if (p == -1) art[v]--;
@@ -34,14 +33,7 @@ class LowLink {
   public:
     LowLink() {}
     LowLink(const int _n)
-        : init(false),
-          n(_n),
-          comp(0),
-          g(_n),
-          seen(_n),
-          ord(_n),
-          low(_n),
-          art(_n) {}
+        : init(false), n(_n), comp(0), g(_n), seen(_n), ord(_n), low(_n), art(_n) {}
 
     void add_edge(int u, int v) {
         assert(!init);

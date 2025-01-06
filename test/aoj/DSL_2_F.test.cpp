@@ -1,5 +1,4 @@
-#define PROBLEM \
-    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F"
+#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_2_F"
 
 // #define _GLIBCXX_DEBUG
 #include <bits/stdc++.h>
@@ -34,8 +33,7 @@ int main() {
     int N, Q;
     cin >> N >> Q;
 
-    OrderedMapAndRangeQuery<K, compare, S, op, e, F, mapping, composition, id>
-        rbst;
+    OrderedMapAndRangeQuery<K, compare, S, op, e, F, mapping, composition, id> rbst;
     rbst.insert(-INF64, e());
     rbst.insert(INF64, e());
 
@@ -57,8 +55,7 @@ int main() {
             ll l, r;
             cin >> l >> r;
             r++;
-            cout << rbst.prod(rbst.upper_bound(l) - 1, rbst.lower_bound(r))
-                 << endl;
+            cout << rbst.prod(rbst.upper_bound(l) - 1, rbst.lower_bound(r)) << endl;
         }
     }
 }

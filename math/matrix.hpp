@@ -45,8 +45,7 @@ template <class T> class Matrix {
         rep(i, 0, lhs.h) {
             rep(j, 0, rhs.w) {
                 rep(k, 0, lhs.w) {
-                    res.set(i, j,
-                            res.get(i, j) + lhs.get(i, k) * rhs.get(k, j));
+                    res.set(i, j, res.get(i, j) + lhs.get(i, k) * rhs.get(k, j));
                 }
             }
         }
@@ -54,9 +53,7 @@ template <class T> class Matrix {
         return res;
     }
 
-    Matrix& operator*=(const Matrix& rhs) noexcept {
-        return *this = *this * rhs;
-    }
+    Matrix& operator*=(const Matrix& rhs) noexcept { return *this = *this * rhs; }
 
     Matrix pow(ll y) const noexcept {
         assert(0 <= y);

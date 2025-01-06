@@ -70,23 +70,19 @@ class DynamicModInt {
         return *this *= rhs.inv();
     }
 
-    friend DynamicModInt operator+(const DynamicModInt& lhs,
-                                   const DynamicModInt& rhs) {
+    friend DynamicModInt operator+(const DynamicModInt& lhs, const DynamicModInt& rhs) {
         return DynamicModInt(lhs) += rhs;
     }
 
-    friend DynamicModInt operator-(const DynamicModInt& lhs,
-                                   const DynamicModInt& rhs) {
+    friend DynamicModInt operator-(const DynamicModInt& lhs, const DynamicModInt& rhs) {
         return DynamicModInt(lhs) -= rhs;
     }
 
-    friend DynamicModInt operator*(const DynamicModInt& lhs,
-                                   const DynamicModInt& rhs) {
+    friend DynamicModInt operator*(const DynamicModInt& lhs, const DynamicModInt& rhs) {
         return DynamicModInt(lhs) *= rhs;
     }
 
-    friend DynamicModInt operator/(const DynamicModInt& lhs,
-                                   const DynamicModInt& rhs) {
+    friend DynamicModInt operator/(const DynamicModInt& lhs, const DynamicModInt& rhs) {
         return DynamicModInt(lhs) /= rhs;
     }
 

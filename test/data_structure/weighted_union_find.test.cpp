@@ -1,5 +1,4 @@
-#define PROBLEM \
-    "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B"
+#define PROBLEM "https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_B"
 
 #include "../../data_structure/weighted_union_find.hpp"
 #include "../../template/template.hpp"

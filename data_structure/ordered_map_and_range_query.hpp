@@ -106,8 +106,7 @@ class OrderedMapAndRangeQuery {
     }
 
     unsigned xor128() {
-        static unsigned x = 123'456'789, y = 362'436'069, z = 521'288'629,
-                        w = 88'675'123;
+        static unsigned x = 123'456'789, y = 362'436'069, z = 521'288'629, w = 88'675'123;
         unsigned t = x ^ (x << 11);
         x = y, y = z, z = w, w = (w ^ (w >> 19)) ^ (t ^ (t >> 8));
         return w;
