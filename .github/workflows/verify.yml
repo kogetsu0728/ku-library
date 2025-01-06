@@ -65,7 +65,7 @@ jobs:
 
   format:
     runs-on: ${{ vars.RUNNER_IMAGE }}
-		needs: [setup]
+    needs: [setup]
 
     steps:
     - uses: actions/checkout@v4
