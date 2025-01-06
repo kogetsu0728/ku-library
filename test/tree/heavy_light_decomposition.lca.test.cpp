@@ -6,10 +6,12 @@
 int main() {
     int N, Q;
     cin >> N >> Q;
+
     HeavyLightDecomposition hld(N);
-    rep(i, 0, N) {
+    rep(i, 1, N) {
         int p;
         cin >> p;
+
         hld.add_edge(i, p);
     }
 
@@ -18,6 +20,7 @@ int main() {
     while (Q--) {
         int u, v;
         cin >> u >> v;
+
         cout << hld.lca(u, v) << LF;
     }
 
