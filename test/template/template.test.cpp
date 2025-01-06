@@ -65,8 +65,5 @@ int main() {
 
     cout << ans << LF;
 
-    set<int> st{1, 2, 5, 8};
-    auto it = lower_bound(xs.begin(), xs.end(), 3);
-
     return 0;
 }
