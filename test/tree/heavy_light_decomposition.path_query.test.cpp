@@ -47,7 +47,6 @@ int main() {
 
             hld.node_query(i, [&](int j) -> void {
                 seg.set(j, seg.get(j) + x);
-
                 return;
             });
         } else {
@@ -64,4 +63,6 @@ int main() {
             cout << ans << LF;
         }
     }
+
+    return 0;
 }
