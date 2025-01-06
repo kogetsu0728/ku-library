@@ -73,9 +73,9 @@ jobs:
         fetch-depth: 0
 
     - name: Run clang-format style check
-      uses: jidicula/clang-format-action@v4.14.0
+      uses: DoozyX/clang-format-lint-action@v0.18.2
       with:
-        clang-format-version: '14'
+        clangFormatVersion: 14
 
   verify:
     runs-on: ${{ vars.RUNNER_IMAGE }}
