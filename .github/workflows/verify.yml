@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  format:
+  check-format:
     runs-on: ${{ vars.RUNNER_IMAGE }}
 
     steps:
@@ -201,7 +201,7 @@ jobs:
           verify-result: ${{ steps.all-artifacts.outputs.artifacts-root }}/Result-*/result.json
   deploy:
     if: (success() || failure()) && github.ref == 'refs/heads/main' && needs.docs-and-check.outputs.upload-pages == 'true'
-    needs: docs-and-check
+    needs: [check-format, docs-and-check]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
