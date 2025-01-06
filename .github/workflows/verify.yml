@@ -21,6 +21,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  format:
+    runs-on: ${{ vars.RUNNER_IMAGE }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Install clang-format
+      run: |
+        sudo apt-get update
+        sudo apt-get install clang-format
+
+    - name: Apply clang-format
+      run: clang-format --dry-run --Werror $(find . -name "*.cpp" -or -name "*.hpp")
+
   setup:
     runs-on: ${{ vars.RUNNER_IMAGE }}
     steps:
@@ -62,23 +78,6 @@ jobs:
           name: Bundled-${{ runner.os }}
           path: .competitive-verifier/bundled
           retention-days: 1
-
-  format:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
-    needs: [setup]
-
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
-    - name: Install clang-format
-      run: |
-        sudo apt-get update
-        sudo apt-get install clang-format
-
-    - name: Apply clang-format
-      run: clang-format --dry-run --Werror $(find . -name "*.cpp" -or -name "*.hpp")
 
   verify:
     runs-on: ${{ vars.RUNNER_IMAGE }}
@@ -133,7 +132,7 @@ jobs:
 
   docs-and-check:
     runs-on: ${{ vars.RUNNER_IMAGE }}
-    needs: [format, verify]
+    needs: [verify]
     outputs:
       upload-pages: ${{steps.upload-pages.outcome == 'success'}}
     steps:
