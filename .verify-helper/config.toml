@@ -1,16 +1,17 @@
 [[languages.cpp.environments]]
 CXX = "g++"
 CXXFLAGS = [
-    "-std=gnu++23",
-    "-O2",
-    "-march=native",
-    "-fconstexpr-depth=2147483647",
-    "-fconstexpr-ops-limit=2147483647",
-    "-fconstexpr-loop-limit=2147483647",
-    "-Wall",
-    "-Wextra",
-    "-Wshadow",
-    "-Winit-self",
-    "-Wlogical-op",
-    "-Wfloat-equal"
+	"-std=gnu++2b",
+	"-O2",
+	"-march=native",
+	"-DONLINE_JUDGE",
+	"-fconstexpr-depth=2147483647",
+	"-fconstexpr-ops-limit=2147483647",
+	"-fconstexpr-loop-limit=2147483647",
+	"-Wall",
+	"-Wextra",
+	"-Wshadow",
+	"-Winit-self",
+	"-Wlogical-op",
+	"-Wfloat-equal"
 ]
