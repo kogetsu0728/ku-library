@@ -1,0 +1,11 @@
+Checks: >
+  clang-analyzer-*,
+  bugprone-*,
+  performance-*,
+  modernize-*,
+  readability-*,
+  cppcoreguidelines-*,
+  -cppcoreguidelines-macro-usage,
+  -cppcoreguidelines-init-variables,
+  -modernize-use-trailing-return-type,
+  -readability-identifier-length

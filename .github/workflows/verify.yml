@@ -35,7 +35,7 @@ jobs:
       uses: cpp-linter/cpp-linter-action@v2
       with:
         style: 'file'
-#        tidy-checks: '-*'
+        tidy-checks: ''
         step-summary: true
 
   setup:
