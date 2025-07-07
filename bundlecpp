@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+	printf "[INFO] usage: "$0" <src.cpp>" >&2
+	exit 0
+fi
+
+DIR=$(realpath $(dirname $0))
+FMT="$DIR/.clang-format"
+TMP=$(mktemp)
+
+trap 'rm -f "$TMP"' EXIT
+
+oj-bundle -I "$DIR" "$1" 2>/dev/null |
+	grep -v -e '^#line ' -e '^#pragma once' |
+	clang-format --style='file' -assume-filename="$FMT" |
+	sed '/./,$!d' |
+	tee "$TMP"
+
+if [ ! -s "$TMP" ]; then
+	printf "\e[31m[ERROR] bundle failed\e[0m\n" >&2
+	exit 1
+fi
