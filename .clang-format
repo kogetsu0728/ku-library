@@ -1,9 +1,17 @@
-BasedOnStyle: 'Chromium'
+BasedOnStyle: Chromium
 ColumnLimit: 90
 IndentWidth: 4
 AccessModifierOffset: -2
-AllowShortFunctionsOnASingleLine: All
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: true
-AlwaysBreakTemplateDeclarations: false
+
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: Empty
+AllowShortLoopsOnASingleLine: false
+
+BreakAfterAttributes: Always
+BreakTemplateDeclarations: Yes
+
+AlignOperands: Align
+BreakBeforeBinaryOperators: NonAssignment
+
 ForEachMacros: ["rep", "rrep"]
