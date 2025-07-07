@@ -75,7 +75,7 @@ jobs:
       uses: cpp-linter/cpp-linter-action@v2
       with:
         style: 'file'
-        tidy-checks: '-*'
+#        tidy-checks: '-*'
         step-summary: true
 
   verify:
@@ -129,7 +129,7 @@ jobs:
           path: ${{runner.temp}}/result.json
           retention-days: 1
 
-  docs-and-check:
+  docs:
     runs-on: ${{ vars.RUNNER_IMAGE }}
     needs: [verify]
     outputs:
@@ -198,9 +198,10 @@ jobs:
         uses: competitive-verifier/actions/check@v2
         with:
           verify-result: ${{ steps.all-artifacts.outputs.artifacts-root }}/Result-*/result.json
+
   deploy:
     if: (success() || failure()) && github.ref == 'refs/heads/main' && needs.docs-and-check.outputs.upload-pages == 'true'
-    needs: [lint, docs-and-check]
+    needs: [docs]
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
