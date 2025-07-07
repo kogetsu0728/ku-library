@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+ * @title 定数
+ */
+
 #include "include.hpp"
 #include "type_alias.hpp"
 

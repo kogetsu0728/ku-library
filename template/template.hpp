@@ -2,6 +2,7 @@
 
 /**
  * @author ku_senjan
+ * @title 提出用テンプレート
  * @see https://github.com/kogetsu0728/ku-library
  */
 
