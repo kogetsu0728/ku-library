@@ -1,5 +1,10 @@
 #pragma once
 
+/**
+ * @author ku_senjan
+ * @see https://github.com/kogetsu0728/ku-library
+ */
+
 #include "constant.hpp"
 #include "include.hpp"
 #include "is_local.hpp"
