@@ -5,7 +5,10 @@ Checks: >
   modernize-*,
   readability-*,
   cppcoreguidelines-*,
+  -bugprone-easily-swappable-parameter,
   -cppcoreguidelines-macro-usage,
   -cppcoreguidelines-init-variables,
+  -cppcoreguidelines-pro-type-member-init,
   -modernize-use-trailing-return-type,
+  -readability-redundant-control-flow,
   -readability-identifier-length
