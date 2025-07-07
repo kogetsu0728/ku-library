@@ -12,3 +12,7 @@ Checks: >
   -modernize-use-trailing-return-type,
   -readability-redundant-control-flow,
   -readability-identifier-length
+
+CheckOptions:
+  - key: extra-arg
+    value: -std=gnu++2b
