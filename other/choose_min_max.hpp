@@ -7,7 +7,8 @@
 /**
  * @brief Choose Minimum
  */
-template <class T> bool chmin(T& a, const T& b) {
+template <class T>
+bool chmin(T& a, const T& b) {
     if (a > b) {
         a = b;
         return true;
@@ -19,7 +20,8 @@ template <class T> bool chmin(T& a, const T& b) {
 /**
  * @brief Choose Maximum
  */
-template <class T> bool chmax(T& a, const T& b) {
+template <class T>
+bool chmax(T& a, const T& b) {
     if (a < b) {
         a = b;
         return true;

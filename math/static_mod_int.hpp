@@ -5,7 +5,8 @@
 /**
  * @brief Static Mod Int
  */
-template <int M> class StaticModInt {
+template <int M>
+class StaticModInt {
     static_assert(2 < M);
     static_assert(M <= INT_MAX / 2);
 

@@ -5,7 +5,8 @@
 /**
  * @brief Segment Tree (セグメント木)
  */
-template <class S, S (*op)(S, S), S (*e)()> class SegmentTree {
+template <class S, S (*op)(S, S), S (*e)()>
+class SegmentTree {
   private:
     int n;
     vector<S> v;

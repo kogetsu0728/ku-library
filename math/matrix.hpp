@@ -5,7 +5,8 @@
 /**
  * @brief Matrix (行列)
  */
-template <class T> class Matrix {
+template <class T>
+class Matrix {
   private:
     int h, w;
     vector<vector<T>> d;

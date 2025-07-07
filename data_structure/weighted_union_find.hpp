@@ -5,7 +5,8 @@
 /**
  * @brief Weighted Union Find (重み付きUnion Find)
  */
-template <class T> class WeightedUnionFind {
+template <class T>
+class WeightedUnionFind {
   private:
     int n, comp;
     vector<int> par, rank;

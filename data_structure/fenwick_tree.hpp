@@ -5,7 +5,8 @@
 /**
  * @brief Fenwick Tree
  */
-template <class T> class FenwickTree {
+template <class T>
+class FenwickTree {
   private:
     int n;
     vector<T> v;

@@ -3,7 +3,8 @@
 /**
  * @brief Merge Sort Tree
  */
-template <class T> class MergeSortTree {
+template <class T>
+class MergeSortTree {
   private:
     int n;
     vector<vector<T>> v, s;

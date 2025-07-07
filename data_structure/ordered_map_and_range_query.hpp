@@ -37,34 +37,40 @@ class OrderedMapAndRangeQuery {
     Node* root;
 
     int size(Node* node) {
-        if (node == nullptr) return 0;
+        if (node == nullptr)
+            return 0;
         return node->size;
     }
 
     S value(Node* node) {
-        if (node == nullptr) return e();
+        if (node == nullptr)
+            return e();
         return node->value;
     }
 
     S sum(Node* node) {
-        if (node == nullptr) return e();
+        if (node == nullptr)
+            return e();
         return node->sum;
     }
 
     F lazy(Node* node) {
-        if (node == nullptr) return id();
+        if (node == nullptr)
+            return id();
         return node->lazy;
     }
 
     void propagate(Node* node, F f) {
-        if (node == nullptr) return;
+        if (node == nullptr)
+            return;
         node->value = mapping(f, value(node));
         node->sum = mapping(f, sum(node));
         node->lazy = composition(f, lazy(node));
     }
 
     void push(Node* node) {
-        if (node == nullptr) return;
+        if (node == nullptr)
+            return;
         if (lazy(node) != id()) {
             propagate(node->left, lazy(node));
             propagate(node->right, lazy(node));
@@ -74,14 +80,16 @@ class OrderedMapAndRangeQuery {
 
     void update(Node* node) {
         push(node);
-        if (node == nullptr) return;
+        if (node == nullptr)
+            return;
         node->sum = op(op(sum(node->left), value(node)), sum(node->right));
         node->size = size(node->left) + 1 + size(node->right);
     }
 
     int lower_bound(Node* node, K k) {
         push(node);
-        if (node == nullptr) return 0;
+        if (node == nullptr)
+            return 0;
         if (compare(node->key, k)) {
             return size(node->left) + lower_bound(node->right, k) + 1;
         }
@@ -90,7 +98,8 @@ class OrderedMapAndRangeQuery {
 
     int upper_bound(Node* node, K k) {
         push(node);
-        if (node == nullptr) return 0;
+        if (node == nullptr)
+            return 0;
         if (compare(k, node->key)) {
             return upper_bound(node->left, k);
         }
@@ -100,8 +109,10 @@ class OrderedMapAndRangeQuery {
     pair<K, S> get(Node* node, int i) {
         push(node);
         assert(node != nullptr);
-        if (i == size(node->left)) return make_pair(node->key, value(node));
-        if (i < size(node->left)) return get(node->left, i);
+        if (i == size(node->left))
+            return make_pair(node->key, value(node));
+        if (i < size(node->left))
+            return get(node->left, i);
         return get(node->right, i - size(node->left) - 1);
     }
 
@@ -114,8 +125,10 @@ class OrderedMapAndRangeQuery {
 
     Node* merge(Node* l, Node* r) {
         push(l), push(r);
-        if (l == nullptr) return r;
-        if (r == nullptr) return l;
+        if (l == nullptr)
+            return r;
+        if (r == nullptr)
+            return l;
         if (xor128() % (size(l) + size(r)) < unsigned(size(l))) {
             l->right = merge(l->right, r);
             update(l);
@@ -128,7 +141,8 @@ class OrderedMapAndRangeQuery {
 
     pair<Node*, Node*> split(Node* node, int i) {
         push(node);
-        if (node == nullptr) return make_pair(nullptr, nullptr);
+        if (node == nullptr)
+            return make_pair(nullptr, nullptr);
         if (i <= size(node->left)) {
             pair<Node*, Node*> s = split(node->left, i);
             node->left = s.second;
@@ -155,7 +169,8 @@ class OrderedMapAndRangeQuery {
     pair<K, S> get(int i) { return get(root, i); }
 
     void erase(K k) {
-        if (!count(k)) return;
+        if (!count(k))
+            return;
         pair<Node*, Node*> s = split(root, lower_bound(k));
         pair<Node*, Node*> t = split(s.second, 1);
         delete t.first;
@@ -163,7 +178,8 @@ class OrderedMapAndRangeQuery {
     }
 
     void insert(K k, S v) {
-        if (count(k)) erase(k);
+        if (count(k))
+            erase(k);
         pair<Node*, Node*> s = split(root, lower_bound(k));
         root = merge(merge(s.first, new Node(k, v)), s.second);
     }

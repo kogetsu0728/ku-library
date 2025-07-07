@@ -6,7 +6,8 @@
  * @brief Binomial (二項係数)
  * @note 参考: https://blog.hamayanhamayan.com/entry/2018/06/06/210256
  */
-template <class T> class Binomial {
+template <class T>
+class Binomial {
   private:
     int n;
     vector<T> fact, ifact;

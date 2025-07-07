@@ -23,11 +23,14 @@ class LowLink {
             } else {
                 dfs(nv, v, i);
                 low[v] = min(low[v], low[nv]);
-                if (ord[v] <= low[nv]) art[v]++;
-                if (ord[v] < low[nv]) bri.insert(make_pair(min(v, nv), max(v, nv)));
+                if (ord[v] <= low[nv])
+                    art[v]++;
+                if (ord[v] < low[nv])
+                    bri.insert(make_pair(min(v, nv), max(v, nv)));
             }
         }
-        if (p == -1) art[v]--;
+        if (p == -1)
+            art[v]--;
     }
 
   public:

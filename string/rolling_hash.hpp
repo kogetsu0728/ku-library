@@ -5,7 +5,8 @@
 /**
  * @brief Rolling Hash (ローリングハッシュ)
  */
-template <class T> class RollingHash {
+template <class T>
+class RollingHash {
   private:
     vector<T> hash, pow;
 

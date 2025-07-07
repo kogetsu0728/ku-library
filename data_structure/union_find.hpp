@@ -4,8 +4,12 @@
 
 namespace _UnionFind {
 using S = bool;
-S op(S a, S b) { return a ^ b; }
-S e() { return false; }
+S op(S a, S b) {
+    return a ^ b;
+}
+S e() {
+    return false;
+}
 };  // namespace _UnionFind
 
 /**
@@ -29,7 +33,8 @@ class UnionFind {
     int size(int x) { return -par[leader(x)]; }
 
     int leader(int x) {
-        if (par[x] < 0) return x;
+        if (par[x] < 0)
+            return x;
         return par[x] = leader(par[x]);
     }
 
@@ -38,9 +43,11 @@ class UnionFind {
     bool merge(int x, int y) {
         x = leader(x);
         y = leader(y);
-        if (x == y) return false;
+        if (x == y)
+            return false;
 
-        if (par[x] > par[y]) swap(x, y);
+        if (par[x] > par[y])
+            swap(x, y);
 
         comp--;
         par[x] += par[y];
