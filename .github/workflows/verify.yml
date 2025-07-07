@@ -21,6 +21,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  lint:
+    runs-on: ${{ vars.RUNNER_IMAGE }}
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Run cpp-linter
+      uses: cpp-linter/cpp-linter-action@v2
+      with:
+        style: 'file'
+#        tidy-checks: '-*'
+        step-summary: true
+
   setup:
     runs-on: ${{ vars.RUNNER_IMAGE }}
     steps:
@@ -62,23 +79,6 @@ jobs:
           name: Bundled-${{ runner.os }}
           path: .competitive-verifier/bundled
           retention-days: 1
-
-  lint:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-
-    - name: Run cpp-linter
-      uses: cpp-linter/cpp-linter-action@v2
-      with:
-        style: 'file'
-#        tidy-checks: '-*'
-        step-summary: true
 
   verify:
     runs-on: ${{ vars.RUNNER_IMAGE }}
