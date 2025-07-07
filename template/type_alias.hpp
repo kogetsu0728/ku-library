@@ -1,6 +1,6 @@
 #pragma once
 
-#include "template/include.hpp"
+#include "include.hpp"
 
 using uint = unsigned int;
 using ll = long long;
