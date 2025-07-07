@@ -1,9 +1,5 @@
 #pragma once
 
-/**
- * @title 型エイリアス
- */
-
 #include "include.hpp"
 
 using uint = unsigned int;

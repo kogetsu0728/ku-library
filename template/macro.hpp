@@ -1,12 +1,19 @@
 #pragma once
 
+#include "include.hpp"
+#include "type_alias.hpp"
+
 /**
- * @title マクロ
  * @see https://trap.jp/post/1224/
  */
 
-#include "include.hpp"
-#include "type_alias.hpp"
+#ifdef LOCAL
+inline constexpr bool IS_LOCAL = true;
+#else
+inline constexpr bool IS_LOCAL = false;
+#endif
+
+#define IF_LOCAL if constexpr (IS_LOCAL)
 
 #define all(a) begin(a), end(a)
 #define rall(a) rbegin(a), rend(a)
