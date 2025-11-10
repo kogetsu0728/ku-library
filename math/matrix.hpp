@@ -78,13 +78,14 @@ class Matrix {
     }
 
     Matrix pow(ll y) const {
+        assert(row() == col());
         assert(0 <= y);
 
-        Matrix res = identity(h);
+        Matrix res = identity(row());
         Matrix x = *this;
 
         while (y > 0) {
-            if (y & 1) {
+            if ((y & 1) != 0) {
                 res *= x;
             }
 
