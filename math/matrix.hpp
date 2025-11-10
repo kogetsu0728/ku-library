@@ -5,16 +5,15 @@
 /**
  * @brief Matrix (行列)
  */
-template <class T>
+template <typename T>
 class Matrix {
   private:
-    int h, w;
-    vector<vector<T>> d;
+    vector<vector<T>> data;
 
   public:
     Matrix() : Matrix(0) {}
-    Matrix(int _h) : Matrix(_h, _h) {}
-    Matrix(int _h, int _w) : h(_h), w(_w), d(_h, vector<T>(_w, T(0))) {}
+    explicit Matrix(int _h) : Matrix(_h, _h) {}
+    explicit Matrix(int _h, int _w) : data(_h, vector<T>(_w, T{})) {}
 
     //! 単位行列
     static Matrix identity(int s) {
@@ -27,27 +26,45 @@ class Matrix {
         return res;
     }
 
-    int height() const { return h; }
-    int width() const { return w; }
+    int row() const {
+        return data.size();
+    }
 
-    T get(int i, int j) const { return d[i][j]; }
-    T set(int i, int j, const T& v) { return d[i][j] = v; }
+    int col() const {
+        return data.empty() ? 0 : data[0].size();
+    }
+
+    T get(int i, int j) const {
+        assert(0 <= i && i < row());
+        assert(0 <= j && j < col());
+
+        return data[i][j];
+    }
+
+    void set(int i, int j, const T v) {
+        assert(0 <= i && i < row());
+        assert(0 <= j && j < col());
+
+        data[i][j] = v;
+
+        return;
+    }
 
     friend bool operator==(const Matrix& lhs, const Matrix& rhs) {
-        return lhs.d == rhs.d;
+        return lhs.data == rhs.data;
     }
 
     friend bool operator!=(const Matrix& lhs, const Matrix& rhs) {
-        return lhs.d != rhs.d;
+        return lhs.data != rhs.data;
     }
 
     friend Matrix operator*(const Matrix& lhs, const Matrix& rhs) {
-        assert(lhs.w == rhs.h);
+        assert(lhs.col() == rhs.row());
 
-        Matrix res(lhs.h, rhs.w);
-        rep (i, 0, lhs.h) {
-            rep (j, 0, rhs.w) {
-                rep (k, 0, lhs.w) {
+        Matrix res(lhs.row(), rhs.col());
+        rep (i, 0, lhs.row()) {
+            rep (j, 0, rhs.col()) {
+                rep (k, 0, lhs.col()) {
                     res.set(i, j, res.get(i, j) + lhs.get(i, k) * rhs.get(k, j));
                 }
             }
@@ -56,21 +73,23 @@ class Matrix {
         return res;
     }
 
-    Matrix& operator*=(const Matrix& rhs) noexcept { return *this = *this * rhs; }
+    Matrix& operator*=(const Matrix& rhs) {
+        return *this = *this * rhs;
+    }
 
-    Matrix pow(ll y) const noexcept {
+    Matrix pow(ll y) const {
         assert(0 <= y);
 
         Matrix res = identity(h);
         Matrix x = *this;
 
-        while (0 < y) {
-            if (y & 1U) {
+        while (y > 0) {
+            if (y & 1) {
                 res *= x;
             }
 
             x *= x;
-            y >>= 1U;
+            y >>= 1;
         }
 
         return res;
