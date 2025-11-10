@@ -4,8 +4,11 @@
 #include "../../template/template.hpp"
 
 int main() {
+    set_io();
+
     int N, K;
     cin >> N >> K;
+
     vector<ll> A(N);
     rep (i, 0, N) {
         cin >> A[i];
