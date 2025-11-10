@@ -7,6 +7,8 @@
 using mint = StaticModInt<998244353>;
 
 int main() {
+    set_io();
+
     int N;
     cin >> N;
 
