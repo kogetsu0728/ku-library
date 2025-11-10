@@ -1,9 +1,9 @@
 BasedOnStyle: Chromium
-ColumnLimit: 90
+ColumnLimit: 0
 IndentWidth: 4
 AccessModifierOffset: -2
 
-AllowShortFunctionsOnASingleLine: Inline
+AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: Empty
 AllowShortLoopsOnASingleLine: false
