@@ -4,20 +4,22 @@
 #include "../../math/static_mod_int.hpp"
 #include "../../template/template.hpp"
 
+using mint = StaticModInt<998244353>;
+
 int main() {
     int N;
     cin >> N;
+
     ll K;
     cin >> K;
 
-    vector A(N, std::vector<StaticModInt<998244353>>(N));
-    Matrix<StaticModInt<998244353>> mat(N);
+    Matrix<mint> mat(N);
     rep (i, 0, N) {
         rep (j, 0, N) {
             ll a;
             cin >> a;
 
-            mat.set(i, j, StaticModInt<998244353>(a));
+            mat.set(i, j, mint(a));
         }
     }
 
@@ -25,12 +27,13 @@ int main() {
 
     rep (i, 0, N) {
         rep (j, 0, N) {
-            if (0 < j) {
+            if (j > 0) {
                 cout << ' ';
             }
 
             cout << mat.get(i, j).val();
         }
+
         cout << LF;
     }
 
