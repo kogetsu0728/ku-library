@@ -3,8 +3,8 @@ ColumnLimit: 0
 IndentWidth: 4
 AccessModifierOffset: -2
 
-AllowShortFunctionsOnASingleLine: None
 AllowShortIfStatementsOnASingleLine: Never
+AllowShortFunctionsOnASingleLine: Empty
 AllowShortLambdasOnASingleLine: Empty
 AllowShortLoopsOnASingleLine: false
 
