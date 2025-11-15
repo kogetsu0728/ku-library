@@ -1,6 +1,6 @@
 #pragma once
 
-#include "include.hpp"
+#include "../template/include.hpp"
 
 void set_io(int d = 16) {
     cin.tie(nullptr);
