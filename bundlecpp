@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$#" -ne 1 ]; then
-	printf "[INFO] usage: "$0" <src.cpp>\n" >&2
+	printf "[INFO] usage: bundlecpp <src.cpp>\n" >&2
 	exit 0
 fi
 
