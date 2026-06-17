@@ -1,6 +1,6 @@
 #define PROBLEM "https://yukicoder.me/problems/no/2561"
 
-#include "../../other/next_combination.hpp"
+#include "../../math/next_combination.hpp"
 #include "../../template/template.hpp"
 
 int main() {
