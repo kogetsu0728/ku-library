@@ -4,6 +4,6 @@ on: workflow_dispatch
 
 jobs:
   clear:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
+    runs-on: ubuntu-slim
     steps:
       - uses: snnaplab/delete-branch-cache-action@v1

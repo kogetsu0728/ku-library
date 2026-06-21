@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   lint:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
+    runs-on: ubuntu-slim
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -36,7 +36,7 @@ jobs:
         step-summary: true
 
   setup:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
+    runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@v6
 
@@ -78,7 +78,7 @@ jobs:
           retention-days: 1
 
   verify:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
+    runs-on: ubuntu-slim
     needs: [setup]
     env:
       SPLIT_SIZE: "20"
@@ -129,7 +129,7 @@ jobs:
           retention-days: 1
 
   docs:
-    runs-on: ${{ vars.RUNNER_IMAGE }}
+    runs-on: ubuntu-latest
     needs: [verify]
     outputs:
       upload-pages: ${{steps.upload-pages.outcome == 'success'}}
@@ -208,7 +208,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ${{ vars.RUNNER_IMAGE }}
+    runs-on: ubuntu-slim
     permissions:
       pages: write
       id-token: write
