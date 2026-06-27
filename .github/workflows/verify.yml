@@ -94,7 +94,7 @@ jobs:
 
       - name: Restore cached results
         if: ${{ ! inputs.ignore_prev_result }}
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         id: restore-cached-results
         with:
           path: ${{github.workspace}}/merged-result.json
@@ -176,7 +176,7 @@ jobs:
           write-summary: true
       - name: Save result
         if: github.ref == 'refs/heads/main'
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         with:
           path: ${{github.workspace}}/merged-result.json
           key: ${{ runner.os }}-verify-result-${{ github.sha }}
