@@ -20,7 +20,7 @@ MergeSortTree<T> mst(values, inf);
 ## count
 
 ```cpp
-int count(int l, int r, const T& a);
+int count(int l, int r, const T& a) const;
 ```
 
 `[l, r)` にある `a` 以下の値の個数を返す。
@@ -32,7 +32,7 @@ int count(int l, int r, const T& a);
 ## sum
 
 ```cpp
-T sum(int l, int r, const T& a);
+T sum(int l, int r, const T& a) const;
 ```
 
 `[l, r)` にある `a` 以下の値の総和を返す。
