@@ -4,6 +4,7 @@ documentation_of: ../../math/next_combination.hpp
 ---
 
 ## 概要
+
 範囲 `[begin, end)` の先頭 `k` 要素で表す組合せを、辞書順で次の組合せに進める。範囲全体の要素を並べ替える。
 
 ```cpp

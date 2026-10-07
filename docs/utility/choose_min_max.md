@@ -4,6 +4,7 @@ documentation_of: ../../utility/choose_min_max.hpp
 ---
 
 ## 概要
+
 値を小さく・大きく更新するヘルパー。変更した場合だけ `true` を返す。
 
 ```cpp
