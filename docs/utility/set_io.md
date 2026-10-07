@@ -4,6 +4,7 @@ documentation_of: ../../utility/set_io.hpp
 ---
 
 ## 概要
+
 標準入出力の設定を行う。
 
 ```cpp

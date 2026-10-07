@@ -4,6 +4,7 @@ documentation_of: ../../math/extended_gcd.hpp
 ---
 
 ## 概要
+
 拡張ユークリッドの互除法。`a*x + b*y == g` を満たす `x`, `y` を参照引数に書き込み、`g` を返す。
 
 ```cpp
