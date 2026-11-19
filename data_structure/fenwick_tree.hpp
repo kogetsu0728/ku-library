@@ -10,11 +10,10 @@
 template <class T>
 class FenwickTree {
   private:
-    int n;
     std::vector<T> tree;
 
     T sum(const int r) const {
-        assert(0 <= r && r <= n);
+        assert(0 <= r && r <= this->size());
 
         T res = T(0);
         for (int i = r; 0 < i; i -= i & -i) {
@@ -26,14 +25,14 @@ class FenwickTree {
 
   public:
     FenwickTree() : FenwickTree(0) {}
-    FenwickTree(const int _n) : n(_n) {
+    FenwickTree(const int n) {
         assert(0 <= n);
         tree = std::vector<T>(n, T(0));
     }
     FenwickTree(const std::vector<T>& values) {
         assert(values.size() <= std::numeric_limits<int>::max());
-        n = static_cast<int>(values.size());
         tree = std::vector<T>(values);
+        const int n = this->size();
         for (int i = 0; i < n; ++i) {
             int parent = i | (i + 1);
             if (parent < n) {
@@ -42,19 +41,22 @@ class FenwickTree {
         }
     }
 
-    T sum(const int l, const int r) const {
-        assert(0 <= l && l <= r && r <= n);
+    int size() const noexcept { return static_cast<int>(tree.size()); }
 
-        return sum(r) - sum(l);
+    T sum(const int l, const int r) const {
+        assert(0 <= l && l <= r && r <= this->size());
+
+        return this->sum(r) - this->sum(l);
     }
 
     T get(const int i) const {
-        assert(0 <= i && i < n);
+        assert(0 <= i && i < this->size());
 
-        return sum(i, i + 1);
+        return this->sum(i, i + 1);
     }
 
     void add(const int index, const T& delta) {
+        const int n = this->size();
         assert(0 <= index && index < n);
 
         for (int i = index; i < n; i = i | (i + 1)) {
@@ -63,9 +65,9 @@ class FenwickTree {
     }
 
     void set(const int i, const T& value) {
-        assert(0 <= i && i < n);
+        assert(0 <= i && i < this->size());
 
-        add(i, value - get(i));
+        this->add(i, value - this->get(i));
 
         return;
     }

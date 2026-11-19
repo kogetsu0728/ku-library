@@ -20,6 +20,14 @@ FenwickTree<T> fw(values);
 
 計算量: どちらも $O(n)$。
 
+## size
+
+```cpp
+int size() const noexcept;
+```
+
+要素数を返す。計算量は $O(1)$。
+
 ## add
 
 ```cpp
