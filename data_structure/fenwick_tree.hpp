@@ -1,6 +1,8 @@
 #pragma once
 
-#include "../template/template.hpp"
+#include <cassert>
+#include <limits>
+#include <vector>
 
 /**
  * @brief Fenwick Tree
@@ -8,16 +10,15 @@
 template <class T>
 class FenwickTree {
   private:
-    int n;
-    vector<T> v;
+    std::vector<T> tree;
 
-    T sum(int r) const {
-        assert(0 <= r && r <= n);
+    [[nodiscard]]
+    T prefix_sum(const int r) const {
+        assert(0 <= r && r <= this->size());
 
         T res = T(0);
-        while (0 < r) {
-            res += v[r - 1];
-            r -= 1 << __builtin_ctz(r);
+        for (int i = r; 0 < i; i -= i & -i) {
+            res += tree[i - 1];
         }
 
         return res;
@@ -25,41 +26,54 @@ class FenwickTree {
 
   public:
     FenwickTree() : FenwickTree(0) {}
-    FenwickTree(int _n) : n(_n), v(_n, T(0)) { assert(0 <= n); }
-    FenwickTree(const vector<T>& _v) : FenwickTree(_v.size()) {
-        rep (i, 0, _v.size()) {
-            set(i, _v[i]);
+    FenwickTree(const int n) {
+        assert(0 <= n);
+        tree = std::vector<T>(n, T(0));
+    }
+    FenwickTree(const std::vector<T>& values) {
+        assert(values.size() <= std::numeric_limits<int>::max());
+        tree = std::vector<T>(values);
+        const int n = this->size();
+        for (int i = 0; i < n; ++i) {
+            int parent = i | (i + 1);
+            if (parent < n) {
+                tree[parent] += tree[i];
+            }
         }
     }
 
-    T sum(int l, int r) const {
-        assert(0 <= l && l <= r && r <= n);
-
-        return sum(r) - sum(l);
+    [[nodiscard]]
+    int size() const noexcept {
+        return static_cast<int>(tree.size());
     }
 
-    T get(int i) const {
-        assert(0 <= i && i < n);
+    [[nodiscard]]
+    T sum(const int l, const int r) const {
+        assert(0 <= l && l <= r && r <= this->size());
 
-        return sum(i, i + 1);
+        return this->prefix_sum(r) - this->prefix_sum(l);
     }
 
-    void add(int i, const T& x) {
-        assert(0 <= i && i < n);
+    [[nodiscard]]
+    T get(const int i) const {
+        assert(0 <= i && i < this->size());
 
-        i++;
-        while (i <= n) {
-            v[i - 1] += x;
-            i += 1 << __builtin_ctz(i);
+        return this->sum(i, i + 1);
+    }
+
+    void add(const int index, const T& delta) {
+        const int n = this->size();
+        assert(0 <= index && index < n);
+
+        for (int i = index; i < n; i = i | (i + 1)) {
+            tree[i] += delta;
         }
-
-        return;
     }
 
-    void set(int i, const T& x) {
-        assert(0 <= i && i < n);
+    void set(const int i, const T& value) {
+        assert(0 <= i && i < this->size());
 
-        add(i, x - get(i));
+        this->add(i, value - this->get(i));
 
         return;
     }

@@ -16,9 +16,17 @@ FenwickTree<T> fw(values);
 
 長さ `n` の零列、または `values` から構築する。
 
-制約: `n >= 0`。
+制約: `0 <= n <= INT_MAX`、`values.size() <= INT_MAX`。
 
-計算量: 長さを指定する場合は $O(n)$、配列から構築する場合は $O(n\log n)$。
+計算量: どちらも $O(n)$。
+
+## size
+
+```cpp
+int size() const noexcept;
+```
+
+要素数を返す。計算量は $O(1)$。
 
 ## add
 
