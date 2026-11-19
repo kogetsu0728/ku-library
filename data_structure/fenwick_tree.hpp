@@ -12,7 +12,7 @@ class FenwickTree {
   private:
     std::vector<T> tree;
 
-    T sum(const int r) const {
+    [[nodiscard]] T sum(const int r) const {
         assert(0 <= r && r <= this->size());
 
         T res = T(0);
@@ -41,15 +41,17 @@ class FenwickTree {
         }
     }
 
-    int size() const noexcept { return static_cast<int>(tree.size()); }
+    [[nodiscard]] int size() const noexcept {
+        return static_cast<int>(tree.size());
+    }
 
-    T sum(const int l, const int r) const {
+    [[nodiscard]] T sum(const int l, const int r) const {
         assert(0 <= l && l <= r && r <= this->size());
 
         return this->sum(r) - this->sum(l);
     }
 
-    T get(const int i) const {
+    [[nodiscard]] T get(const int i) const {
         assert(0 <= i && i < this->size());
 
         return this->sum(i, i + 1);
