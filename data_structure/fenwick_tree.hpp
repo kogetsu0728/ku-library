@@ -12,7 +12,7 @@ class FenwickTree {
   private:
     std::vector<T> tree;
 
-    [[nodiscard]] T sum(const int r) const {
+    [[nodiscard]] T prefix_sum(const int r) const {
         assert(0 <= r && r <= this->size());
 
         T res = T(0);
@@ -48,7 +48,7 @@ class FenwickTree {
     [[nodiscard]] T sum(const int l, const int r) const {
         assert(0 <= l && l <= r && r <= this->size());
 
-        return this->sum(r) - this->sum(l);
+        return this->prefix_sum(r) - this->prefix_sum(l);
     }
 
     [[nodiscard]] T get(const int i) const {
